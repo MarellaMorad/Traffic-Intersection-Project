@@ -1,0 +1,538 @@
+" XPLAOPT Version 9.99.99.99
+" Created on Thu Jun 03 20:08:15 2021
+" 63 Mcells, 103 PLApts, 7 Levels, 171 Fanins
+" XPLAOPT -run s -it b -i TrafficController.blx -dev XC2C64A-5VQ44 -reg -xor a 
+"         -mode 1 -th 28 -fi 32 -bfi 38 -pre keep -unused keeper -terminate keeper -no_output_files 
+MODULE TrafficController
+
+	CarEW  pin 34 ; 
+ 	CarNS  pin 36 ; 
+ 	LightsEW<0>  pin 40 ;  " 1 pt.
+ 	LightsEW<1>  pin 39 ;  " 1 pt.
+ 	LightsNS<0>  pin 42 ;  " 1 pt.
+ 	LightsNS<1>  pin 41 ;  " 1 pt.
+ 	PedEW  pin 37 ; 
+ 	PedNS  pin 38 ; 
+ 	clock  pin 1 ; 
+ 	reset  pin 30 ; 
+ 
+
+	CarEW_s  node ;  " 1 pt.
+ 	CarNS_s  node ;  " 1 pt.
+ 	N_PZ_145  node istype 'collapse';  " 2 pt.
+ 	N_PZ_146  node istype 'collapse';  " 2 pt.
+ 	N_PZ_147  node istype 'collapse';  " 2 pt.
+ 	N_PZ_148  node istype 'collapse';  " 2 pt.
+ 	N_PZ_149  node istype 'collapse';  " 1 pt.
+ 	N_PZ_150  node istype 'collapse';  " 1 pt.
+ 	N_PZ_151  node istype 'collapse';  " 2 pt.
+ 	N_PZ_152  node istype 'collapse';  " 2 pt.
+ 	N_PZ_153  node istype 'collapse';  " 2 pt.
+ 	N_PZ_154  node istype 'collapse';  " 1 pt.
+ 	N_PZ_155  node istype 'collapse';  " 1 pt.
+ 	N_PZ_156  node istype 'collapse';  " 1 pt.
+ 	N_PZ_157  node istype 'collapse';  " 1 pt.
+ 	N_PZ_158  node istype 'collapse';  " 2 pt.
+ 	N_PZ_159  node istype 'collapse';  " 1 pt.
+ 	N_PZ_160  node istype 'collapse';  " 2 pt.
+ 	N_PZ_161  node istype 'collapse';  " 1 pt.
+ 	N_PZ_162  node istype 'collapse';  " 1 pt.
+ 	N_PZ_163  node istype 'collapse';  " 1 pt.
+ 	N_PZ_164  node istype 'collapse';  " 1 pt.
+ 	N_PZ_165  node istype 'collapse';  " 2 pt.
+ 	N_PZ_166  node istype 'collapse';  " 1 pt.
+ 	N_PZ_167  node istype 'collapse';  " 1 pt.
+ 	N_PZ_168  node istype 'collapse';  " 1 pt.
+ 	N_PZ_169  node istype 'collapse';  " 1 pt.
+ 	N_PZ_170  node istype 'collapse';  " 1 pt.
+ 	N_PZ_171  node istype 'collapse';  " 2 pt.
+ 	N_PZ_172  node istype 'collapse';  " 2 pt.
+ 	N_PZ_173  node istype 'collapse';  " 1 pt.
+ 	N_PZ_174  node istype 'collapse';  " 2 pt.
+ 	N_PZ_175  node istype 'collapse';  " 2 pt.
+ 	N_PZ_176  node istype 'collapse';  " 2 pt.
+ 	N_PZ_177  node istype 'collapse';  " 2 pt.
+ 	N_PZ_178  node istype 'collapse';  " 1 pt.
+ 	N_PZ_179  node istype 'collapse';  " 1 pt.
+ 	N_PZ_180  node istype 'collapse';  " 1 pt.
+ 	N_PZ_181  node istype 'collapse';  " 1 pt.
+ 	N_PZ_182  node istype 'collapse';  " 1 pt.
+ 	PedEW_s  node ;  " 1 pt.
+ 	PedNS_s  node ;  " 1 pt.
+ 	theController/PedEW_s  node ;  " 1 pt.
+ 	theController/PedNS_s  node ;  " 1 pt.
+ 	theController/state_FSM_FFd1  node ;  " 2 pt.
+ 	theController/state_FSM_FFd2  node ;  " 2 pt.
+ 	theController/state_FSM_FFd3  node ;  " 2 pt.
+ 	theController/state_FSM_FFd4  node ;  " 2 pt.
+ 	theController/state_FSM_FFd5  node ;  " 3 pt.
+ 	theController/state_FSM_FFd6  node ;  " 3 pt.
+ 	theCounter/count<0>  node ;  " 1 pt.
+ 	theCounter/count<1>  node ;  " 2 pt.
+ 	theCounter/count<2>  node ;  " 3 pt.
+ 	theCounter/count<3>  node ;  " 3 pt.
+ 	theCounter/count<4>  node ;  " 4 pt.
+ 	theCounter/count<5>  node ;  " 4 pt.
+ 	theCounter/count<6>  node ;  " 2 pt.
+ 	theCounter/count<7>  node ;  " 3 pt.
+ 	theCounter/count<8>  node ;  " 3 pt.
+ 
+
+xpla property 'USER_SLEW_RATE LightsEW<0> LightsEW<1> LightsNS<0> LightsNS<1> '; 
+xpla property 'GLOBAL_CLK clock '; 
+xpla property 'POWER_UP_HIGH theController/state_FSM_FFd6 '; 
+xpla property 'unused_keeper'; 
+xpla property 'timespec  PedEW_s.Q theController/PedEW_s.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theController/PedEW_s.CE 344.000000'; 
+xpla property 'timespec  PedEW_s.Q theController/PedEW_s.CE 344.000000'; 
+xpla property 'timespec  PedNS_s.Q theController/PedNS_s.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theController/PedNS_s.CE 344.000000'; 
+xpla property 'timespec  PedNS_s.Q theController/PedNS_s.CE 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theController/state_FSM_FFd5.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theController/state_FSM_FFd6.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theController/state_FSM_FFd2.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theController/state_FSM_FFd3.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theCounter/count<0>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theController/state_FSM_FFd1.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theController/state_FSM_FFd4.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theCounter/count<1>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theCounter/count<2>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theCounter/count<3>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theCounter/count<4>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theCounter/count<5>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theCounter/count<6>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theCounter/count<7>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<2>.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<3>.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<5>.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<8>.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<0>.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<1>.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<4>.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<6>.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theCounter/count<7>.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd1.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd4.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd2.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd3.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd6.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  CarEW_s.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theController/state_FSM_FFd5.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  CarNS_s.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theController/PedEW_s.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'timespec  theController/PedNS_s.Q theCounter/count<8>.D 344.000000'; 
+xpla property 'IOSTD clock 0 -1';
+xpla property 'IOSTD reset 0 -1';
+xpla property 'IOSTD CarEW 0 -1';
+xpla property 'IOSTD CarNS 0 -1';
+xpla property 'IOSTD PedEW 0 -1';
+xpla property 'IOSTD PedNS 0 -1';
+xpla property 'IOSTD LightsEW<0> 0 -1';
+xpla property 'IOSTD LightsEW<1> 0 -1';
+xpla property 'IOSTD LightsNS<0> 0 -1';
+xpla property 'IOSTD LightsNS<1> 0 -1';
+EQUATIONS 
+
+ CarEW_s.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ CarEW_s.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ CarEW_s.D = CarEW;		"--- [PT=1, FI=1, LVL=1] ---
+ CarNS_s.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ CarNS_s.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ CarNS_s.D = CarNS;		"--- [PT=1, FI=1, LVL=1] ---
+! LightsEW<0> = !theController/state_FSM_FFd3.Q & !
+    theController/state_FSM_FFd4.Q;		"--- [PT=1, FI=2, LVL=1] ---
+! LightsEW<1> = !theController/state_FSM_FFd5.Q & !
+    theController/state_FSM_FFd3.Q;		"--- [PT=1, FI=2, LVL=1] ---
+! LightsNS<0> = !theController/state_FSM_FFd2.Q & !
+    theController/state_FSM_FFd1.Q;		"--- [PT=1, FI=2, LVL=1] ---
+! LightsNS<1> = !theController/state_FSM_FFd6.Q & !
+    theController/state_FSM_FFd2.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_145 = theController/PedNS_s.Q
+      # theController/PedEW_s.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_146 = N_PZ_145
+      # CarNS_s.Q;		"--- [PT=2, FI=2, LVL=2] ---
+ N_PZ_147 = N_PZ_145
+      # CarEW_s.Q;		"--- [PT=2, FI=2, LVL=2] ---
+ N_PZ_148 = theController/state_FSM_FFd6.Q & N_PZ_147
+      # theController/state_FSM_FFd5.Q & N_PZ_146
+    ;		"--- [PT=2, FI=4, LVL=3] ---
+ N_PZ_149 = !theCounter/count<0>.Q & !theCounter/count<1>.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_150 = theCounter/count<8>.Q & N_PZ_149;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_151 = theController/state_FSM_FFd4.Q
+      # theController/state_FSM_FFd1.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_152 = N_PZ_151 & N_PZ_167
+      # N_PZ_148 & N_PZ_159;		"--- [PT=2, FI=4, LVL=4] ---
+ N_PZ_153 = theController/state_FSM_FFd3.Q
+      # theController/state_FSM_FFd2.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_154 = theCounter/count<2>.Q & theCounter/count<5>.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_155 = !theCounter/count<3>.Q & theCounter/count<7>.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_156 = N_PZ_150 & N_PZ_154;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_157 = theCounter/count<4>.Q & N_PZ_155;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_158 = !theCounter/count<1>.Q
+      # !theCounter/count<0>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_159 = theCounter/count<6>.Q & N_PZ_157;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_160 = N_PZ_158
+      # !theCounter/count<3>.Q;		"--- [PT=2, FI=2, LVL=2] ---
+ N_PZ_161 = N_PZ_156 & N_PZ_159;		"--- [PT=1, FI=2, LVL=4] ---
+ N_PZ_162 = !theCounter/count<4>.Q & !theCounter/count<6>.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_163 = !theCounter/count<2>.Q & !theCounter/count<5>.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_164 = !theCounter/count<7>.Q & N_PZ_162;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_165 = N_PZ_160
+      # !theCounter/count<4>.Q;		"--- [PT=2, FI=2, LVL=3] ---
+ N_PZ_166 = N_PZ_150 & N_PZ_163;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_167 = theCounter/count<3>.Q & N_PZ_164;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_168 = !theCounter/count<6>.Q & N_PZ_166;		"--- [PT=1, FI=2, LVL=4] ---
+ N_PZ_169 = N_PZ_157 & N_PZ_168;		"--- [PT=1, FI=2, LVL=5] ---
+ N_PZ_170 = N_PZ_156 & N_PZ_167;		"--- [PT=1, FI=2, LVL=4] ---
+ N_PZ_171 = CarNS_s.Q
+      # theController/PedNS_s.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_172 = CarEW_s.Q
+      # theController/PedEW_s.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_173 = N_PZ_154 & !N_PZ_165;		"--- [PT=1, FI=2, LVL=4] ---
+ N_PZ_174 = N_PZ_158
+      # !theCounter/count<2>.Q;		"--- [PT=2, FI=2, LVL=2] ---
+ N_PZ_175 = N_PZ_160
+      # !theCounter/count<2>.Q;		"--- [PT=2, FI=2, LVL=3] ---
+ N_PZ_176 = !N_PZ_172 & N_PZ_182
+      # N_PZ_180;		"--- [PT=2, FI=3, LVL=6] ---
+ N_PZ_177 = !N_PZ_171 & N_PZ_179
+      # N_PZ_181;		"--- [PT=2, FI=3, LVL=6] ---
+ N_PZ_178 = N_PZ_153 & N_PZ_169;		"--- [PT=1, FI=2, LVL=6] ---
+ N_PZ_179 = theController/state_FSM_FFd5.Q & N_PZ_161
+    ;		"--- [PT=1, FI=2, LVL=5] ---
+ N_PZ_180 = theController/state_FSM_FFd4.Q & N_PZ_170
+    ;		"--- [PT=1, FI=2, LVL=5] ---
+ N_PZ_181 = theController/state_FSM_FFd1.Q & N_PZ_170
+    ;		"--- [PT=1, FI=2, LVL=5] ---
+ N_PZ_182 = theController/state_FSM_FFd6.Q & N_PZ_161
+    ;		"--- [PT=1, FI=2, LVL=5] ---
+ PedEW_s.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ PedEW_s.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ PedEW_s.D = PedEW;		"--- [PT=1, FI=1, LVL=1] ---
+ PedNS_s.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ PedNS_s.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ PedNS_s.D = PedNS;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/PedEW_s.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+! theController/PedEW_s.CE = !theController/state_FSM_FFd3.Q & !PedEW_s.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ theController/PedEW_s.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/PedEW_s.D = PedEW_s.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/PedNS_s.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+! theController/PedNS_s.CE = !theController/state_FSM_FFd2.Q & !PedNS_s.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ theController/PedNS_s.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/PedNS_s.D = PedNS_s.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd1.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd1.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd1.T = !theController/state_FSM_FFd1.Q & N_PZ_172
+     & N_PZ_182
+      # N_PZ_181;		"--- [PT=2, FI=4, LVL=6] ---
+ theController/state_FSM_FFd2.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd2.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd2.T = theController/PedNS_s.Q & !
+    theController/state_FSM_FFd2.Q & N_PZ_176
+      # theController/state_FSM_FFd2.Q & N_PZ_169
+    ;		"--- [PT=2, FI=4, LVL=7] ---
+ theController/state_FSM_FFd3.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd3.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd3.T = theController/PedEW_s.Q & !
+    theController/state_FSM_FFd3.Q & N_PZ_177
+      # theController/state_FSM_FFd3.Q & N_PZ_169
+    ;		"--- [PT=2, FI=4, LVL=7] ---
+ theController/state_FSM_FFd4.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd4.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd4.T = !theController/state_FSM_FFd4.Q & N_PZ_171
+     & N_PZ_179
+      # N_PZ_180;		"--- [PT=2, FI=4, LVL=6] ---
+ theController/state_FSM_FFd5.AP = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd5.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd5.T = !theController/PedEW_s.Q & !
+    theController/state_FSM_FFd5.Q & N_PZ_181
+      # !theController/state_FSM_FFd5.Q & theController/state_FSM_FFd3.Q & 
+    N_PZ_169
+      # N_PZ_146 & N_PZ_179;		"--- [PT=3, FI=7, LVL=6] ---
+ theController/state_FSM_FFd6.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd6.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theController/state_FSM_FFd6.T = !theController/PedNS_s.Q & !
+    theController/state_FSM_FFd6.Q & N_PZ_180
+      # !theController/state_FSM_FFd6.Q & theController/state_FSM_FFd2.Q & 
+    N_PZ_169
+      # N_PZ_147 & N_PZ_182;		"--- [PT=3, FI=7, LVL=6] ---
+ theCounter/count<0>.AP = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<0>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<0>.D = !theCounter/count<0>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<1>.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<1>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<1>.D = theCounter/count<0>.Q & !theCounter/count<1>.Q
+    
+      # !theCounter/count<0>.Q & theCounter/count<1>.Q
+    ;		"--- [PT=2, FI=2, LVL=1] ---
+ theCounter/count<2>.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<2>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+! theCounter/count<2>.D = theCounter/count<5>.Q & N_PZ_150 & N_PZ_152
+      # !theCounter/count<2>.Q & N_PZ_158
+      # !N_PZ_174;		"--- [PT=3, FI=6, LVL=5] ---
+ theCounter/count<3>.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<3>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+! theCounter/count<3>.D = N_PZ_151 & N_PZ_156 & N_PZ_164
+      # !theCounter/count<3>.Q & N_PZ_174
+      # !N_PZ_175;		"--- [PT=3, FI=6, LVL=4] ---
+ theCounter/count<4>.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<4>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+! theCounter/count<4>.D = theCounter/count<6>.Q & N_PZ_148 & N_PZ_155 & 
+    N_PZ_156
+      # !theCounter/count<4>.Q & N_PZ_175
+      # theCounter/count<2>.Q & !N_PZ_165
+      # N_PZ_178;		"--- [PT=4, FI=9, LVL=7] ---
+ theCounter/count<5>.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<5>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+! theCounter/count<5>.D = theCounter/count<2>.Q & N_PZ_150 & N_PZ_152
+      # !theCounter/count<5>.Q & N_PZ_165
+      # N_PZ_173
+      # N_PZ_163;		"--- [PT=4, FI=7, LVL=5] ---
+ theCounter/count<6>.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<6>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<6>.T = N_PZ_148 & N_PZ_161
+      # N_PZ_173;		"--- [PT=2, FI=3, LVL=5] ---
+ theCounter/count<7>.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<7>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<7>.T = theCounter/count<6>.Q & N_PZ_173
+      # N_PZ_148 & N_PZ_161
+      # N_PZ_178;		"--- [PT=3, FI=5, LVL=7] ---
+ theCounter/count<8>.AR = reset;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<8>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ theCounter/count<8>.T = theCounter/count<6>.Q & theCounter/count<7>.Q & 
+    N_PZ_173
+      # N_PZ_152 & N_PZ_156
+      # N_PZ_178;		"--- [PT=3, FI=6, LVL=7] ---
+END

@@ -1,0 +1,385 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="paths.js"></script><script src="eqns.js"></script><script>
+      var design = "TrafficController";
+      var device = "XC2C64A";
+      signals = new Array("CarEW_s","CarNS_s","CarNS_sCOMB_SPECSIG","LightsEW0_SPECSIG","LightsEW1_SPECSIG","LightsNS0_SPECSIG","LightsNS1_SPECSIG","PedEW_s","PedEW_sCOMB_SPECSIG","PedNS_s","PedNS_sCOMB_SPECSIG","theControllerPedEW_s_SPECSIG","theControllerPedNS_s_SPECSIG","theControllerstate_FSM_FFd1_SPECSIG","theControllerstate_FSM_FFd2_SPECSIG","theControllerstate_FSM_FFd3_SPECSIG","theControllerstate_FSM_FFd4_SPECSIG","theControllerstate_FSM_FFd5_SPECSIG","theControllerstate_FSM_FFd6_SPECSIG","theCountercount0_SPECSIG","theCountercount1_SPECSIG","theCountercount2_SPECSIG","theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG");
+      sigNegs = new Array("OFF","OFF","OFF","ON","ON","ON","ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON","OFF","ON","ON","OFF","OFF","OFF","OFF","OFF");
+      sigTypes = new Array("DFF","DFF","","","","","","DFF","","DFF","","DEFF","DEFF","TFF","TFF","TFF","TFF","TFF","TFFS_SPECSIG","TFF","TFF","DFF","DFF","TFF","TFF","TFF","TFF","TFF");
+
+      
+           iostyle["PedNS"]=new Array("KPR");
+        
+           iostyle["PedEW"]=new Array("KPR");
+        
+           iostyle["CarNS"]=new Array("KPR");
+        
+           iostyle["CarEW"]=new Array("KPR");
+        
+           iostyle["reset"]=new Array("KPR");
+        
+           iostyle["clock"]=new Array("KPR");
+        
+        specSig["b_SPECSIG"]=new Array("(b)");
+      
+        specSig["theControllerstate_FSM_FFd1_SPECSIG"]=new Array("theController/state_FSM_FFd1");
+      
+        specSig["theControllerstate_FSM_FFd6_SPECSIG"]=new Array("theController/state_FSM_FFd6");
+      
+        specSig["theControllerstate_FSM_FFd2_SPECSIG"]=new Array("theController/state_FSM_FFd2");
+      
+        specSig["LightsEW1_SPECSIG"]=new Array("LightsEW<1>");
+      
+        specSig["LightsEW0_SPECSIG"]=new Array("LightsEW<0>");
+      
+        specSig["LightsNS1_SPECSIG"]=new Array("LightsNS<1>");
+      
+        specSig["LightsNS0_SPECSIG"]=new Array("LightsNS<0>");
+      
+        specSig["PedNS_sCOMB_SPECSIG"]=new Array("PedNS_s.COMB");
+      
+        specSig["PedEW_sCOMB_SPECSIG"]=new Array("PedEW_s.COMB");
+      
+        specSig["CarNS_sCOMB_SPECSIG"]=new Array("CarNS_s.COMB");
+      
+        specSig["theCountercount7_SPECSIG"]=new Array("theCounter/count<7>");
+      
+        specSig["theCountercount4_SPECSIG"]=new Array("theCounter/count<4>");
+      
+        specSig["theCountercount8_SPECSIG"]=new Array("theCounter/count<8>");
+      
+        specSig["theCountercount5_SPECSIG"]=new Array("theCounter/count<5>");
+      
+        specSig["theCountercount2_SPECSIG"]=new Array("theCounter/count<2>");
+      
+        specSig["theCountercount3_SPECSIG"]=new Array("theCounter/count<3>");
+      
+        specSig["theCountercount6_SPECSIG"]=new Array("theCounter/count<6>");
+      
+        specSig["theCountercount1_SPECSIG"]=new Array("theCounter/count<1>");
+      
+        specSig["theCountercount0_SPECSIG"]=new Array("theCounter/count<0>");
+      
+        specSig["theControllerPedEW_s_SPECSIG"]=new Array("theController/PedEW_s");
+      
+        specSig["theControllerPedNS_s_SPECSIG"]=new Array("theController/PedNS_s");
+      
+        specSig["theControllerstate_FSM_FFd3_SPECSIG"]=new Array("theController/state_FSM_FFd3");
+      
+        specSig["theControllerstate_FSM_FFd4_SPECSIG"]=new Array("theController/state_FSM_FFd4");
+      
+        specSig["theControllerstate_FSM_FFd5_SPECSIG"]=new Array("theController/state_FSM_FFd5");
+      
+        specSig["TFFS_SPECSIG"]=new Array("TFF/S");
+      
+            pterms["FB1_0"]=new Array("theCountercount0_SPECSIG","theCountercount1_SPECSIG","theCountercount2_SPECSIG","theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG");
+          
+            pterms["FB1_1"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","/PedNS_sCOMB_SPECSIG");
+          
+            pterms["FB1_2"]=new Array("theCountercount0_SPECSIG","theCountercount1_SPECSIG");
+          
+            pterms["FB1_3"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","theControllerstate_FSM_FFd1_SPECSIG","theCountercount3_SPECSIG","/theCountercount4_SPECSIG","theCountercount5_SPECSIG","/theCountercount6_SPECSIG","/theCountercount7_SPECSIG","theCountercount8_SPECSIG");
+          
+            pterms["FB1_4"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","theCountercount3_SPECSIG","/theCountercount4_SPECSIG","theCountercount5_SPECSIG","/theCountercount6_SPECSIG","/theCountercount7_SPECSIG","theCountercount8_SPECSIG","theControllerstate_FSM_FFd4_SPECSIG");
+          
+            pterms["FB1_5"]=new Array("theCountercount0_SPECSIG","theCountercount1_SPECSIG","theCountercount2_SPECSIG","theCountercount3_SPECSIG","theCountercount4_SPECSIG");
+          
+            pterms["FB1_6"]=new Array("theCountercount0_SPECSIG","theCountercount1_SPECSIG","theCountercount2_SPECSIG","theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG");
+          
+            pterms["FB1_7"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","/theCountercount2_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theControllerstate_FSM_FFd2_SPECSIG","/theCountercount5_SPECSIG","/theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG");
+          
+            pterms["FB1_8"]=new Array("theControllerstate_FSM_FFd3_SPECSIG","/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","/theCountercount2_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","/theCountercount5_SPECSIG","/theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG");
+          
+            pterms["FB1_9"]=new Array("theCountercount0_SPECSIG","theCountercount1_SPECSIG","theCountercount2_SPECSIG","theCountercount3_SPECSIG");
+          
+            pterms["FB1_10"]=new Array("theCountercount0_SPECSIG","theCountercount1_SPECSIG","theCountercount2_SPECSIG","theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG");
+          
+            pterms["FB1_11"]=new Array("theCountercount0_SPECSIG","theCountercount1_SPECSIG","theCountercount2_SPECSIG");
+          
+            pterms["FB1_12"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","theCountercount3_SPECSIG","/theCountercount4_SPECSIG","/theControllerstate_FSM_FFd2_SPECSIG","theCountercount5_SPECSIG","/theCountercount6_SPECSIG","/theCountercount7_SPECSIG","theCountercount8_SPECSIG","theControllerstate_FSM_FFd4_SPECSIG","theControllerPedNS_s_SPECSIG");
+          
+            pterms["FB1_13"]=new Array("/theControllerstate_FSM_FFd3_SPECSIG","/PedEW_s");
+          
+            pterms["FB1_14"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","/theControllerPedEW_s_SPECSIG","theControllerstate_FSM_FFd6_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","/theControllerstate_FSM_FFd2_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","theControllerPedNS_s_SPECSIG","/CarEW_s");
+          
+            pterms["FB1_15"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","theControllerPedEW_s_SPECSIG","theControllerstate_FSM_FFd6_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG");
+          
+            pterms["FB1_16"]=new Array("/theControllerstate_FSM_FFd2_SPECSIG","/PedNS_s");
+          
+            pterms["FB1_17"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","theControllerstate_FSM_FFd6_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","theControllerPedNS_s_SPECSIG");
+          
+            pterms["FB1_18"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","/theCountercount2_SPECSIG","/theControllerstate_FSM_FFd6_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theControllerstate_FSM_FFd2_SPECSIG","/theCountercount5_SPECSIG","/theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG");
+          
+            pterms["FB1_19"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","/theControllerstate_FSM_FFd6_SPECSIG","theCountercount3_SPECSIG","/theCountercount4_SPECSIG","theCountercount5_SPECSIG","/theCountercount6_SPECSIG","/theCountercount7_SPECSIG","theCountercount8_SPECSIG","theControllerstate_FSM_FFd4_SPECSIG","/theControllerPedNS_s_SPECSIG");
+          
+            pterms["FB1_20"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","theControllerstate_FSM_FFd6_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","CarEW_s");
+          
+            pterms["FB1_21"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","/theControllerstate_FSM_FFd1_SPECSIG","theControllerPedEW_s_SPECSIG","theControllerstate_FSM_FFd6_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG");
+          
+            pterms["FB1_22"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","/theControllerstate_FSM_FFd1_SPECSIG","theControllerstate_FSM_FFd6_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","CarEW_s");
+          
+            pterms["FB1_23"]=new Array("/theControllerstate_FSM_FFd6_SPECSIG","/theControllerstate_FSM_FFd5_SPECSIG");
+          
+            pterms["FB1_24"]=new Array("/theControllerPedEW_s_SPECSIG","/theControllerPedNS_s_SPECSIG","/theControllerstate_FSM_FFd5_SPECSIG","/CarEW_s");
+          
+            pterms["FB1_25"]=new Array("/theControllerPedEW_s_SPECSIG","/theControllerstate_FSM_FFd6_SPECSIG","/theControllerPedNS_s_SPECSIG","/CarNS_s");
+          
+            pterms["FB1_26"]=new Array("/theControllerPedEW_s_SPECSIG","/theControllerPedNS_s_SPECSIG","/CarNS_s","/CarEW_s");
+          
+            pterms["FB1_31"]=new Array("/theCountercount2_SPECSIG");
+          
+            pterms["FB1_46"]=new Array("/theCountercount3_SPECSIG");
+          
+            pterms["FB1_52"]=new Array("theCountercount0_SPECSIG");
+          
+            pterms["FB2_0"]=new Array("theControllerstate_FSM_FFd3_SPECSIG","/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","/theCountercount2_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","/theCountercount5_SPECSIG","/theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG");
+          
+            pterms["FB2_1"]=new Array("/theControllerstate_FSM_FFd3_SPECSIG","/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","theControllerstate_FSM_FFd1_SPECSIG","theControllerPedEW_s_SPECSIG","theCountercount3_SPECSIG","/theCountercount4_SPECSIG","theCountercount5_SPECSIG","/theCountercount6_SPECSIG","/theCountercount7_SPECSIG","theCountercount8_SPECSIG");
+          
+            pterms["FB2_2"]=new Array("/theControllerstate_FSM_FFd3_SPECSIG","/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","theControllerPedEW_s_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","/theControllerPedNS_s_SPECSIG","/CarNS_s","theControllerstate_FSM_FFd5_SPECSIG");
+          
+            pterms["FB2_3"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","theControllerPedEW_s_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","theControllerstate_FSM_FFd5_SPECSIG");
+          
+            pterms["FB2_4"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","theControllerPedNS_s_SPECSIG","theControllerstate_FSM_FFd5_SPECSIG");
+          
+            pterms["FB2_5"]=new Array("theControllerstate_FSM_FFd3_SPECSIG","/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","/theCountercount2_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","/theCountercount5_SPECSIG","/theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","/theControllerstate_FSM_FFd5_SPECSIG");
+          
+            pterms["FB2_6"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","theControllerstate_FSM_FFd1_SPECSIG","/theControllerPedEW_s_SPECSIG","theCountercount3_SPECSIG","/theCountercount4_SPECSIG","theCountercount5_SPECSIG","/theCountercount6_SPECSIG","/theCountercount7_SPECSIG","theCountercount8_SPECSIG","/theControllerstate_FSM_FFd5_SPECSIG");
+          
+            pterms["FB2_7"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","CarNS_s","theControllerstate_FSM_FFd5_SPECSIG");
+          
+            pterms["FB2_8"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","/theControllerstate_FSM_FFd4_SPECSIG","theControllerPedNS_s_SPECSIG","theControllerstate_FSM_FFd5_SPECSIG");
+          
+            pterms["FB2_9"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","theCountercount3_SPECSIG","/theCountercount4_SPECSIG","theCountercount5_SPECSIG","/theCountercount6_SPECSIG","/theCountercount7_SPECSIG","theCountercount8_SPECSIG","theControllerstate_FSM_FFd4_SPECSIG");
+          
+            pterms["FB2_10"]=new Array("/theControllerstate_FSM_FFd3_SPECSIG","/theControllerstate_FSM_FFd5_SPECSIG");
+          
+            pterms["FB2_11"]=new Array("/theCountercount0_SPECSIG","/theCountercount1_SPECSIG","theCountercount2_SPECSIG","/theCountercount3_SPECSIG","theCountercount4_SPECSIG","theCountercount5_SPECSIG","theCountercount6_SPECSIG","theCountercount7_SPECSIG","theCountercount8_SPECSIG","/theControllerstate_FSM_FFd4_SPECSIG","CarNS_s","theControllerstate_FSM_FFd5_SPECSIG");
+          
+            pterms["FB2_12"]=new Array("PedEW_s");
+          
+            pterms["FB2_13"]=new Array("/theControllerstate_FSM_FFd3_SPECSIG","/theControllerstate_FSM_FFd4_SPECSIG");
+          
+            pterms["FB2_14"]=new Array("PedNS_s");
+          
+            pterms["FB2_22"]=new Array("/theControllerstate_FSM_FFd6_SPECSIG","/theControllerstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB2_25"]=new Array("/theControllerstate_FSM_FFd1_SPECSIG","/theControllerstate_FSM_FFd2_SPECSIG");
+          
+            pterms["FB2_34"]=new Array("/CarNS_sCOMB_SPECSIG");
+          
+            pterms["FB2_40"]=new Array("/PedEW_sCOMB_SPECSIG");
+          
+              gblclk["PedNS_s"]=new Array("clock");
+            
+              gblrst["PedNS_s"]=new Array("reset");
+            prld["PedNS_s"]="GND";
+          inreg["PedNS_s"]=new Array("PedNS");
+        
+              gblclk["PedEW_s"]=new Array("clock");
+            
+              gblrst["PedEW_s"]=new Array("reset");
+            prld["PedEW_s"]="GND";
+          inreg["PedEW_s"]=new Array("PedEW");
+        
+              gblclk["CarNS_s"]=new Array("clock");
+            
+              gblrst["CarNS_s"]=new Array("reset");
+            prld["CarNS_s"]="GND";
+          inreg["CarNS_s"]=new Array("CarNS");
+        
+          d2["theCountercount7_SPECSIG"]=new Array("FB1_10","FB1_8","FB1_1","FB1_7");
+          
+              gblclk["theCountercount7_SPECSIG"]=new Array("clock");
+            
+              gblrst["theCountercount7_SPECSIG"]=new Array("reset");
+            prld["theCountercount7_SPECSIG"]="GND";
+          d2["theCountercount4_SPECSIG"]=new Array("FB1_9","FB1_8","FB1_1","FB1_7");
+          
+              gblclk["theCountercount4_SPECSIG"]=new Array("clock");
+            
+              gblrst["theCountercount4_SPECSIG"]=new Array("reset");
+            prld["theCountercount4_SPECSIG"]="GND";
+          d2["theCountercount8_SPECSIG"]=new Array("FB1_6","FB1_8","FB1_3","FB1_4","FB1_1","FB1_7");
+          
+              gblclk["theCountercount8_SPECSIG"]=new Array("clock");
+            
+              gblrst["theCountercount8_SPECSIG"]=new Array("reset");
+            prld["theCountercount8_SPECSIG"]="GND";
+          d2["theCountercount5_SPECSIG"]=new Array("FB1_5","FB1_3","FB1_4","FB1_1");
+          
+              gblclk["theCountercount5_SPECSIG"]=new Array("clock");
+            
+              gblrst["theCountercount5_SPECSIG"]=new Array("reset");
+            prld["theCountercount5_SPECSIG"]="GND";
+          d1["theCountercount2_SPECSIG"]=new Array("FB1_31");
+          
+          d2["theCountercount2_SPECSIG"]=new Array("FB1_2","FB1_3","FB1_4","FB1_1");
+          
+              gblclk["theCountercount2_SPECSIG"]=new Array("clock");
+            
+              gblrst["theCountercount2_SPECSIG"]=new Array("reset");
+            prld["theCountercount2_SPECSIG"]="GND";
+              gblclk["CarEW_s"]=new Array("clock");
+            
+              gblrst["CarEW_s"]=new Array("reset");
+            prld["CarEW_s"]="GND";
+          inreg["CarEW_s"]=new Array("CarEW");
+        
+          d2["theControllerstate_FSM_FFd1_SPECSIG"]=new Array("FB1_3","FB1_21","FB1_22");
+          
+              gblclk["theControllerstate_FSM_FFd1_SPECSIG"]=new Array("clock");
+            
+              gblrst["theControllerstate_FSM_FFd1_SPECSIG"]=new Array("reset");
+            prld["theControllerstate_FSM_FFd1_SPECSIG"]="GND";
+          d2["theControllerstate_FSM_FFd6_SPECSIG"]=new Array("FB1_15","FB1_17","FB1_20","FB1_18","FB1_19");
+          
+              gblclk["theControllerstate_FSM_FFd6_SPECSIG"]=new Array("clock");
+            
+              gblrst["theControllerstate_FSM_FFd6_SPECSIG"]=new Array("reset");
+            prld["theControllerstate_FSM_FFd6_SPECSIG"]="VCC";
+          d2["theControllerstate_FSM_FFd2_SPECSIG"]=new Array("FB1_7","FB1_12","FB1_14");
+          
+              gblclk["theControllerstate_FSM_FFd2_SPECSIG"]=new Array("clock");
+            
+              gblrst["theControllerstate_FSM_FFd2_SPECSIG"]=new Array("reset");
+            prld["theControllerstate_FSM_FFd2_SPECSIG"]="GND";
+          d1["theCountercount3_SPECSIG"]=new Array("FB1_46");
+          
+          d2["theCountercount3_SPECSIG"]=new Array("FB1_11","FB1_3","FB1_4");
+          
+              gblclk["theCountercount3_SPECSIG"]=new Array("clock");
+            
+              gblrst["theCountercount3_SPECSIG"]=new Array("reset");
+            prld["theCountercount3_SPECSIG"]="GND";
+          d2["theCountercount6_SPECSIG"]=new Array("FB1_0","FB1_1");
+          
+              gblclk["theCountercount6_SPECSIG"]=new Array("clock");
+            
+              gblrst["theCountercount6_SPECSIG"]=new Array("reset");
+            prld["theCountercount6_SPECSIG"]="GND";
+          d1["theCountercount1_SPECSIG"]=new Array("FB1_52");
+          
+              gblclk["theCountercount1_SPECSIG"]=new Array("clock");
+            
+              gblrst["theCountercount1_SPECSIG"]=new Array("reset");
+            prld["theCountercount1_SPECSIG"]="GND";
+          d2["theCountercount0_SPECSIG"]=new Array("GND");
+          
+              gblclk["theCountercount0_SPECSIG"]=new Array("clock");
+            
+              gblset["theCountercount0_SPECSIG"]=new Array("reset");
+            prld["theCountercount0_SPECSIG"]="GND";
+          d2["PedNS_sCOMB_SPECSIG"]=new Array("FB1_23","FB1_25","FB1_26","FB1_24");
+          
+          d1["PedEW_sCOMB_SPECSIG"]=new Array("FB1_13");
+          
+          d1["CarNS_sCOMB_SPECSIG"]=new Array("FB1_16");
+          
+          d1["LightsEW1_SPECSIG"]=new Array("FB2_10");
+          
+          d1["LightsEW0_SPECSIG"]=new Array("FB2_13");
+          
+          d1["LightsNS1_SPECSIG"]=new Array("FB2_22");
+          
+          d1["LightsNS0_SPECSIG"]=new Array("FB2_25");
+          
+          d2["theControllerPedNS_s_SPECSIG"]=new Array("FB2_14");
+          
+              gblclk["theControllerPedNS_s_SPECSIG"]=new Array("clock");
+            
+              gblrst["theControllerPedNS_s_SPECSIG"]=new Array("reset");
+            
+          ce["theControllerPedNS_s_SPECSIG"]=new Array("FB2_34");
+          prld["theControllerPedNS_s_SPECSIG"]="GND";
+          d2["theControllerPedEW_s_SPECSIG"]=new Array("FB2_12");
+          
+              gblclk["theControllerPedEW_s_SPECSIG"]=new Array("clock");
+            
+              gblrst["theControllerPedEW_s_SPECSIG"]=new Array("reset");
+            
+          ce["theControllerPedEW_s_SPECSIG"]=new Array("FB2_40");
+          prld["theControllerPedEW_s_SPECSIG"]="GND";
+          d2["theControllerstate_FSM_FFd4_SPECSIG"]=new Array("FB2_9","FB2_8","FB2_11");
+          
+              gblclk["theControllerstate_FSM_FFd4_SPECSIG"]=new Array("clock");
+            
+              gblrst["theControllerstate_FSM_FFd4_SPECSIG"]=new Array("reset");
+            prld["theControllerstate_FSM_FFd4_SPECSIG"]="GND";
+          d2["theControllerstate_FSM_FFd5_SPECSIG"]=new Array("FB2_5","FB2_3","FB2_4","FB2_7","FB2_6");
+          
+              gblclk["theControllerstate_FSM_FFd5_SPECSIG"]=new Array("clock");
+            
+              gblset["theControllerstate_FSM_FFd5_SPECSIG"]=new Array("reset");
+            prld["theControllerstate_FSM_FFd5_SPECSIG"]="GND";
+          d2["theControllerstate_FSM_FFd3_SPECSIG"]=new Array("FB2_0","FB2_1","FB2_2");
+          
+              gblclk["theControllerstate_FSM_FFd3_SPECSIG"]=new Array("clock");
+            
+              gblrst["theControllerstate_FSM_FFd3_SPECSIG"]=new Array("reset");
+            prld["theControllerstate_FSM_FFd3_SPECSIG"]="GND";
+
+      uimSignals = new Array();
+
+      uimSigNegs = new Array();
+
+      uimPterms = new Array();
+      
+
+      
+        function getEqnList() {
+          var str = "<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>";
+          str += "<center><h3>Equations</h3></center>";
+          str += "<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>";
+          for (s=0; s<uimSignals.length; s++) {
+            str += "<tr><td>";
+            str += retUimEqn(uimSignals[s]);
+            str += "</td></tr>";
+          }
+          for (s=0; s<signals.length; s++) {
+            str += "<tr><td>";
+            str += retEqn(signals[s]);
+            str += "</td></tr>";
+          }
+
+          var legend = retLegend();
+		      if (legend != "") {
+		        str += "<tr><td>" + legend + "</td></tr>";
+		      }
+
+          str += "</table>";
+          str += "<form><span class='pgRef'>";
+
+          if (!parent.leftnav.IsNS()) {
+            str += "<table width='90%' align='center'>";
+            str += "<tr><td align='left'><input type='button' value='back to top' ";
+            str += "onclick='javascript:parent.leftnav.showEqnAll()' ";
+            str += "onmouseover=\"window.status='goto top of page'; return true;\" ";
+            str += "onmouseout=\"window.status=''\">";
+            str += "</td>";
+            str += "<td align='right'>";
+            str += "<input type='button' value='print page' ";
+            str += "onclick='javascript:window.print()' ";
+            str += "onmouseover=\"window.status='print page'; return true;\" ";
+            str += "onmouseout=\"window.status=''\">";
+            str += "</td>";
+            str += "</tr></table>";
+          }
+          else {
+            str += "<table width='90%' align='center'>";
+            str += "<tr><td align='left'><a href='javascript:parent.leftnav.showEqnAll()'>back to top</a>";
+            str += "</td>";
+            str += "<td align='right'>";
+            str += "<a href='javascript:window.print()'>";
+            str += "print page</a>";
+            str += "</td>";
+            str += "</tr></table>";
+          }
+
+          str += "</span></form>";
+          str += "</body></html>";
+          return str;
+        }
+      
+    </script>
+</head></html>

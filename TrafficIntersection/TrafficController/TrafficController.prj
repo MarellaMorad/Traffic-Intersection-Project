@@ -1,0 +1,3 @@
+vhdl work "../Counter.vhdl"
+vhdl work "../Controller.vhdl"
+vhdl work "TrafficController.vhd"

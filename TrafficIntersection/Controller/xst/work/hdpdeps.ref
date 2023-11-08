@@ -1,0 +1,9 @@
+V3 3
+FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Controller/Controller.vhd" 2021/05/21.11:01:07 P.20131013
+EN work/Controller 1621558898 \
+      FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Controller/Controller.vhd" \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/Controller/Behavioral_CONT 1621558899 \
+      FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Controller/Controller.vhd" \
+      EN work/Controller 1621558898

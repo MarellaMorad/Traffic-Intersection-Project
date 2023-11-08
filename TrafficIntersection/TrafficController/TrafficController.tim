@@ -1,0 +1,192 @@
+                           Performance Summary Report
+                           --------------------------
+
+Design:     TrafficController
+Device:     XC2C64A-5-VQ44
+Speed File: Version 14.0 Advance Product Specification
+Program:    Timing Report Generator:  version P.20131013
+Date:       Tue May 25 13:54:32 2021
+
+Timing Constraint Summary:
+
+TS_Clock=PERIOD:Clock:1000.000nS:HIGH:500.000nS                              Met
+
+Performance Summary:
+
+Clock net 'CarEW_s.Q' path delays:
+
+                   Minimum Internal Clock Period(Tcyc): 2.8ns
+                     Maximum Internal Clock Speed: 357.1Mhz
+                         (Limited by Clock Pulse Width)
+
+                      Minimum External Clock Period: 2.8ns
+            Maximum External Clock Speed (before divider): 357.1Mhz
+                         (Limited by Clock Pulse Width)
+
+Clock net 'CarNS_s.Q' path delays:
+
+                   Minimum Internal Clock Period(Tcyc): 2.8ns
+                     Maximum Internal Clock Speed: 357.1Mhz
+                         (Limited by Clock Pulse Width)
+
+                      Minimum External Clock Period: 2.8ns
+            Maximum External Clock Speed (before divider): 357.1Mhz
+                         (Limited by Clock Pulse Width)
+
+Clock net 'theController/state<2>.Q' path delays:
+
+                   Minimum Internal Clock Period(Tcyc): 2.8ns
+                     Maximum Internal Clock Speed: 357.1Mhz
+                         (Limited by Clock Pulse Width)
+
+                      Minimum External Clock Period: 2.8ns
+            Maximum External Clock Speed (before divider): 357.1Mhz
+                         (Limited by Clock Pulse Width)
+
+Clock net 'theController/state<0>.Q' path delays:
+
+                   Minimum Internal Clock Period(Tcyc): 2.8ns
+                     Maximum Internal Clock Speed: 357.1Mhz
+                         (Limited by Clock Pulse Width)
+
+                      Minimum External Clock Period: 2.8ns
+            Maximum External Clock Speed (before divider): 357.1Mhz
+                         (Limited by Clock Pulse Width)
+
+Clock net 'theController/state<1>.Q' path delays:
+
+                   Minimum Internal Clock Period(Tcyc): 2.8ns
+                     Maximum Internal Clock Speed: 357.1Mhz
+                         (Limited by Clock Pulse Width)
+
+                      Minimum External Clock Period: 2.8ns
+            Maximum External Clock Speed (before divider): 357.1Mhz
+                         (Limited by Clock Pulse Width)
+
+Clock net 'clock' path delays:
+
+Clock Pad to Output Pad (tCO)             :          8.5ns (2 macrocell levels)
+Clock Pad 'clock' to Output Pad 'LightsEW<0>'                             (GCK)
+
+Clock to Setup (tCYC)                     :          7.9ns (2 macrocell levels)
+Clock to Q, net 'theController/state<1>.Q' to DFF Setup(D) at 'theController/state<1>.D'        (GCK)
+Target FF drives output net 'theController/state<1>'
+
+Setup to Clock at the Pad (tSUF)          :          2.4ns (0 macrocell levels)
+Data signal 'PedEW' to DFF D input Pin at 'PedEW_s.D'
+Clock pad 'clock'                                                         (GCK)
+
+                   Minimum Internal Clock Period(Tcyc): 7.9ns
+                     Maximum Internal Clock Speed: 126.5Mhz
+                            (Limited by Cycle Time)
+
+                      Minimum External Clock Period: 7.9ns
+            Maximum External Clock Speed (before divider): 126.5Mhz
+                            (Limited by Cycle Time)
+
+--------------------------------------------------------------------------------
+                      Clock Pad to Output Pad (tCO) (nsec)
+
+\ From          c
+ \              l
+  \             o
+   \            c
+    \           k
+     \           
+      \          
+       \         
+        \        
+         \       
+          \      
+  To       \------
+
+LightsEW<0>   8.5
+LightsEW<1>   8.5
+LightsNS<0>   8.1
+LightsNS<1>   8.5
+
+--------------------------------------------------------------------------------
+                   Setup to Clock at Pad (tSU or tSUF) (nsec)
+
+\ From      c
+ \          l
+  \         o
+   \        c
+    \       k
+     \       
+      \      
+  To   \------
+
+CarEW     2.4
+CarNS     2.4
+PedEW     2.4
+PedNS     2.4
+
+--------------------------------------------------------------------------------
+                          Clock to Setup (tCYC) (nsec)
+                                 (Clock: clock)
+
+\ From                       P     P     t     t     t
+ \                           e     e     h     h     h
+  \                          d     d     e     e     e
+   \                         E     N     C     C     C
+    \                        W     S     o     o     o
+     \                       _     _     n     n     n
+      \                      s     s     t     t     t
+       \                     .     .     r     r     r
+        \                    Q     Q     o     o     o
+         \                               l     l     l
+          \                              l     l     l
+           \                             e     e     e
+            \                            r     r     r
+             \                           /     /     /
+              \                          s     s     s
+               \                         t     t     t
+                \                        a     a     a
+                 \                       t     t     t
+                  \                      e     e     e
+                   \                     <     <     <
+                    \                    0     1     2
+                     \                   >     >     >
+                      \                  .     .     .
+                       \                 Q     Q     Q
+  To                    \------------------------------
+
+theController/state<0>.D   7.9         7.9   7.9   7.9
+theController/state<1>.D   7.9         7.9   7.9   7.9
+theController/state<2>.D   7.9   7.9   7.9   7.9   7.9
+
+Path Type Definition: 
+
+Pad to Pad (tPD) -                        Reports pad to pad paths that start 
+                                          at input pads and end at output pads. 
+                                          Paths are not traced through 
+                                          registers. 
+
+Clock Pad to Output Pad (tCO) -           Reports paths that start at input 
+                                          pads trace through clock inputs of 
+                                          registers and end at output pads. 
+                                          Paths are not traced through PRE/CLR 
+                                          inputs of registers. 
+
+Setup to Clock at Pad (tSU or tSUF) -     Reports external setup time of data 
+                                          to clock at pad. Data path starts at 
+                                          an input pad and ends at register 
+                                          (Fast Input Register for tSUF) D/T 
+                                          input. Clock path starts at input pad 
+                                          and ends at the register clock input. 
+                                          Paths are not traced through 
+                                          registers. Pin-to-pin setup 
+                                          requirement is not reported or 
+                                          guaranteed for product-term clocks 
+                                          derived from macrocell feedback 
+                                          signals. 
+
+Clock to Setup (tCYC) -                   Register to register cycle time. 
+                                          Include source register tCO and 
+                                          destination register tSU. Note that 
+                                          when the computed Maximum Clock Speed 
+                                          is limited by tCYC it is computed 
+                                          assuming that all registers are 
+                                          rising-edge sensitive. 
+

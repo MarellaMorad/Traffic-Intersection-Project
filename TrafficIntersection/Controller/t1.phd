@@ -1,0 +1,97 @@
+" XPLAOPT Version 9.99.99.99
+" Created on Fri May 21 11:02:02 2021
+" 17 Mcells, 25 PLApts, 3 Levels, 45 Fanins
+" XPLAOPT -run s -it b -i Controller.blx -dev XC2C64A-5VQ44 -reg -xor a -mode 1 
+"         -th 28 -fi 32 -bfi 38 -pre keep -unused keeper -terminate keeper -no_output_files 
+MODULE Controller
+
+	CarEW  pin 34 ; 
+ 	CarNS  pin 36 ; 
+ 	LightsEW<0>  pin 40 ;  " 2 pt.
+ 	LightsEW<1>  pin 39 ;  " 2 pt.
+ 	LightsNS<0>  pin 42 ;  " 1 pt.
+ 	LightsNS<1>  pin 41 ;  " 1 pt.
+ 	PedEW  pin 37 ; 
+ 	PedNS  pin 38 ; 
+ 	Reset  pin 30 ; 
+ 	clearCounter  pin 13 ;  " 1 pt.
+ 	clock  pin 1 ; 
+ 
+
+	N_PZ_28  node istype 'collapse';  " 2 pt.
+ 	N_PZ_29  node istype 'collapse';  " 1 pt.
+ 	N_PZ_30  node istype 'collapse';  " 2 pt.
+ 	N_PZ_31  node istype 'collapse';  " 1 pt.
+ 	N_PZ_32  node istype 'collapse';  " 2 pt.
+ 	N_PZ_33  node istype 'collapse';  " 1 pt.
+ 	nextState<0>  node ;  " 2 pt.
+ 	nextState<1>  node ;  " 2 pt.
+ 	nextState<2>  node ;  " 2 pt.
+ 	state<0>  node ;  " 1 pt.
+ 	state<1>  node ;  " 1 pt.
+ 	state<2>  node ;  " 1 pt.
+ 
+
+xpla property 'USER_SLEW_RATE LightsNS<0> LightsNS<1> LightsEW<1> clearCounter LightsEW<0> 
+	'; 
+xpla property 'GLOBAL_CLK clock '; 
+xpla property 'unused_keeper'; 
+xpla property 'timespec  state<2>.Q state<1>.D 344.000000'; 
+xpla property 'timespec  state<0>.Q state<1>.D 344.000000'; 
+xpla property 'timespec  state<1>.Q state<1>.D 344.000000'; 
+xpla property 'timespec  state<2>.Q state<2>.D 344.000000'; 
+xpla property 'timespec  state<0>.Q state<2>.D 344.000000'; 
+xpla property 'timespec  state<1>.Q state<2>.D 344.000000'; 
+xpla property 'timespec  state<2>.Q state<0>.D 344.000000'; 
+xpla property 'timespec  state<0>.Q state<0>.D 344.000000'; 
+xpla property 'timespec  state<1>.Q state<0>.D 344.000000'; 
+xpla property 'IOSTD clock 0 -1';
+xpla property 'IOSTD Reset 0 -1';
+xpla property 'IOSTD LightsNS<0> 0 -1';
+xpla property 'IOSTD LightsNS<1> 0 -1';
+xpla property 'IOSTD CarEW 0 -1';
+xpla property 'IOSTD PedEW 0 -1';
+xpla property 'IOSTD CarNS 0 -1';
+xpla property 'IOSTD PedNS 0 -1';
+xpla property 'IOSTD LightsEW<1> 0 -1';
+xpla property 'IOSTD clearCounter 0 -1';
+xpla property 'IOSTD LightsEW<0> 0 -1';
+EQUATIONS 
+
+ LightsEW<0> = !state<2>.Q & state<0>.Q
+      # N_PZ_31;		"--- [PT=2, FI=3, LVL=2] ---
+ LightsEW<1> = CarNS & state<1>.Q & N_PZ_29
+      # state<2>.Q & N_PZ_31;		"--- [PT=2, FI=5, LVL=2] ---
+ LightsNS<0> = !state<1>.Q & state<2>.Q & !state<0>.Q
+    ;		"--- [PT=1, FI=3, LVL=1] ---
+ LightsNS<1> = !state<1>.Q & !state<0>.Q & N_PZ_32
+    ;		"--- [PT=1, FI=3, LVL=2] ---
+ N_PZ_28 = !CarNS & state<1>.Q
+      # !CarEW & !state<1>.Q;		"--- [PT=2, FI=3, LVL=1] ---
+ N_PZ_29 = !state<2>.Q & !state<0>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_30 = state<2>.Q
+      # !PedEW;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_31 = !state<1>.Q & state<0>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_32 = state<2>.Q
+      # CarEW;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_33 = N_PZ_28 & N_PZ_29;		"--- [PT=1, FI=2, LVL=2] ---
+! clearCounter = !state<1>.Q & state<2>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ nextState<0>.D = !state<1>.Q & !N_PZ_30
+      # N_PZ_29;		"--- [PT=2, FI=3, LVL=2] ---
+! nextState<0>.LH = N_PZ_33;		"--- [PT=1, FI=1, LVL=3] ---
+ nextState<1>.D = N_PZ_30 & N_PZ_31
+      # state<1>.Q & N_PZ_29;		"--- [PT=2, FI=4, LVL=2] ---
+! nextState<1>.LH = N_PZ_33;		"--- [PT=1, FI=1, LVL=3] ---
+ nextState<2>.D = PedNS & state<1>.Q & !state<2>.Q & state<0>.Q
+      # !N_PZ_30 & N_PZ_31;		"--- [PT=2, FI=6, LVL=2] ---
+! nextState<2>.LH = N_PZ_33;		"--- [PT=1, FI=1, LVL=3] ---
+ state<0>.AR = Reset;		"--- [PT=1, FI=1, LVL=1] ---
+ state<0>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ state<0>.D = nextState<0>.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ state<1>.AP = Reset;		"--- [PT=1, FI=1, LVL=1] ---
+ state<1>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ state<1>.D = nextState<1>.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ state<2>.AR = Reset;		"--- [PT=1, FI=1, LVL=1] ---
+ state<2>.CLK = clock;		"--- [PT=1, FI=1, LVL=1] ---
+ state<2>.D = nextState<2>.Q;		"--- [PT=1, FI=1, LVL=1] ---
+END

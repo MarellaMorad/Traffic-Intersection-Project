@@ -1,0 +1,617 @@
+NDS Database:  version P.20131013
+
+NDS_INFO | xbr | 2C64A44VQ | XC2C64A-5-VQ44
+
+DEVICE | 2C64A | 2C64A44VQ | 
+
+NETWORK | Controller | 0 | 0 | 1073758214 | 0
+
+INPUT_INSTANCE | 0 | 0 | NULL | CarEW_II | Controller_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | CarEW | 1156 | PI | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
+NODE | CarEW_II/UIM | 1202 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | CarEW_II | 0 | 5 | II_IMUX
+
+INPUT_INSTANCE | 0 | 0 | NULL | CarNS_II | Controller_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | CarNS | 1157 | PI | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
+NODE | CarNS_II/UIM | 1201 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | CarNS_II | 0 | 5 | II_IMUX
+
+MACROCELL_INSTANCE | NULL | LightsEW<0>_MC | Controller_COPY_0_COPY_0 | 0 | 3 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | LightsEW<0>_MC.Q | 1208 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | LightsEW<0>_MC.Q | LightsEW<0>_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | LightsEW<0>_MC.SI | LightsEW<0>_MC | 0 | 3 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | LightsEW<0>_MC.D1 | 1160 | ? | 0 | 0 | LightsEW<0>_MC | NULL | NULL | LightsEW<0>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | LightsEW<0>_MC.D2 | 1159 | ? | 0 | 0 | LightsEW<0>_MC | NULL | NULL | LightsEW<0>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | state<1> | IV_TRUE | state<0>
+SPPTERM | 2 | IV_TRUE | state<0> | IV_FALSE | state<2>
+
+SRFF_INSTANCE | LightsEW<0>_MC.REG | LightsEW<0>_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | LightsEW<0>_MC.D | 1158 | ? | 0 | 0 | LightsEW<0>_MC | NULL | NULL | LightsEW<0>_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | LightsEW<0>_MC.Q | 1207 | ? | 0 | 0 | LightsEW<0>_MC | NULL | NULL | LightsEW<0>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | state<1>_MC | Controller_COPY_0_COPY_0 | 1024 | 3 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | nextState<1> | 1166 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | nextState<1>_MC.Q | nextState<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clock_II/FCLK | 1204 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | Reset_II/FSR | 1206 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | Reset_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | state<1>_MC.SI | state<1>_MC | 0 | 1 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | nextState<1> | 1166 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | nextState<1>_MC.Q | nextState<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | state<1>_MC.D1 | 1164 | ? | 0 | 0 | state<1>_MC | NULL | NULL | state<1>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 1 | IV_TRUE | nextState<1>
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | state<1>_MC.D2 | 1165 | ? | 0 | 0 | state<1>_MC | NULL | NULL | state<1>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | state<1>_MC.REG | state<1>_MC | 0 | 3 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | state<1>_MC.D | 1163 | ? | 0 | 0 | state<1>_MC | NULL | NULL | state<1>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clock_II/FCLK | 1204 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 2 | 8 | SRFF_S
+NODE | Reset_II/FSR | 1206 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | Reset_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | state<1>_MC.Q | 1162 | ? | 0 | 0 | state<1>_MC | NULL | NULL | state<1>_MC.REG | 0 | 8 | SRFF_Q
+TNAME | Clock
+
+MACROCELL_INSTANCE | Latch+PrldLow+Ce | nextState<1>_MC | Controller_COPY_0_COPY_0 | 268436544 | 5 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | PedEW_II/UIM | 1172 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | PedEW_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+SIGNAL | NODE | FOOBAR1__ctinst/4 | 1195 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
+SPPTERM | 1 | IV_TRUE | N_PZ_33
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | nextState<1> | 1166 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | nextState<1>_MC.Q | nextState<1>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | nextState<1>_MC.SI | nextState<1>_MC | 0 | 4 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | PedEW_II/UIM | 1172 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | PedEW_II | 0 | 5 | II_IMUX
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | nextState<1>_MC.D1 | 1170 | ? | 0 | 0 | nextState<1>_MC | NULL | NULL | nextState<1>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | nextState<1>_MC.D2 | 1169 | ? | 0 | 0 | nextState<1>_MC | NULL | NULL | nextState<1>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | state<1> | IV_FALSE | state<0> | IV_FALSE | state<2>
+SPPTERM | 3 | IV_FALSE | state<1> | IV_FALSE | PedEW_II/UIM | IV_TRUE | state<0>
+SPPTERM | 3 | IV_FALSE | state<1> | IV_TRUE | state<0> | IV_TRUE | state<2>
+
+SRFF_INSTANCE | nextState<1>_MC.REG | nextState<1>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | nextState<1>_MC.D | 1168 | ? | 0 | 0 | nextState<1>_MC | NULL | NULL | nextState<1>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+SIGNAL | NODE | FOOBAR1__ctinst/4 | 1195 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
+SPPTERM | 1 | IV_TRUE | N_PZ_33
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | nextState<1>_MC.Q | 1167 | ? | 0 | 0 | nextState<1>_MC | NULL | NULL | nextState<1>_MC.REG | 0 | 8 | SRFF_Q
+
+INPUT_INSTANCE | 0 | 0 | NULL | PedEW_II | Controller_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | PedEW | 1171 | PI | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
+NODE | PedEW_II/UIM | 1172 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | PedEW_II | 0 | 5 | II_IMUX
+
+MACROCELL_INSTANCE | PrldLow | state<0>_MC | Controller_COPY_0_COPY_0 | 1024 | 3 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | nextState<0> | 1178 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | nextState<0>_MC.Q | nextState<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clock_II/FCLK | 1204 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | Reset_II/FSR | 1206 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | Reset_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | state<0>_MC.SI | state<0>_MC | 0 | 1 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | nextState<0> | 1178 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | nextState<0>_MC.Q | nextState<0>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | state<0>_MC.D1 | 1176 | ? | 0 | 0 | state<0>_MC | NULL | NULL | state<0>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 1 | IV_TRUE | nextState<0>
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | state<0>_MC.D2 | 1177 | ? | 0 | 0 | state<0>_MC | NULL | NULL | state<0>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | state<0>_MC.REG | state<0>_MC | 0 | 3 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | state<0>_MC.D | 1175 | ? | 0 | 0 | state<0>_MC | NULL | NULL | state<0>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clock_II/FCLK | 1204 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 3 | 8 | SRFF_R
+NODE | Reset_II/FSR | 1206 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | Reset_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | state<0>_MC.Q | 1174 | ? | 0 | 0 | state<0>_MC | NULL | NULL | state<0>_MC.REG | 0 | 8 | SRFF_Q
+TNAME | Clock
+
+MACROCELL_INSTANCE | Latch+PrldLow+Ce | nextState<0>_MC | Controller_COPY_0_COPY_0 | 268436544 | 5 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | PedEW_II/UIM | 1172 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | PedEW_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+SIGNAL | NODE | FOOBAR1__ctinst/4 | 1195 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
+SPPTERM | 1 | IV_TRUE | N_PZ_33
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | nextState<0> | 1178 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | nextState<0>_MC.Q | nextState<0>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | nextState<0>_MC.SI | nextState<0>_MC | 0 | 4 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | PedEW_II/UIM | 1172 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | PedEW_II | 0 | 5 | II_IMUX
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | nextState<0>_MC.D1 | 1182 | ? | 0 | 0 | nextState<0>_MC | NULL | NULL | nextState<0>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | nextState<0>_MC.D2 | 1181 | ? | 0 | 0 | nextState<0>_MC | NULL | NULL | nextState<0>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | state<0> | IV_FALSE | state<2>
+SPPTERM | 3 | IV_FALSE | state<1> | IV_TRUE | PedEW_II/UIM | IV_FALSE | state<2>
+
+SRFF_INSTANCE | nextState<0>_MC.REG | nextState<0>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | nextState<0>_MC.D | 1180 | ? | 0 | 0 | nextState<0>_MC | NULL | NULL | nextState<0>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+SIGNAL | NODE | FOOBAR1__ctinst/4 | 1195 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
+SPPTERM | 1 | IV_TRUE | N_PZ_33
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | nextState<0>_MC.Q | 1179 | ? | 0 | 0 | nextState<0>_MC | NULL | NULL | nextState<0>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | state<2>_MC | Controller_COPY_0_COPY_0 | 1024 | 3 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | nextState<2> | 1188 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | nextState<2>_MC.Q | nextState<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clock_II/FCLK | 1204 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | Reset_II/FSR | 1206 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | Reset_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | state<2>_MC.SI | state<2>_MC | 0 | 1 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | nextState<2> | 1188 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | nextState<2>_MC.Q | nextState<2>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | state<2>_MC.D1 | 1186 | ? | 0 | 0 | state<2>_MC | NULL | NULL | state<2>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 1 | IV_TRUE | nextState<2>
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | state<2>_MC.D2 | 1187 | ? | 0 | 0 | state<2>_MC | NULL | NULL | state<2>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | state<2>_MC.REG | state<2>_MC | 0 | 3 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | state<2>_MC.D | 1185 | ? | 0 | 0 | state<2>_MC | NULL | NULL | state<2>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clock_II/FCLK | 1204 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 3 | 8 | SRFF_R
+NODE | Reset_II/FSR | 1206 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | Reset_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | state<2>_MC.Q | 1184 | ? | 0 | 0 | state<2>_MC | NULL | NULL | state<2>_MC.REG | 0 | 8 | SRFF_Q
+TNAME | Clock
+
+MACROCELL_INSTANCE | Latch+PrldLow+Ce | nextState<2>_MC | Controller_COPY_0_COPY_0 | 268436544 | 6 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | PedNS_II/UIM | 1194 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | PedNS_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | PedEW_II/UIM | 1172 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | PedEW_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+SIGNAL | NODE | FOOBAR1__ctinst/4 | 1195 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
+SPPTERM | 1 | IV_TRUE | N_PZ_33
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | nextState<2> | 1188 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | nextState<2>_MC.Q | nextState<2>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | nextState<2>_MC.SI | nextState<2>_MC | 0 | 5 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | PedNS_II/UIM | 1194 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | PedNS_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | PedEW_II/UIM | 1172 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | PedEW_II | 0 | 5 | II_IMUX
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | nextState<2>_MC.D1 | 1192 | ? | 0 | 0 | nextState<2>_MC | NULL | NULL | nextState<2>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | nextState<2>_MC.D2 | 1191 | ? | 0 | 0 | nextState<2>_MC | NULL | NULL | nextState<2>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 4 | IV_TRUE | state<1> | IV_TRUE | state<0> | IV_FALSE | state<2> | IV_TRUE | PedNS_II/UIM
+SPPTERM | 4 | IV_FALSE | state<1> | IV_TRUE | PedEW_II/UIM | IV_TRUE | state<0> | IV_FALSE | state<2>
+
+SRFF_INSTANCE | nextState<2>_MC.REG | nextState<2>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | nextState<2>_MC.D | 1190 | ? | 0 | 0 | nextState<2>_MC | NULL | NULL | nextState<2>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+SIGNAL | NODE | FOOBAR1__ctinst/4 | 1195 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
+SPPTERM | 1 | IV_TRUE | N_PZ_33
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | nextState<2>_MC.Q | 1189 | ? | 0 | 0 | nextState<2>_MC | NULL | NULL | nextState<2>_MC.REG | 0 | 8 | SRFF_Q
+
+INPUT_INSTANCE | 0 | 0 | NULL | PedNS_II | Controller_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | PedNS | 1193 | PI | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
+NODE | PedNS_II/UIM | 1194 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | PedNS_II | 0 | 5 | II_IMUX
+
+MACROCELL_INSTANCE | NULL | N_PZ_33_MC | Controller_COPY_0_COPY_0 | 0 | 5 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | CarNS_II/UIM | 1201 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | CarNS_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | CarEW_II/UIM | 1202 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | CarEW_II | 0 | 5 | II_IMUX
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | N_PZ_33 | 1196 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | N_PZ_33_MC.Q | N_PZ_33_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | N_PZ_33_MC.SI | N_PZ_33_MC | 0 | 5 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | CarNS_II/UIM | 1201 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | CarNS_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | CarEW_II/UIM | 1202 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | CarEW_II | 0 | 5 | II_IMUX
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | N_PZ_33_MC.D1 | 1200 | ? | 0 | 0 | N_PZ_33_MC | NULL | NULL | N_PZ_33_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | N_PZ_33_MC.D2 | 1199 | ? | 0 | 0 | N_PZ_33_MC | NULL | NULL | N_PZ_33_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 4 | IV_TRUE | state<1> | IV_FALSE | state<0> | IV_FALSE | state<2> | IV_FALSE | CarNS_II/UIM
+SPPTERM | 4 | IV_FALSE | state<1> | IV_FALSE | state<0> | IV_FALSE | state<2> | IV_FALSE | CarEW_II/UIM
+
+SRFF_INSTANCE | N_PZ_33_MC.REG | N_PZ_33_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | N_PZ_33_MC.D | 1198 | ? | 0 | 0 | N_PZ_33_MC | NULL | NULL | N_PZ_33_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | N_PZ_33_MC.Q | 1197 | ? | 0 | 0 | N_PZ_33_MC | NULL | NULL | N_PZ_33_MC.REG | 0 | 8 | SRFF_Q
+
+INPUT_INSTANCE | 0 | 0 | NULL | clock_II | Controller_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | clock | 1203 | PI | 0 | 0 | Controller_COPY_0_COPY_0 | Clock;Clock;Clock | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 3 | 5 | II_FCLK
+NODE | clock_II/FCLK | 1204 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | clock_II | 3 | 5 | II_FCLK
+
+INPUT_INSTANCE | 0 | 0 | NULL | Reset_II | Controller_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | Reset | 1205 | PI | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 6 | 5 | II_FSR
+NODE | Reset_II/FSR | 1206 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | Reset_II | 6 | 5 | II_FSR
+
+OUTPUT_INSTANCE | 0 | LightsEW<0> | Controller_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | LightsEW<0>_MC.Q | 1208 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | LightsEW<0>_MC.Q | LightsEW<0>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | LightsEW<0> | 1209 | PO | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | LightsEW<0> | 0 | 6 | OI_OUT
+
+MACROCELL_INSTANCE | NULL | LightsEW<1>_MC | Controller_COPY_0_COPY_0 | 0 | 4 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | CarNS_II/UIM | 1201 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | CarNS_II | 0 | 5 | II_IMUX
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | LightsEW<1>_MC.Q | 1214 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | LightsEW<1>_MC.Q | LightsEW<1>_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | LightsEW<1>_MC.SI | LightsEW<1>_MC | 0 | 4 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | CarNS_II/UIM | 1201 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | CarNS_II | 0 | 5 | II_IMUX
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | LightsEW<1>_MC.D1 | 1212 | ? | 0 | 0 | LightsEW<1>_MC | NULL | NULL | LightsEW<1>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | LightsEW<1>_MC.D2 | 1211 | ? | 0 | 0 | LightsEW<1>_MC | NULL | NULL | LightsEW<1>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_FALSE | state<1> | IV_TRUE | state<0> | IV_TRUE | state<2>
+SPPTERM | 4 | IV_TRUE | state<1> | IV_FALSE | state<0> | IV_FALSE | state<2> | IV_TRUE | CarNS_II/UIM
+
+SRFF_INSTANCE | LightsEW<1>_MC.REG | LightsEW<1>_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | LightsEW<1>_MC.D | 1210 | ? | 0 | 0 | LightsEW<1>_MC | NULL | NULL | LightsEW<1>_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | LightsEW<1>_MC.Q | 1213 | ? | 0 | 0 | LightsEW<1>_MC | NULL | NULL | LightsEW<1>_MC.REG | 0 | 8 | SRFF_Q
+
+OUTPUT_INSTANCE | 0 | LightsEW<1> | Controller_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | LightsEW<1>_MC.Q | 1214 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | LightsEW<1>_MC.Q | LightsEW<1>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | LightsEW<1> | 1215 | PO | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | LightsEW<1> | 0 | 6 | OI_OUT
+
+MACROCELL_INSTANCE | NULL | LightsNS<0>_MC | Controller_COPY_0_COPY_0 | 0 | 3 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | LightsNS<0>_MC.Q | 1220 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | LightsNS<0>_MC.Q | LightsNS<0>_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | LightsNS<0>_MC.SI | LightsNS<0>_MC | 0 | 3 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | LightsNS<0>_MC.D1 | 1217 | ? | 0 | 0 | LightsNS<0>_MC | NULL | NULL | LightsNS<0>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 3 | IV_FALSE | state<1> | IV_FALSE | state<0> | IV_TRUE | state<2>
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | LightsNS<0>_MC.D2 | 1218 | ? | 0 | 0 | LightsNS<0>_MC | NULL | NULL | LightsNS<0>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | LightsNS<0>_MC.REG | LightsNS<0>_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | LightsNS<0>_MC.D | 1216 | ? | 0 | 0 | LightsNS<0>_MC | NULL | NULL | LightsNS<0>_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | LightsNS<0>_MC.Q | 1219 | ? | 0 | 0 | LightsNS<0>_MC | NULL | NULL | LightsNS<0>_MC.REG | 0 | 8 | SRFF_Q
+
+OUTPUT_INSTANCE | 0 | LightsNS<0> | Controller_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | LightsNS<0>_MC.Q | 1220 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | LightsNS<0>_MC.Q | LightsNS<0>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | LightsNS<0> | 1221 | PO | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | LightsNS<0> | 0 | 6 | OI_OUT
+
+MACROCELL_INSTANCE | NULL | LightsNS<1>_MC | Controller_COPY_0_COPY_0 | 0 | 4 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | CarEW_II/UIM | 1202 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | CarEW_II | 0 | 5 | II_IMUX
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | LightsNS<1>_MC.Q | 1226 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | LightsNS<1>_MC.Q | LightsNS<1>_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | LightsNS<1>_MC.SI | LightsNS<1>_MC | 0 | 4 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<0> | 1173 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<0>_MC.Q | state<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | CarEW_II/UIM | 1202 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | CarEW_II | 0 | 5 | II_IMUX
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | LightsNS<1>_MC.D1 | 1224 | ? | 0 | 0 | LightsNS<1>_MC | NULL | NULL | LightsNS<1>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | LightsNS<1>_MC.D2 | 1223 | ? | 0 | 0 | LightsNS<1>_MC | NULL | NULL | LightsNS<1>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_FALSE | state<1> | IV_FALSE | state<0> | IV_TRUE | state<2>
+SPPTERM | 3 | IV_FALSE | state<1> | IV_FALSE | state<0> | IV_TRUE | CarEW_II/UIM
+
+SRFF_INSTANCE | LightsNS<1>_MC.REG | LightsNS<1>_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | LightsNS<1>_MC.D | 1222 | ? | 0 | 0 | LightsNS<1>_MC | NULL | NULL | LightsNS<1>_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | LightsNS<1>_MC.Q | 1225 | ? | 0 | 0 | LightsNS<1>_MC | NULL | NULL | LightsNS<1>_MC.REG | 0 | 8 | SRFF_Q
+
+OUTPUT_INSTANCE | 0 | LightsNS<1> | Controller_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | LightsNS<1>_MC.Q | 1226 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | LightsNS<1>_MC.Q | LightsNS<1>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | LightsNS<1> | 1227 | PO | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | LightsNS<1> | 0 | 6 | OI_OUT
+
+MACROCELL_INSTANCE | Inv | clearCounter_MC | Controller_COPY_0_COPY_0 | 256 | 2 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | clearCounter_MC.Q | 1232 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | clearCounter_MC.Q | clearCounter_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | clearCounter_MC.SI | clearCounter_MC | 0 | 2 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<1> | 1161 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<1>_MC.Q | state<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state<2> | 1183 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | state<2>_MC.Q | state<2>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | clearCounter_MC.D1 | 1229 | ? | 0 | 0 | clearCounter_MC | NULL | NULL | clearCounter_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 2 | IV_FALSE | state<1> | IV_TRUE | state<2>
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | clearCounter_MC.D2 | 1230 | ? | 0 | 0 | clearCounter_MC | NULL | NULL | clearCounter_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | clearCounter_MC.REG | clearCounter_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | clearCounter_MC.D | 1228 | ? | 0 | 0 | clearCounter_MC | NULL | NULL | clearCounter_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | clearCounter_MC.Q | 1231 | ? | 0 | 0 | clearCounter_MC | NULL | NULL | clearCounter_MC.REG | 0 | 8 | SRFF_Q
+
+OUTPUT_INSTANCE | 0 | clearCounter | Controller_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | clearCounter_MC.Q | 1232 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | clearCounter_MC.Q | clearCounter_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | clearCounter | 1233 | PO | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | clearCounter | 0 | 6 | OI_OUT
+
+FB_INSTANCE | FOOBAR1_ | Controller_COPY_0_COPY_0 | 0 | 0 | 0
+FBPIN | 1 | NULL | 0 | PedNS_II | 1 | NULL | 0 | 38 | 49152
+FBPIN | 2 | NULL | 0 | PedEW_II | 1 | NULL | 0 | 37 | 49152
+FBPIN | 3 | NULL | 0 | CarNS_II | 1 | NULL | 0 | 36 | 49152
+FBPIN | 5 | nextState<2>_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 6 | nextState<1>_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 7 | nextState<0>_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 8 | N_PZ_33_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 9 | NULL | 0 | CarEW_II | 1 | NULL | 0 | 34 | 53248
+FBPIN | 13 | NULL | 0 | Reset_II | 1 | NULL | 0 | 30 | 51200
+FBPIN | 14 | state<2>_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 15 | state<1>_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 16 | state<0>_MC | 1 | NULL | 0 | NULL | 0
+
+FB_INSTANCE | FOOBAR2_ | Controller_COPY_0_COPY_0 | 0 | 0 | 0
+FBPIN | 1 | LightsEW<1>_MC | 1 | NULL | 0 | LightsEW<1> | 1 | 39 | 49152
+FBPIN | 2 | LightsEW<0>_MC | 1 | NULL | 0 | LightsEW<0> | 1 | 40 | 49152
+FBPIN | 5 | LightsNS<1>_MC | 1 | NULL | 0 | LightsNS<1> | 1 | 41 | 49152
+FBPIN | 6 | LightsNS<0>_MC | 1 | NULL | 0 | LightsNS<0> | 1 | 42 | 49152
+FBPIN | 10 | NULL | 0 | clock_II | 1 | NULL | 0 | 1 | 57344
+
+FB_INSTANCE | FOOBAR3_ | Controller_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR4_ | Controller_COPY_0_COPY_0 | 0 | 0 | 0
+FBPIN | 13 | clearCounter_MC | 1 | NULL | 0 | clearCounter | 1 | 13 | 49152
+
+FB_INSTANCE | INPUTPINS_FOOBAR5_ | Controller_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR1_ | FOOBAR1__ctinst | Controller_COPY_0_COPY_0 | 0 | 1 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | N_PZ_33 | 1196 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | N_PZ_33_MC.Q | N_PZ_33_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 4 | 12 | CT_SI4
+SIGNAL | NODE | FOOBAR1__ctinst/4 | 1195 | ? | 0 | 0 | Controller_COPY_0_COPY_0 | NULL | NULL | FOOBAR1__ctinst | 4 | 12 | CT_SI4
+SPPTERM | 1 | IV_TRUE | N_PZ_33
+
+CT_INSTANCE | FOOBAR2_ | FOOBAR2__ctinst | Controller_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR3_ | FOOBAR3__ctinst | Controller_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR4_ | FOOBAR4__ctinst | Controller_COPY_0_COPY_0 | 0 | 0 | 0
+
+PLA | FOOBAR1_ | 13
+PLA_TERM | 0 | 
+SPPTERM | 4 | IV_TRUE | state<1> | IV_FALSE | state<0> | IV_FALSE | state<2> | IV_FALSE | CarNS_II/UIM
+PLA_TERM | 1 | 
+SPPTERM | 4 | IV_FALSE | state<1> | IV_FALSE | state<0> | IV_FALSE | state<2> | IV_FALSE | CarEW_II/UIM
+PLA_TERM | 2 | 
+SPPTERM | 3 | IV_FALSE | state<1> | IV_TRUE | PedEW_II/UIM | IV_FALSE | state<2>
+PLA_TERM | 3 | 
+SPPTERM | 2 | IV_FALSE | state<0> | IV_FALSE | state<2>
+PLA_TERM | 4 | 
+SPPTERM | 1 | IV_TRUE | N_PZ_33
+PLA_TERM | 5 | 
+SPPTERM | 3 | IV_FALSE | state<1> | IV_FALSE | PedEW_II/UIM | IV_TRUE | state<0>
+PLA_TERM | 6 | 
+SPPTERM | 3 | IV_FALSE | state<1> | IV_TRUE | state<0> | IV_TRUE | state<2>
+PLA_TERM | 7 | 
+SPPTERM | 3 | IV_TRUE | state<1> | IV_FALSE | state<0> | IV_FALSE | state<2>
+PLA_TERM | 8 | 
+SPPTERM | 4 | IV_TRUE | state<1> | IV_TRUE | state<0> | IV_FALSE | state<2> | IV_TRUE | PedNS_II/UIM
+PLA_TERM | 9 | 
+SPPTERM | 4 | IV_FALSE | state<1> | IV_TRUE | PedEW_II/UIM | IV_TRUE | state<0> | IV_FALSE | state<2>
+PLA_TERM | 49 | 
+SPPTERM | 1 | IV_TRUE | nextState<2>
+PLA_TERM | 52 | 
+SPPTERM | 1 | IV_TRUE | nextState<1>
+PLA_TERM | 55 | 
+SPPTERM | 1 | IV_TRUE | nextState<0>
+
+PLA | FOOBAR2_ | 6
+PLA_TERM | 0 | 
+SPPTERM | 3 | IV_FALSE | state<1> | IV_TRUE | state<0> | IV_TRUE | state<2>
+PLA_TERM | 1 | 
+SPPTERM | 4 | IV_TRUE | state<1> | IV_FALSE | state<0> | IV_FALSE | state<2> | IV_TRUE | CarNS_II/UIM
+PLA_TERM | 2 | 
+SPPTERM | 3 | IV_FALSE | state<1> | IV_FALSE | state<0> | IV_TRUE | CarEW_II/UIM
+PLA_TERM | 3 | 
+SPPTERM | 2 | IV_FALSE | state<1> | IV_TRUE | state<0>
+PLA_TERM | 4 | 
+SPPTERM | 2 | IV_TRUE | state<0> | IV_FALSE | state<2>
+PLA_TERM | 25 | 
+SPPTERM | 3 | IV_FALSE | state<1> | IV_FALSE | state<0> | IV_TRUE | state<2>
+
+PLA | FOOBAR4_ | 1
+PLA_TERM | 46 | 
+SPPTERM | 2 | IV_FALSE | state<1> | IV_TRUE | state<2>
+
+BUSINFO | LIGHTSEW<1:0> | 2 | 0 | 1 | LightsEW<0> | 1 | LightsEW<1> | 0
+BUSINFO | LIGHTSNS<1:0> | 2 | 0 | 1 | LightsNS<0> | 1 | LightsNS<1> | 0
+
+IOSTD | LVCMOS18
+CarEW | LVCMOS33
+CarNS | LVCMOS33
+PedEW | LVCMOS33
+PedNS | LVCMOS33
+clock | LVCMOS33
+Reset | LVCMOS33
+LightsEW<0> | LVCMOS33
+LightsEW<1> | LVCMOS33
+LightsNS<0> | LVCMOS33
+LightsNS<1> | LVCMOS33
+clearCounter | LVCMOS33
+
+
+FB_ORDER_OF_INPUTS | FOOBAR1_ | 0 | nextState<2> | NULL | 1 | state<0> | NULL | 2 | CarNS | 36 | 3 | N_PZ_33 | NULL | 4 | nextState<0> | NULL
+FB_ORDER_OF_INPUTS | FOOBAR1_ | 6 | state<2> | NULL | 8 | state<1> | NULL | 10 | PedEW | 37 | 12 | PedNS | 38 | 15 | nextState<1> | NULL
+FB_ORDER_OF_INPUTS | FOOBAR1_ | 32 | CarEW | 34
+
+FB_IMUX_INDEX | FOOBAR1_ | 68 | 79 | 2 | 71 | 70 | -1 | 77 | -1 | 78 | -1 | 1 | -1 | 0 | -1 | -1 | 69 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | 8 | -1 | -1 | -1 | -1 | -1 | -1 | -1
+
+
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 1 | state<0> | NULL | 2 | CarNS | 36 | 6 | state<2> | NULL | 8 | state<1> | NULL | 15 | CarEW | 34
+
+FB_IMUX_INDEX | FOOBAR2_ | -1 | 79 | 2 | -1 | -1 | -1 | 77 | -1 | 78 | -1 | -1 | -1 | -1 | -1 | -1 | 8 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1
+
+
+FB_ORDER_OF_INPUTS | FOOBAR4_ | 6 | state<2> | NULL | 8 | state<1> | NULL
+
+FB_IMUX_INDEX | FOOBAR4_ | -1 | -1 | -1 | -1 | -1 | -1 | 77 | -1 | 78 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1
+
+
+GLOBAL_FCLK | clock | 2 | 2
+
+GLOBAL_FSR | Reset | 0 | 0
+
+TIME_TSPEC | TS_Clock | PERIOD:Clock:1000.000nS:HIGH:500.000nS | Clock | 10003 | 10000 | 5000 | NULL

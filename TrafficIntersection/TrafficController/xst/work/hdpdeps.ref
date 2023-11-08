@@ -1,0 +1,34 @@
+V3 20
+FL "C:/Users/marel/Desktop/Project Final/Project Final/Controller.vhdl" 2021/05/30.22:14:53 P.20131013
+FL "C:/Users/marel/Desktop/Project Final/Project Final/Counter.vhdl" 2021/05/25.14:50:42 P.20131013
+FL "C:/Users/marel/Desktop/Project Final/Project Final/TrafficController/TrafficController.vhd" 2021/05/25.15:51:48 P.20131013
+FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Controller.vhdl" 2021/06/02.14:34:30 P.20131013
+EN work/Controller 1622700739 \
+      FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Controller.vhdl" \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/Controller/Behavioral_CONT 1622700740 \
+      FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Controller.vhdl" \
+      EN work/Controller 1622700739
+FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter.vhdl" 2021/06/02.14:22:22 P.20131013
+EN work/Counter 1622700737 \
+      FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter.vhdl" \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/Counter/Behavioral 1622700738 \
+      FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter.vhdl" \
+      EN work/Counter 1622700737
+FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.vhd" 2021/06/02.14:00:29 P.20131013
+EN work/TrafficController 1622700741 \
+      FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.vhd" \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/TrafficController/Behavioral 1622700742 \
+      FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.vhd" \
+      EN work/TrafficController 1622700741 CP work/Counter CP work/controller
+FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Controller.vhdl" 2021/06/02.09:56:23 P.20131013
+FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Counter.vhdl" 2021/06/02.10:24:33 P.20131013
+FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/Controller.vhdl" 2021/06/01.21:16:30 P.20131013
+FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/Counter.vhdl" 2021/05/25.14:50:42 P.20131013
+FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.vhd" 2021/05/25.15:51:48 P.20131013
+FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.vhd" 2021/06/02.10:17:56 P.20131013

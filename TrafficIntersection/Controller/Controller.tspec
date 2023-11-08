@@ -1,0 +1,9 @@
+TS_Clock:FROM:state<1>_MC.Q:TO:state<1>_MC.D:10000
+TS_Clock:FROM:state<0>_MC.Q:TO:state<1>_MC.D:10000
+TS_Clock:FROM:state<2>_MC.Q:TO:state<1>_MC.D:10000
+TS_Clock:FROM:state<1>_MC.Q:TO:state<0>_MC.D:10000
+TS_Clock:FROM:state<0>_MC.Q:TO:state<0>_MC.D:10000
+TS_Clock:FROM:state<2>_MC.Q:TO:state<0>_MC.D:10000
+TS_Clock:FROM:state<1>_MC.Q:TO:state<2>_MC.D:10000
+TS_Clock:FROM:state<0>_MC.Q:TO:state<2>_MC.D:10000
+TS_Clock:FROM:state<2>_MC.Q:TO:state<2>_MC.D:10000

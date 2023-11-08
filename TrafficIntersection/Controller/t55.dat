@@ -1,0 +1,320 @@
+assert111.........
+name = ddddddd..
+assert333.........
+NDEBUG is not defined
+__STDC__ is not defined
+__MSVC__ is defined
+XPLA_BORLANDC is defined
+
+---------------------
+|  D E F A U L T S  |
+---------------------
+max_pt=28, min_pt=3
+max_fi=32, min_fi=4
+
+-----------------
+|  H E A D E R  |
+-----------------
+#$ MODULE Controller
+#$ PINS 5 "clock":1 "Reset":30 "LightsNS<0>":42 "LightsNS<1>":41 "CarEW":34 
+#$ PINS 4 "PedEW":37 "CarNS":36 "PedNS":38 "LightsEW<1>":39 
+#$ PINS 2 "clearCounter":13 "LightsEW<0>":40 
+#$ NODES 5 "state<1>" "nextState<1>" "state<2>" "nextState<2>" "state<0>" 
+#$ NODES 2 "nextState<0>" "N_PZ_33"'co' 
+
+--------------------------------------
+|  P I N    T a b l e    [count=18]  |
+--------------------------------------
+ state<0> N_PZ_33 PedNS clock nextState<0> CarNS state<2> nextState<2> LightsNS<1> 
+ LightsEW<0> CarEW state<1> clearCounter PedEW nextState<1> LightsNS<0> Reset 
+ LightsEW<1>
+
+------------------------------------------
+|  P I N    E q n l i s t    [count=11]  |
+------------------------------------------
+clock (fi=0): 
+Reset (fi=0): 
+LightsNS<0> (fi=3): (LightsNS<0>/N_PZ_9, net=Controller) 
+LightsNS<1> (fi=4): (LightsNS<1>/N_PZ_10, net=Controller) 
+CarEW (fi=0): 
+PedEW (fi=0): 
+CarNS (fi=0): 
+PedNS (fi=0): 
+LightsEW<1> (fi=4): (LightsEW<1>/N_PZ_17, net=Controller) 
+clearCounter (fi=2): (clearCounter/N_PZ_18, net=Controller) 
+LightsEW<0> (fi=3): (LightsEW<0>/N_PZ_19, net=Controller) 
+
+-------------------------------------------
+|  N O D E    E q n l i s t    [count=7]  |
+-------------------------------------------
+state<1> (fi=3): state<1>.D/N_PZ_0 state<1>.CLK/N_PZ_1 state<1>.AP/N_PZ_2 
+nextState<1> (fi=5): nextState<1>.D/N_PZ_13 nextState<1>.LH/N_PZ_14 
+state<2> (fi=3): state<2>.D/N_PZ_3 state<2>.CLK/N_PZ_4 state<2>.AR/N_PZ_5 
+nextState<2> (fi=6): nextState<2>.D/N_PZ_15 nextState<2>.LH/N_PZ_16 
+state<0> (fi=3): state<0>.D/N_PZ_6 state<0>.CLK/N_PZ_7 state<0>.AR/N_PZ_8 
+nextState<0> (fi=5): nextState<0>.D/N_PZ_11 nextState<0>.LH/N_PZ_12 
+N_PZ_33 (fi=5): N_PZ_33 
+
+---------------------------------
+|  D a t a   S t r u c t u r e  |
+---------------------------------
+PI ( 12) =  clock Reset CarEW PedEW CarNS PedNS state<1>.Q state<2>.Q state<0>.Q 
+            nextState<0>.Q nextState<1>.Q nextState<2>.Q
+
+PO ( 20) =  state<1>.D state<1>.CLK state<1>.AP state<2>.D state<2>.CLK state<2>.AR 
+            state<0>.D state<0>.CLK state<0>.AR LightsNS<0> LightsNS<1> nextState<0>.D 
+            nextState<0>.LH nextState<1>.D nextState<1>.LH nextState<2>.D 
+            nextState<2>.LH LightsEW<1> clearCounter LightsEW<0>
+
+INT = ( 21) N_PZ_0 N_PZ_1 N_PZ_2 N_PZ_3 N_PZ_4 N_PZ_5 N_PZ_6 N_PZ_7 N_PZ_8 N_PZ_9 
+            N_PZ_10 N_PZ_11 N_PZ_12 N_PZ_13 N_PZ_14 N_PZ_15 N_PZ_16 N_PZ_17 N_PZ_18 
+            N_PZ_19 N_PZ_33
+
+PINT= (  1) N_PZ_33
+
+AINT= ( 20) N_PZ_0 N_PZ_1 N_PZ_2 N_PZ_3 N_PZ_4 N_PZ_5 N_PZ_6 N_PZ_7 N_PZ_8 N_PZ_9 
+            N_PZ_10 N_PZ_11 N_PZ_12 N_PZ_13 N_PZ_14 N_PZ_15 N_PZ_16 N_PZ_17 N_PZ_18 
+            N_PZ_19
+
+
+----------------------------
+|  D F S    N e t w o r k  |
+----------------------------
+nextState<1>.Q N_PZ_0 state<1>.D clock N_PZ_1 state<1>.CLK Reset N_PZ_2 state<1>.AP  
+nextState<2>.Q N_PZ_3 state<2>.D N_PZ_4 state<2>.CLK N_PZ_5 state<2>.AR nextState<0>.Q  
+N_PZ_6 state<0>.D N_PZ_7 state<0>.CLK N_PZ_8 state<0>.AR state<1>.Q state<2>.Q  
+state<0>.Q N_PZ_9 LightsNS<0> CarEW N_PZ_10 LightsNS<1> PedEW N_PZ_11 nextState<0>.D  
+CarNS N_PZ_33 N_PZ_12 nextState<0>.LH N_PZ_13 nextState<1>.D N_PZ_14 nextState<1>.LH  
+PedNS N_PZ_15 nextState<2>.D N_PZ_16 nextState<2>.LH N_PZ_17 LightsEW<1> N_PZ_18  
+clearCounter N_PZ_19 LightsEW<0> 
+
+                                  Short Name                 Collapsible
+          Name       Base   Ext   | TypePolOld pt/th fi/FI fo | min          Pair        pxapin
+         clock      clock         b   PI  -  -  -| -  -| -  3 -   -             -             -
+         Reset      Reset         c   PI  -  -  -| -  -| -  3 -   -             -             -
+         CarEW      CarEW         q   PI  -  -  -| -  -| -  2 -   -             -             -
+         PedEW      PedEW         s   PI  -  -  -| -  -| -  3 -   -             -             -
+         CarNS      CarNS         x   PI  -  -  -| -  -| -  2 -   -             -             -
+         PedNS      PedNS        b0   PI  -  -  -| -  -| -  1 -   -             -             -
+        N_PZ_0     N_PZ_0     -  z0 AINT  -  -  1|28  1|32  1 -   -    state<1>.D             -
+        N_PZ_1     N_PZ_1     -  a1 AINT  -  -  1|28  1|32  1 -   -  state<1>.CLK             -
+        N_PZ_2     N_PZ_2     -  b1 AINT  -  -  1|28  1|32  1 -   -   state<1>.AP             -
+        N_PZ_3     N_PZ_3     -  c1 AINT  -  -  1|28  1|32  1 -   -    state<2>.D             -
+        N_PZ_4     N_PZ_4     -  d1 AINT  -  -  1|28  1|32  1 -   -  state<2>.CLK             -
+        N_PZ_5     N_PZ_5     -  e1 AINT  -  -  1|28  1|32  1 -   -   state<2>.AR             -
+        N_PZ_6     N_PZ_6     -  f1 AINT  -  -  1|28  1|32  1 -   -    state<0>.D             -
+        N_PZ_7     N_PZ_7     -  g1 AINT  -  -  1|28  1|32  1 -   -  state<0>.CLK             -
+        N_PZ_8     N_PZ_8     -  h1 AINT  -  -  1|28  1|32  1 -   -   state<0>.AR             -
+        N_PZ_9     N_PZ_9     -  i1 AINT  -  -  1|28  3|32  1 -   -   LightsNS<0>             -
+       N_PZ_10    N_PZ_10     -  j1 AINT  -  -  2|28  4|32  1 -   -   LightsNS<1>             -
+       N_PZ_11    N_PZ_11     -  k1 AINT  -  -  2|28  4|32  1 -   -nextState<0>.D             -
+       N_PZ_12    N_PZ_12     -  l1 AINT  L  -  1|28  1|32  1 -   -nextState<0>.LH             -
+       N_PZ_13    N_PZ_13     -  m1 AINT  -  -  3|28  4|32  1 -   -nextState<1>.D             -
+       N_PZ_14    N_PZ_14     -  n1 AINT  L  -  1|28  1|32  1 -   -nextState<1>.LH             -
+       N_PZ_15    N_PZ_15     -  o1 AINT  -  -  2|28  5|32  1 -   -nextState<2>.D             -
+       N_PZ_16    N_PZ_16     -  p1 AINT  L  -  1|28  1|32  1 -   -nextState<2>.LH             -
+       N_PZ_17    N_PZ_17     -  q1 AINT  -  -  2|28  4|32  1 -   -   LightsEW<1>             -
+       N_PZ_18    N_PZ_18     -  r1 AINT  L  -  1|28  2|32  1 -   -  clearCounter             -
+       N_PZ_19    N_PZ_19     -  s1 AINT  -  -  2|28  3|32  1 -   -   LightsEW<0>             -
+    state<1>.D   state<1>    .D  f0   PO  -  -  -| -  -| -  0 -   -        N_PZ_0      state<1>
+  state<1>.CLK   state<1>  .CLK  g0   PO  -  -  -| -  -| -  0 -   -        N_PZ_1      state<1>
+   state<1>.AP   state<1>   .AP  h0   PO  -  -  -| -  -| -  0 -   -        N_PZ_2      state<1>
+    state<2>.D   state<2>    .D  i0   PO  -  -  -| -  -| -  0 -   -        N_PZ_3      state<2>
+  state<2>.CLK   state<2>  .CLK  j0   PO  -  -  -| -  -| -  0 -   -        N_PZ_4      state<2>
+   state<2>.AR   state<2>   .AR  k0   PO  -  -  -| -  -| -  0 -   -        N_PZ_5      state<2>
+    state<0>.D   state<0>    .D  l0   PO  -  -  -| -  -| -  0 -   -        N_PZ_6      state<0>
+  state<0>.CLK   state<0>  .CLK  m0   PO  -  -  -| -  -| -  0 -   -        N_PZ_7      state<0>
+   state<0>.AR   state<0>   .AR  n0   PO  -  -  -| -  -| -  0 -   -        N_PZ_8      state<0>
+   LightsNS<0>LightsNS<0>        o0   PO  -  -  -| -  -| -  0 -   -        N_PZ_9   LightsNS<0>
+   LightsNS<1>LightsNS<1>        p0   PO  -  -  -| -  -| -  0 -   -       N_PZ_10   LightsNS<1>
+nextState<0>.DnextState<0>    .D  q0   PO  -  -  -| -  -| -  0 -   -       N_PZ_11  nextState<0>
+nextState<0>.LHnextState<0>   .LH  r0   PO  -  -  -| -  -| -  0 -   -       N_PZ_12  nextState<0>
+nextState<1>.DnextState<1>    .D  s0   PO  -  -  -| -  -| -  0 -   -       N_PZ_13  nextState<1>
+nextState<1>.LHnextState<1>   .LH  t0   PO  -  -  -| -  -| -  0 -   -       N_PZ_14  nextState<1>
+nextState<2>.DnextState<2>    .D  u0   PO  -  -  -| -  -| -  0 -   -       N_PZ_15  nextState<2>
+nextState<2>.LHnextState<2>   .LH  v0   PO  -  -  -| -  -| -  0 -   -       N_PZ_16  nextState<2>
+   LightsEW<1>LightsEW<1>        w0   PO  -  -  -| -  -| -  0 -   -       N_PZ_17   LightsEW<1>
+  clearCounterclearCounter        x0   PO  -  -  -| -  -| -  0 -   -       N_PZ_18  clearCounter
+   LightsEW<0>LightsEW<0>        y0   PO  -  -  -| -  -| -  0 -   -       N_PZ_19   LightsEW<0>
+    state<1>.Q   state<1>    .Q  t1   PI  -  -  -| -  -| -  9 -   -             -             -
+    state<2>.Q   state<2>    .Q  u1   PI  -  -  -| -  -| -  9 -   -             -             -
+    state<0>.Q   state<0>    .Q  v1   PI  -  -  -| -  -| -  8 -   -             -             -
+nextState<0>.QnextState<0>    .Q  w1   PI  -  -  -| -  -| -  1 -   -             -             -
+nextState<1>.QnextState<1>    .Q  x1   PI  -  -  -| -  -| -  1 -   -             -             -
+nextState<2>.QnextState<2>    .Q  y1   PI  -  -  -| -  -| -  1 -   -             -             -
+       N_PZ_33    N_PZ_33     -  p2 PINT  -  -  2|28  5|32  3 Y   -             -       N_PZ_33
+
+-------------------------------------------------------
+|  PinCnt = 11, NodeCnt = 7, Total = 18, TotalPt = 29 |
+-------------------------------------------------------
+clock,net=Controller: PI
+  <--0-- 
+  --3--> (N_PZ_1, Controller) (N_PZ_4, Controller) (N_PZ_7, Controller) 
+Reset,net=Controller: PI
+  <--0-- 
+  --3--> (N_PZ_2, Controller) (N_PZ_5, Controller) (N_PZ_8, Controller) 
+CarEW,net=Controller: PI
+  <--0-- 
+  --2--> (N_PZ_10, Controller) (N_PZ_33, Controller) 
+PedEW,net=Controller: PI
+  <--0-- 
+  --3--> (N_PZ_11, Controller) (N_PZ_13, Controller) (N_PZ_15, Controller) 
+CarNS,net=Controller: PI
+  <--0-- 
+  --2--> (N_PZ_33, Controller) (N_PZ_17, Controller) 
+PedNS,net=Controller: PI
+  <--0-- 
+  --1--> (N_PZ_15, Controller) 
+N_PZ_0,net=Controller: PINT ( state<1>.D )
+  <--1--  (nextState<1>.Q, Controller)
+  --1--> (state<1>.D, Controller) 
+N_PZ_1,net=Controller: PINT ( state<1>.CLK )
+  <--1--  (clock, Controller)
+  --1--> (state<1>.CLK, Controller) 
+N_PZ_2,net=Controller: PINT ( state<1>.AP )
+  <--1--  (Reset, Controller)
+  --1--> (state<1>.AP, Controller) 
+N_PZ_3,net=Controller: PINT ( state<2>.D )
+  <--1--  (nextState<2>.Q, Controller)
+  --1--> (state<2>.D, Controller) 
+N_PZ_4,net=Controller: PINT ( state<2>.CLK )
+  <--1--  (clock, Controller)
+  --1--> (state<2>.CLK, Controller) 
+N_PZ_5,net=Controller: PINT ( state<2>.AR )
+  <--1--  (Reset, Controller)
+  --1--> (state<2>.AR, Controller) 
+N_PZ_6,net=Controller: PINT ( state<0>.D )
+  <--1--  (nextState<0>.Q, Controller)
+  --1--> (state<0>.D, Controller) 
+N_PZ_7,net=Controller: PINT ( state<0>.CLK )
+  <--1--  (clock, Controller)
+  --1--> (state<0>.CLK, Controller) 
+N_PZ_8,net=Controller: PINT ( state<0>.AR )
+  <--1--  (Reset, Controller)
+  --1--> (state<0>.AR, Controller) 
+N_PZ_9,net=Controller: PINT ( LightsNS<0> )
+  <--3--  (state<1>.Q, Controller) (state<2>.Q, Controller) (state<0>.Q, Controller)
+  --1--> (LightsNS<0>, Controller) 
+N_PZ_10,net=Controller: PINT ( LightsNS<1> )
+  <--4--  (CarEW, Controller) (state<1>.Q, Controller) (state<2>.Q, Controller) 
+          (state<0>.Q, Controller)
+  --1--> (LightsNS<1>, Controller) 
+N_PZ_11,net=Controller: PINT ( nextState<0>.D )
+  <--4--  (PedEW, Controller) (state<1>.Q, Controller) (state<2>.Q, Controller) 
+          (state<0>.Q, Controller)
+  --1--> (nextState<0>.D, Controller) 
+N_PZ_12,net=Controller: PINT ( nextState<0>.LH )
+  <--1--  (N_PZ_33, Controller)
+  --1--> (nextState<0>.LH, Controller) 
+N_PZ_13,net=Controller: PINT ( nextState<1>.D )
+  <--4--  (PedEW, Controller) (state<1>.Q, Controller) (state<2>.Q, Controller) 
+          (state<0>.Q, Controller)
+  --1--> (nextState<1>.D, Controller) 
+N_PZ_14,net=Controller: PINT ( nextState<1>.LH )
+  <--1--  (N_PZ_33, Controller)
+  --1--> (nextState<1>.LH, Controller) 
+N_PZ_15,net=Controller: PINT ( nextState<2>.D )
+  <--5--  (PedEW, Controller) (PedNS, Controller) (state<1>.Q, Controller) 
+          (state<2>.Q, Controller) (state<0>.Q, Controller)
+  --1--> (nextState<2>.D, Controller) 
+N_PZ_16,net=Controller: PINT ( nextState<2>.LH )
+  <--1--  (N_PZ_33, Controller)
+  --1--> (nextState<2>.LH, Controller) 
+N_PZ_17,net=Controller: PINT ( LightsEW<1> )
+  <--4--  (CarNS, Controller) (state<1>.Q, Controller) (state<2>.Q, Controller) 
+          (state<0>.Q, Controller)
+  --1--> (LightsEW<1>, Controller) 
+N_PZ_18,net=Controller: PINT ( clearCounter )
+  <--2--  (state<1>.Q, Controller) (state<2>.Q, Controller)
+  --1--> (clearCounter, Controller) 
+N_PZ_19,net=Controller: PINT ( LightsEW<0> )
+  <--3--  (state<1>.Q, Controller) (state<2>.Q, Controller) (state<0>.Q, Controller)
+  --1--> (LightsEW<0>, Controller) 
+state<1>.D,net=Controller: PO
+  <--1--  (N_PZ_0, Controller)
+  --0--> 
+state<1>.CLK,net=Controller: PO
+  <--1--  (N_PZ_1, Controller)
+  --0--> 
+state<1>.AP,net=Controller: PO
+  <--1--  (N_PZ_2, Controller)
+  --0--> 
+state<2>.D,net=Controller: PO
+  <--1--  (N_PZ_3, Controller)
+  --0--> 
+state<2>.CLK,net=Controller: PO
+  <--1--  (N_PZ_4, Controller)
+  --0--> 
+state<2>.AR,net=Controller: PO
+  <--1--  (N_PZ_5, Controller)
+  --0--> 
+state<0>.D,net=Controller: PO
+  <--1--  (N_PZ_6, Controller)
+  --0--> 
+state<0>.CLK,net=Controller: PO
+  <--1--  (N_PZ_7, Controller)
+  --0--> 
+state<0>.AR,net=Controller: PO
+  <--1--  (N_PZ_8, Controller)
+  --0--> 
+LightsNS<0>,net=Controller: PO
+  <--1--  (N_PZ_9, Controller)
+  --0--> 
+LightsNS<1>,net=Controller: PO
+  <--1--  (N_PZ_10, Controller)
+  --0--> 
+nextState<0>.D,net=Controller: PO
+  <--1--  (N_PZ_11, Controller)
+  --0--> 
+nextState<0>.LH,net=Controller: PO
+  <--1--  (N_PZ_12, Controller)
+  --0--> 
+nextState<1>.D,net=Controller: PO
+  <--1--  (N_PZ_13, Controller)
+  --0--> 
+nextState<1>.LH,net=Controller: PO
+  <--1--  (N_PZ_14, Controller)
+  --0--> 
+nextState<2>.D,net=Controller: PO
+  <--1--  (N_PZ_15, Controller)
+  --0--> 
+nextState<2>.LH,net=Controller: PO
+  <--1--  (N_PZ_16, Controller)
+  --0--> 
+LightsEW<1>,net=Controller: PO
+  <--1--  (N_PZ_17, Controller)
+  --0--> 
+clearCounter,net=Controller: PO
+  <--1--  (N_PZ_18, Controller)
+  --0--> 
+LightsEW<0>,net=Controller: PO
+  <--1--  (N_PZ_19, Controller)
+  --0--> 
+state<1>.Q,net=Controller: PI
+  <--0-- 
+  --9--> (N_PZ_9, Controller) (N_PZ_18, Controller) (N_PZ_10, Controller)  
+         (N_PZ_11, Controller) (N_PZ_33, Controller) (N_PZ_13, Controller)  
+         (N_PZ_15, Controller) (N_PZ_17, Controller) (N_PZ_19, Controller) 
+state<2>.Q,net=Controller: PI
+  <--0-- 
+  --9--> (N_PZ_9, Controller) (N_PZ_18, Controller) (N_PZ_10, Controller)  
+         (N_PZ_11, Controller) (N_PZ_33, Controller) (N_PZ_13, Controller)  
+         (N_PZ_15, Controller) (N_PZ_17, Controller) (N_PZ_19, Controller) 
+state<0>.Q,net=Controller: PI
+  <--0-- 
+  --8--> (N_PZ_9, Controller) (N_PZ_10, Controller) (N_PZ_11, Controller)  
+         (N_PZ_33, Controller) (N_PZ_13, Controller) (N_PZ_15, Controller)  
+         (N_PZ_17, Controller) (N_PZ_19, Controller) 
+nextState<0>.Q,net=Controller: PI
+  <--0-- 
+  --1--> (N_PZ_6, Controller) 
+nextState<1>.Q,net=Controller: PI
+  <--0-- 
+  --1--> (N_PZ_0, Controller) 
+nextState<2>.Q,net=Controller: PI
+  <--0-- 
+  --1--> (N_PZ_3, Controller) 
+N_PZ_33,net=Controller: INT
+  <--5--  (CarEW, Controller) (CarNS, Controller) (state<1>.Q, Controller) 
+          (state<2>.Q, Controller) (state<0>.Q, Controller)
+  --3--> (N_PZ_16, Controller) (N_PZ_12, Controller) (N_PZ_14, Controller) 

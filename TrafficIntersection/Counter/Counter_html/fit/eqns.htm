@@ -1,0 +1,197 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="paths.js"></script><script src="eqns.js"></script><script>
+      var design = "Counter";
+      var device = "XC2C64A";
+      signals = new Array("count0_SPECSIG","count1_SPECSIG","count2_SPECSIG","count3_SPECSIG","count4_SPECSIG","count5_SPECSIG","count6_SPECSIG","count7_SPECSIG","count8_SPECSIG","is400");
+      sigNegs = new Array("ON","OFF","OFF","OFF","OFF","OFF","OFF","OFF","OFF","ON");
+      sigTypes = new Array("DFF","DFF","TFF","TFF","TFF","TFF","TFF","TFF","TFF","");
+
+      
+           iostyle["clear"]=new Array("KPR");
+        
+           iostyle["Reset"]=new Array("KPR");
+        
+           iostyle["clock"]=new Array("KPR");
+        
+        specSig["count7_SPECSIG"]=new Array("count<7>");
+      
+        specSig["count6_SPECSIG"]=new Array("count<6>");
+      
+        specSig["count5_SPECSIG"]=new Array("count<5>");
+      
+        specSig["count4_SPECSIG"]=new Array("count<4>");
+      
+        specSig["count3_SPECSIG"]=new Array("count<3>");
+      
+        specSig["count8_SPECSIG"]=new Array("count<8>");
+      
+        specSig["count2_SPECSIG"]=new Array("count<2>");
+      
+        specSig["count1_SPECSIG"]=new Array("count<1>");
+      
+        specSig["count0_SPECSIG"]=new Array("count<0>");
+      
+            pterms["FB1_0"]=new Array("/count0_SPECSIG","/clear","count1_SPECSIG");
+          
+            pterms["FB1_1"]=new Array("count0_SPECSIG","/clear","/count1_SPECSIG");
+          
+            pterms["FB1_2"]=new Array("count0_SPECSIG","/clear","count1_SPECSIG");
+          
+            pterms["FB1_3"]=new Array("clear","count2_SPECSIG");
+          
+            pterms["FB1_4"]=new Array("count0_SPECSIG","/clear","count1_SPECSIG","count2_SPECSIG");
+          
+            pterms["FB1_5"]=new Array("clear","count3_SPECSIG");
+          
+            pterms["FB1_6"]=new Array("count0_SPECSIG","/clear","count1_SPECSIG","count2_SPECSIG","count3_SPECSIG");
+          
+            pterms["FB1_7"]=new Array("clear","count4_SPECSIG");
+          
+            pterms["FB1_8"]=new Array("count0_SPECSIG","/clear","count1_SPECSIG","count2_SPECSIG","count3_SPECSIG","count4_SPECSIG");
+          
+            pterms["FB1_9"]=new Array("clear","count5_SPECSIG");
+          
+            pterms["FB1_10"]=new Array("count0_SPECSIG","/clear","count1_SPECSIG","count2_SPECSIG","count3_SPECSIG","count5_SPECSIG","count4_SPECSIG");
+          
+            pterms["FB1_11"]=new Array("clear","count6_SPECSIG");
+          
+            pterms["FB1_12"]=new Array("count0_SPECSIG","/clear","count1_SPECSIG","count2_SPECSIG","count3_SPECSIG","count5_SPECSIG","count4_SPECSIG","count6_SPECSIG");
+          
+            pterms["FB1_13"]=new Array("clear","count7_SPECSIG");
+          
+            pterms["FB1_14"]=new Array("count0_SPECSIG","/clear","count1_SPECSIG","count2_SPECSIG","count3_SPECSIG","count5_SPECSIG","count4_SPECSIG","count6_SPECSIG","count7_SPECSIG");
+          
+            pterms["FB1_15"]=new Array("clear","count8_SPECSIG");
+          
+            pterms["FB1_55"]=new Array("count0_SPECSIG","/clear");
+          
+            pterms["FB3_0"]=new Array("/count0_SPECSIG","/count1_SPECSIG","/count2_SPECSIG","/count3_SPECSIG","/count5_SPECSIG","/count6_SPECSIG");
+          
+            pterms["FB3_1"]=new Array("/count5_SPECSIG","/count4_SPECSIG","/count6_SPECSIG");
+          
+            pterms["FB3_2"]=new Array("/count7_SPECSIG");
+          
+            pterms["FB3_3"]=new Array("/count8_SPECSIG");
+          
+          d2["count7_SPECSIG"]=new Array("FB1_13","FB1_12");
+          
+              gblclk["count7_SPECSIG"]=new Array("clock");
+            
+              gblrst["count7_SPECSIG"]=new Array("Reset");
+            prld["count7_SPECSIG"]="GND";
+          d2["count6_SPECSIG"]=new Array("FB1_11","FB1_10");
+          
+              gblclk["count6_SPECSIG"]=new Array("clock");
+            
+              gblrst["count6_SPECSIG"]=new Array("Reset");
+            prld["count6_SPECSIG"]="GND";
+          d2["count5_SPECSIG"]=new Array("FB1_9","FB1_8");
+          
+              gblclk["count5_SPECSIG"]=new Array("clock");
+            
+              gblrst["count5_SPECSIG"]=new Array("Reset");
+            prld["count5_SPECSIG"]="GND";
+          d2["count4_SPECSIG"]=new Array("FB1_7","FB1_6");
+          
+              gblclk["count4_SPECSIG"]=new Array("clock");
+            
+              gblrst["count4_SPECSIG"]=new Array("Reset");
+            prld["count4_SPECSIG"]="GND";
+          d2["count3_SPECSIG"]=new Array("FB1_5","FB1_4");
+          
+              gblclk["count3_SPECSIG"]=new Array("clock");
+            
+              gblrst["count3_SPECSIG"]=new Array("Reset");
+            prld["count3_SPECSIG"]="GND";
+          d2["count8_SPECSIG"]=new Array("FB1_15","FB1_14");
+          
+              gblclk["count8_SPECSIG"]=new Array("clock");
+            
+              gblrst["count8_SPECSIG"]=new Array("Reset");
+            prld["count8_SPECSIG"]="GND";
+          d2["count2_SPECSIG"]=new Array("FB1_3","FB1_2");
+          
+              gblclk["count2_SPECSIG"]=new Array("clock");
+            
+              gblrst["count2_SPECSIG"]=new Array("Reset");
+            prld["count2_SPECSIG"]="GND";
+          d2["count1_SPECSIG"]=new Array("FB1_1","FB1_0");
+          
+              gblclk["count1_SPECSIG"]=new Array("clock");
+            
+              gblrst["count1_SPECSIG"]=new Array("Reset");
+            prld["count1_SPECSIG"]="GND";
+          d1["count0_SPECSIG"]=new Array("FB1_55");
+          
+              gblclk["count0_SPECSIG"]=new Array("clock");
+            
+              gblset["count0_SPECSIG"]=new Array("Reset");
+            prld["count0_SPECSIG"]="GND";
+          d2["is400"]=new Array("FB3_2","FB3_3","FB3_1","FB3_0");
+          
+
+      uimSignals = new Array();
+
+      uimSigNegs = new Array();
+
+      uimPterms = new Array();
+      
+
+      
+        function getEqnList() {
+          var str = "<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>";
+          str += "<center><h3>Equations</h3></center>";
+          str += "<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>";
+          for (s=0; s<uimSignals.length; s++) {
+            str += "<tr><td>";
+            str += retUimEqn(uimSignals[s]);
+            str += "</td></tr>";
+          }
+          for (s=0; s<signals.length; s++) {
+            str += "<tr><td>";
+            str += retEqn(signals[s]);
+            str += "</td></tr>";
+          }
+
+          var legend = retLegend();
+		      if (legend != "") {
+		        str += "<tr><td>" + legend + "</td></tr>";
+		      }
+
+          str += "</table>";
+          str += "<form><span class='pgRef'>";
+
+          if (!parent.leftnav.IsNS()) {
+            str += "<table width='90%' align='center'>";
+            str += "<tr><td align='left'><input type='button' value='back to top' ";
+            str += "onclick='javascript:parent.leftnav.showEqnAll()' ";
+            str += "onmouseover=\"window.status='goto top of page'; return true;\" ";
+            str += "onmouseout=\"window.status=''\">";
+            str += "</td>";
+            str += "<td align='right'>";
+            str += "<input type='button' value='print page' ";
+            str += "onclick='javascript:window.print()' ";
+            str += "onmouseover=\"window.status='print page'; return true;\" ";
+            str += "onmouseout=\"window.status=''\">";
+            str += "</td>";
+            str += "</tr></table>";
+          }
+          else {
+            str += "<table width='90%' align='center'>";
+            str += "<tr><td align='left'><a href='javascript:parent.leftnav.showEqnAll()'>back to top</a>";
+            str += "</td>";
+            str += "<td align='right'>";
+            str += "<a href='javascript:window.print()'>";
+            str += "print page</a>";
+            str += "</td>";
+            str += "</tr></table>";
+          }
+
+          str += "</span></form>";
+          str += "</body></html>";
+          return str;
+        }
+      
+    </script>
+</head></html>

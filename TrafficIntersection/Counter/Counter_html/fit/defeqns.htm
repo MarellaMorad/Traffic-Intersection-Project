@@ -1,0 +1,69 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+FDCPE_count0: FDCPE port map (count(0),count_D(0),clock,'0',Reset,'1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count_D(0) <= NOT ((count(0) AND NOT clear));
+</td></tr><tr><td>
+FDCPE_count1: FDCPE port map (count(1),count_D(1),clock,Reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count_D(1) <= ((count(0) AND NOT clear AND NOT count(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT count(0) AND NOT clear AND count(1)));
+</td></tr><tr><td>
+FTCPE_count2: FTCPE port map (count(2),count_T(2),clock,Reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count_T(2) <= ((clear AND count(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (count(0) AND NOT clear AND count(1)));
+</td></tr><tr><td>
+FTCPE_count3: FTCPE port map (count(3),count_T(3),clock,Reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count_T(3) <= ((clear AND count(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (count(0) AND NOT clear AND count(1) AND count(2)));
+</td></tr><tr><td>
+FTCPE_count4: FTCPE port map (count(4),count_T(4),clock,Reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count_T(4) <= ((clear AND count(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (count(0) AND NOT clear AND count(1) AND count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	count(3)));
+</td></tr><tr><td>
+FTCPE_count5: FTCPE port map (count(5),count_T(5),clock,Reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count_T(5) <= ((clear AND count(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (count(0) AND NOT clear AND count(1) AND count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	count(3) AND count(4)));
+</td></tr><tr><td>
+FTCPE_count6: FTCPE port map (count(6),count_T(6),clock,Reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count_T(6) <= ((clear AND count(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (count(0) AND NOT clear AND count(1) AND count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	count(3) AND count(5) AND count(4)));
+</td></tr><tr><td>
+FTCPE_count7: FTCPE port map (count(7),count_T(7),clock,Reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count_T(7) <= ((clear AND count(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (count(0) AND NOT clear AND count(1) AND count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	count(3) AND count(5) AND count(4) AND count(6)));
+</td></tr><tr><td>
+FTCPE_count8: FTCPE port map (count(8),count_T(8),clock,Reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count_T(8) <= ((clear AND count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (count(0) AND NOT clear AND count(1) AND count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	count(3) AND count(5) AND count(4) AND count(6) AND count(7)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+is400 <= NOT (((NOT count(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT count(5) AND NOT count(4) AND NOT count(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT count(0) AND NOT count(1) AND NOT count(2) AND NOT count(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT count(5) AND NOT count(6))));
+</td></tr><tr><td>
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

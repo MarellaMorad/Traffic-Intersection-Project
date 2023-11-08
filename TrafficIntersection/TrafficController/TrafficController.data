@@ -1,0 +1,62 @@
+MODELDATA
+MODELDATA_VERSION "v1998.8"
+DESIGN "TrafficController";
+
+/* port drive, load, max capacitance and max transition in data file */
+PORTDATA
+clock: MAXTRANS(0.0);
+reset: MAXTRANS(0.0);
+CarEW: MAXTRANS(0.0);
+CarNS: MAXTRANS(0.0);
+PedEW: MAXTRANS(0.0);
+PedNS: MAXTRANS(0.0);
+LightsEW<0>: MAXTRANS(0.0);
+LightsEW<1>: MAXTRANS(0.0);
+LightsNS<0>: MAXTRANS(0.0);
+LightsNS<1>: MAXTRANS(0.0);
+ENDPORTDATA
+
+/* timing arc data */
+TIMINGDATA
+
+ARCDATA
+clock_LightsEW<0>_delay:
+CELL_RISE(scalar) {
+  VALUES("8.5");
+}
+CELL_FALL(scalar) {
+  VALUES("8.5");
+}
+ENDARCDATA
+
+ARCDATA
+clock_LightsEW<1>_delay:
+CELL_RISE(scalar) {
+  VALUES("8.5");
+}
+CELL_FALL(scalar) {
+  VALUES("8.5");
+}
+ENDARCDATA
+
+ARCDATA
+clock_LightsNS<0>_delay:
+CELL_RISE(scalar) {
+  VALUES("8.1");
+}
+CELL_FALL(scalar) {
+  VALUES("8.1");
+}
+ENDARCDATA
+
+ARCDATA
+clock_LightsNS<1>_delay:
+CELL_RISE(scalar) {
+  VALUES("8.5");
+}
+CELL_FALL(scalar) {
+  VALUES("8.5");
+}
+ENDARCDATA
+
+ENDMODELDATA

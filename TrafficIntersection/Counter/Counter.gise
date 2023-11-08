@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Counter.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="Counter.bld"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_CHK" xil_pn:name="Counter.chk"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Counter.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_CXT" xil_pn:name="Counter.cxt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GYD" xil_pn:name="Counter.gyd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_JEDEC" xil_pn:name="Counter.jed"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="Counter.log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Counter.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MFD" xil_pn:name="Counter.mfd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGA" xil_pn:name="Counter.nga"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Counter.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="Counter.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="Counter.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="Counter.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PNX" xil_pn:name="Counter.pnx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Counter.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="Counter.rpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="Counter.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Counter.syr"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="Counter.tim"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="Counter.tspec"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VM6" xil_pn:name="Counter.vm6"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="Counter.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Counter.xst"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="Counter_build.xml"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="Counter_envsettings.html"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="Counter_html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Counter_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="Counter_pad.csv"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="Counter_summary.html"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Counter_vhdl.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Counter_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1621559151" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1621559151">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1621559151" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="619582388373656087" xil_pn:start_ts="1621559151">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1621916246" xil_pn:in_ck="107936858518335760" xil_pn:name="TRANEXT_xstsynthesize_xbr" xil_pn:prop_ck="-7201545157376993353" xil_pn:start_ts="1621916239">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="Counter.lso"/>
+      <outfile xil_pn:name="Counter.ngc"/>
+      <outfile xil_pn:name="Counter.ngr"/>
+      <outfile xil_pn:name="Counter.prj"/>
+      <outfile xil_pn:name="Counter.stx"/>
+      <outfile xil_pn:name="Counter.syr"/>
+      <outfile xil_pn:name="Counter.xst"/>
+      <outfile xil_pn:name="Counter_vhdl.prj"/>
+      <outfile xil_pn:name="Counter_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1621559160" xil_pn:in_ck="-5448900681665802482" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-1521648465024519144" xil_pn:start_ts="1621559160">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1621916251" xil_pn:in_ck="5487949709513120052" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="2257924951880178845" xil_pn:start_ts="1621916246">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="Counter.bld"/>
+      <outfile xil_pn:name="Counter.ngd"/>
+      <outfile xil_pn:name="Counter_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1621916258" xil_pn:in_ck="107936858518327015" xil_pn:name="TRANEXT_vm6File_xbr" xil_pn:prop_ck="7739009259095032836" xil_pn:start_ts="1621916251">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="Counter.chk"/>
+      <outfile xil_pn:name="Counter.cxt"/>
+      <outfile xil_pn:name="Counter.gyd"/>
+      <outfile xil_pn:name="Counter.log"/>
+      <outfile xil_pn:name="Counter.mfd"/>
+      <outfile xil_pn:name="Counter.nga"/>
+      <outfile xil_pn:name="Counter.pad"/>
+      <outfile xil_pn:name="Counter.pnx"/>
+      <outfile xil_pn:name="Counter.rpt"/>
+      <outfile xil_pn:name="Counter.tim"/>
+      <outfile xil_pn:name="Counter.tspec"/>
+      <outfile xil_pn:name="Counter.vm6"/>
+      <outfile xil_pn:name="Counter.xml"/>
+      <outfile xil_pn:name="Counter_build.xml"/>
+      <outfile xil_pn:name="Counter_html"/>
+      <outfile xil_pn:name="Counter_pad.csv"/>
+    </transform>
+    <transform xil_pn:end_ts="1621916260" xil_pn:in_ck="107936858518335879" xil_pn:name="TRANEXT_crtProg_xbr" xil_pn:prop_ck="5245363024343" xil_pn:start_ts="1621916258">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="Counter.jed"/>
+    </transform>
+    <transform xil_pn:end_ts="1621559183" xil_pn:in_ck="107936858518335879" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1621559180">
+      <status xil_pn:value="AbortedRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
+    </transform>
+  </transforms>
+
+</generated_project>

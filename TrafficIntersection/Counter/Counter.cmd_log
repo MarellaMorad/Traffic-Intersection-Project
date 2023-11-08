@@ -1,0 +1,32 @@
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc CMOD_Counter.ucf -p xc2c64a-VQ44-5 "Counter.ngc" Counter.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 Counter.ngd 
+XSLTProcess Counter_build.xml 
+tsim -intstyle ise Counter Counter.nga 
+taengine -intstyle ise -f Counter -w --format html1 -l Counter_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -i Counter 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc CMOD_Counter.ucf -p xc2c64a-VQ44-5 "Counter.ngc" Counter.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 Counter.ngd 
+XSLTProcess Counter_build.xml 
+tsim -intstyle ise Counter Counter.nga 
+hprep6 -s IEEE1149 -i Counter 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc CMOD_Counter.ucf -p xc2c64a-VQ44-5 "Counter.ngc" Counter.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 Counter.ngd 
+XSLTProcess Counter_build.xml 
+tsim -intstyle ise Counter Counter.nga 
+hprep6 -s IEEE1149 -i Counter 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc CMOD_Counter.ucf -p xc2c64a-VQ44-5 "Counter.ngc" Counter.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 Counter.ngd 
+XSLTProcess Counter_build.xml 
+tsim -intstyle ise Counter Counter.nga 
+hprep6 -s IEEE1149 -i Counter 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc CMOD_Counter.ucf -p xc2c64a-VQ44-5 "Counter.ngc" Counter.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 Counter.ngd 
+XSLTProcess Counter_build.xml 
+tsim -intstyle ise Counter Counter.nga 
+hprep6 -s IEEE1149 -i Counter 

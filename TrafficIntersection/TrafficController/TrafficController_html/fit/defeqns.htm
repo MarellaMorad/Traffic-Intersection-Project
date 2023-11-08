@@ -1,0 +1,295 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+FDCPE_CarEW_s: FDCPE port map (CarEW_s,CarEW,clock,reset,'0','1');
+</td></tr><tr><td>
+</td></tr><tr><td>
+CarNS_s.COMB <= (NOT theController/state_FSM_FFd2 AND NOT PedNS_s);FDCPE_CarNS_s: FDCPE port map (CarNS_s,CarNS,clock,reset,'0','1');
+</td></tr><tr><td>
+</td></tr><tr><td>
+LightsEW(0) <= NOT ((NOT theController/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theController/state_FSM_FFd4));
+</td></tr><tr><td>
+</td></tr><tr><td>
+LightsEW(1) <= NOT ((NOT theController/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theController/state_FSM_FFd5));
+</td></tr><tr><td>
+</td></tr><tr><td>
+LightsNS(0) <= NOT ((NOT theController/state_FSM_FFd1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theController/state_FSM_FFd2));
+</td></tr><tr><td>
+</td></tr><tr><td>
+LightsNS(1) <= NOT ((NOT theController/state_FSM_FFd6 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theController/state_FSM_FFd2));
+</td></tr><tr><td>
+</td></tr><tr><td>
+PedEW_s.COMB <= (NOT theController/state_FSM_FFd3 AND NOT PedEW_s);FDCPE_PedEW_s: FDCPE port map (PedEW_s,PedEW,clock,reset,'0','1');
+</td></tr><tr><td>
+</td></tr><tr><td>
+PedNS_s.COMB <= ((NOT theController/state_FSM_FFd6 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theController/state_FSM_FFd5)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theController/PedEW_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theController/state_FSM_FFd6 AND NOT theController/PedNS_s AND NOT CarNS_s)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theController/PedEW_s AND NOT theController/PedNS_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CarNS_s AND NOT CarEW_s)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theController/PedEW_s AND NOT theController/PedNS_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theController/state_FSM_FFd5 AND NOT CarEW_s));FDCPE_PedNS_s: FDCPE port map (PedNS_s,PedNS,clock,reset,'0','1');
+</td></tr><tr><td>
+FDCPE_theController/PedEW_s: FDCPE port map (theController/PedEW_s,PedEW_s,clock,reset,'0',NOT PedEW_s.COMB);
+</td></tr><tr><td>
+FDCPE_theController/PedNS_s: FDCPE port map (theController/PedNS_s,PedNS_s,clock,reset,'0',NOT CarNS_s.COMB);
+</td></tr><tr><td>
+FTCPE_theController/state_FSM_FFd1: FTCPE port map (theController/state_FSM_FFd1,theController/state_FSM_FFd1_T,clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theController/state_FSM_FFd1_T <= ((NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theController/state_FSM_FFd1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(3) AND NOT theCounter/count(4) AND theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(6) AND NOT theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theController/state_FSM_FFd1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/PedEW_s AND theController/state_FSM_FFd6 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(3) AND theCounter/count(4) AND theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(6) AND theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theController/state_FSM_FFd1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd6 AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND CarEW_s));
+</td></tr><tr><td>
+FTCPE_theController/state_FSM_FFd2: FTCPE port map (theController/state_FSM_FFd2,theController/state_FSM_FFd2_T,clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theController/state_FSM_FFd2_T <= ((NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd2 AND NOT theCounter/count(5) AND NOT theCounter/count(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theCounter/count(3) AND NOT theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theController/state_FSM_FFd2 AND theCounter/count(5) AND NOT theCounter/count(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(7) AND theCounter/count(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd4 AND theController/PedNS_s)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theController/PedEW_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd6 AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theController/state_FSM_FFd2 AND theCounter/count(5) AND theCounter/count(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(7) AND theCounter/count(8) AND theController/PedNS_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CarEW_s));
+</td></tr><tr><td>
+FTCPE_theController/state_FSM_FFd3: FTCPE port map (theController/state_FSM_FFd3,theController/state_FSM_FFd3_T,clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theController/state_FSM_FFd3_T <= ((theController/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(0) AND NOT theCounter/count(1) AND NOT theCounter/count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(3) AND theCounter/count(4) AND NOT theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(6) AND theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theController/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(0) AND NOT theCounter/count(1) AND theCounter/count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd1 AND theController/PedEW_s AND theCounter/count(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(4) AND theCounter/count(5) AND NOT theCounter/count(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theController/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(0) AND NOT theCounter/count(1) AND theCounter/count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/PedEW_s AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND NOT theController/PedNS_s AND NOT CarNS_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd5));
+</td></tr><tr><td>
+FTCPE_theController/state_FSM_FFd4: FTCPE port map (theController/state_FSM_FFd4,theController/state_FSM_FFd4_T,clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theController/state_FSM_FFd4_T <= ((NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theCounter/count(3) AND NOT theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND NOT theCounter/count(6) AND NOT theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND theController/state_FSM_FFd4)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND NOT theController/state_FSM_FFd4 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/PedNS_s AND theController/state_FSM_FFd5)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND NOT theController/state_FSM_FFd4 AND CarNS_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd5));
+</td></tr><tr><td>
+FTCPE_theController/state_FSM_FFd5: FTCPE port map (theController/state_FSM_FFd5,theController/state_FSM_FFd5_T,clock,'0',reset,'1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theController/state_FSM_FFd5_T <= ((theController/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(0) AND NOT theCounter/count(1) AND NOT theCounter/count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(3) AND theCounter/count(4) AND NOT theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(6) AND theCounter/count(7) AND theCounter/count(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theController/state_FSM_FFd5)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theController/PedEW_s AND NOT theCounter/count(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(4) AND theCounter/count(5) AND theCounter/count(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(7) AND theCounter/count(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd5)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND theController/PedNS_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd5)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND CarNS_s AND theController/state_FSM_FFd5)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theController/state_FSM_FFd1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theController/PedEW_s AND theCounter/count(3) AND NOT theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND NOT theCounter/count(6) AND NOT theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND NOT theController/state_FSM_FFd5));
+</td></tr><tr><td>
+FTCPE_theController/state_FSM_FFd6: FTCPE port map (theController/state_FSM_FFd6,theController/state_FSM_FFd6_T,clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theController/state_FSM_FFd6_T <= ((NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theController/PedEW_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd6 AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theController/state_FSM_FFd6 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(3) AND theCounter/count(4) AND theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(6) AND theCounter/count(7) AND theCounter/count(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/PedNS_s)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theController/state_FSM_FFd6 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(3) AND theCounter/count(4) AND theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(6) AND theCounter/count(7) AND theCounter/count(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	CarEW_s)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(2) AND NOT theController/state_FSM_FFd6 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd2 AND NOT theCounter/count(5) AND NOT theCounter/count(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theController/state_FSM_FFd6 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(3) AND NOT theCounter/count(4) AND theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(6) AND NOT theCounter/count(7) AND theCounter/count(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd4 AND NOT theController/PedNS_s));
+</td></tr><tr><td>
+FTCPE_theCounter/count0: FTCPE port map (theCounter/count(0),'0',clock,'0',reset,'1');
+</td></tr><tr><td>
+FTCPE_theCounter/count1: FTCPE port map (theCounter/count(1),theCounter/count(0),clock,reset,'0','1');
+</td></tr><tr><td>
+FDCPE_theCounter/count2: FDCPE port map (theCounter/count(2),theCounter/count_D(2),clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theCounter/count_D(2) <= NOT (NOT theCounter/count(2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR ((theCounter/count(0) AND theCounter/count(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theController/state_FSM_FFd1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(3) AND NOT theCounter/count(4) AND theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(6) AND NOT theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theCounter/count(3) AND NOT theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND NOT theCounter/count(6) AND NOT theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND theController/state_FSM_FFd4)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND NOT PedNS_s.COMB)));
+</td></tr><tr><td>
+FDCPE_theCounter/count3: FDCPE port map (theCounter/count(3),theCounter/count_D(3),clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theCounter/count_D(3) <= NOT (NOT theCounter/count(3)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR ((theCounter/count(0) AND theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theController/state_FSM_FFd1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(3) AND NOT theCounter/count(4) AND theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(6) AND NOT theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theCounter/count(3) AND NOT theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND NOT theCounter/count(6) AND NOT theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND theController/state_FSM_FFd4)));
+</td></tr><tr><td>
+FTCPE_theCounter/count4: FTCPE port map (theCounter/count(4),theCounter/count_T(4),clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theCounter/count_T(4) <= ((theCounter/count(0) AND theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theCounter/count(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (theController/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(0) AND NOT theCounter/count(1) AND NOT theCounter/count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(3) AND theCounter/count(4) AND NOT theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(6) AND theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND NOT PedNS_s.COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd2 AND NOT theCounter/count(5) AND NOT theCounter/count(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(7) AND theCounter/count(8)));
+</td></tr><tr><td>
+FTCPE_theCounter/count5: FTCPE port map (theCounter/count(5),theCounter/count_T(5),clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theCounter/count_T(5) <= ((theCounter/count(0) AND theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theCounter/count(3) AND theCounter/count(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theController/state_FSM_FFd1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(3) AND NOT theCounter/count(4) AND theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(6) AND NOT theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theCounter/count(3) AND NOT theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND NOT theCounter/count(6) AND NOT theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND theController/state_FSM_FFd4)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND NOT PedNS_s.COMB));
+</td></tr><tr><td>
+FTCPE_theCounter/count6: FTCPE port map (theCounter/count(6),theCounter/count_T(6),clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theCounter/count_T(6) <= ((theCounter/count(0) AND theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND NOT PedNS_s.COMB));
+</td></tr><tr><td>
+FTCPE_theCounter/count7: FTCPE port map (theCounter/count(7),theCounter/count_T(7),clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theCounter/count_T(7) <= ((theCounter/count(0) AND theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (theController/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(0) AND NOT theCounter/count(1) AND NOT theCounter/count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(3) AND theCounter/count(4) AND NOT theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(6) AND theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND NOT PedNS_s.COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd2 AND NOT theCounter/count(5) AND NOT theCounter/count(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(7) AND theCounter/count(8)));
+</td></tr><tr><td>
+FTCPE_theCounter/count8: FTCPE port map (theCounter/count(8),theCounter/count_T(8),clock,reset,'0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theCounter/count_T(8) <= ((theCounter/count(0) AND theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (theController/state_FSM_FFd3 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(0) AND NOT theCounter/count(1) AND NOT theCounter/count(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(3) AND theCounter/count(4) AND NOT theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(6) AND theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theController/state_FSM_FFd1 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(3) AND NOT theCounter/count(4) AND theCounter/count(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(6) AND NOT theCounter/count(7) AND theCounter/count(8))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND theCounter/count(3) AND NOT theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND NOT theCounter/count(6) AND NOT theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND theController/state_FSM_FFd4)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(5) AND theCounter/count(6) AND theCounter/count(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(8) AND NOT PedNS_s.COMB)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT theCounter/count(0) AND NOT theCounter/count(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT theCounter/count(2) AND NOT theCounter/count(3) AND theCounter/count(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theController/state_FSM_FFd2 AND NOT theCounter/count(5) AND NOT theCounter/count(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	theCounter/count(7) AND theCounter/count(8)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

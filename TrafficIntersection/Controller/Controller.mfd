@@ -1,0 +1,132 @@
+MDF Database:  version 1.0
+MDF_INFO | Controller | XC2C64A-5-VQ44
+MACROCELL | 1 | 1 | LightsEW<0>_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 3 | state<1>  | state<0>  | state<2>
+INPUTMC | 3 | 0 | 14 | 0 | 15 | 0 | 13
+EQ | 2 | 
+   LightsEW<0> = !state<1> & state<0>
+	# state<0> & !state<2>;	// (2 pt, 3 inp)
+
+MACROCELL | 0 | 14 | state<1>_MC
+ATTRIBUTES | 2172683008 | 0
+OUTPUTMC | 9 | 0 | 4 | 0 | 7 | 0 | 6 | 0 | 5 | 1 | 1 | 1 | 0 | 1 | 5 | 1 | 4 | 3 | 12
+INPUTS | 1 | nextState<1>
+INPUTMC | 1 | 0 | 5
+EQ | 3 | 
+   state<1> := nextState<1>;	// (1 pt, 1 inp)
+   state<1>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   state<1>.AP = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 1 | Reset
+
+MACROCELL | 0 | 5 | nextState<1>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 1 | 0 | 14
+INPUTS | 4 | state<1>  | state<0>  | state<2>  | PedEW
+INPUTMC | 3 | 0 | 14 | 0 | 15 | 0 | 13
+INPUTP | 1 | 10
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   nextState<1>.D = state<1> & !state<0> & !state<2>
+	# !state<1> & !PedEW & state<0>
+	# !state<1> & state<0> & state<2>;	// (3 pt, 4 inp)
+    nextState<1>.LH = !(N_PZ_33);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 15 | state<0>_MC
+ATTRIBUTES | 2189460224 | 0
+OUTPUTMC | 8 | 0 | 4 | 0 | 7 | 0 | 6 | 0 | 5 | 1 | 1 | 1 | 0 | 1 | 5 | 1 | 4
+INPUTS | 1 | nextState<0>
+INPUTMC | 1 | 0 | 6
+EQ | 3 | 
+   state<0> := nextState<0>;	// (1 pt, 1 inp)
+   state<0>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   state<0>.AR = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 4 | Reset
+
+MACROCELL | 0 | 6 | nextState<0>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 1 | 0 | 15
+INPUTS | 4 | state<0>  | state<2>  | state<1>  | PedEW
+INPUTMC | 3 | 0 | 15 | 0 | 13 | 0 | 14
+INPUTP | 1 | 10
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   nextState<0>.D = !state<0> & !state<2>
+	# !state<1> & PedEW & !state<2>;	// (2 pt, 4 inp)
+    nextState<0>.LH = !(N_PZ_33);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 13 | state<2>_MC
+ATTRIBUTES | 2189460224 | 0
+OUTPUTMC | 9 | 0 | 4 | 0 | 7 | 0 | 6 | 0 | 5 | 1 | 1 | 1 | 0 | 1 | 5 | 1 | 4 | 3 | 12
+INPUTS | 1 | nextState<2>
+INPUTMC | 1 | 0 | 4
+EQ | 3 | 
+   state<2> := nextState<2>;	// (1 pt, 1 inp)
+   state<2>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   state<2>.AR = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 4 | Reset
+
+MACROCELL | 0 | 4 | nextState<2>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 1 | 0 | 13
+INPUTS | 5 | state<1>  | state<0>  | state<2>  | PedNS  | PedEW
+INPUTMC | 3 | 0 | 14 | 0 | 15 | 0 | 13
+INPUTP | 2 | 11 | 10
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   nextState<2>.D = state<1> & state<0> & !state<2> & PedNS
+	# !state<1> & PedEW & state<0> & !state<2>;	// (2 pt, 5 inp)
+    nextState<2>.LH = !(N_PZ_33);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 7 | N_PZ_33_MC
+ATTRIBUTES | 536871680 | 0
+INPUTS | 5 | state<1>  | state<0>  | state<2>  | CarNS  | CarEW
+INPUTMC | 3 | 0 | 14 | 0 | 15 | 0 | 13
+INPUTP | 2 | 9 | 2
+EQ | 2 | 
+   N_PZ_33 = state<1> & !state<0> & !state<2> & !CarNS
+	# !state<1> & !state<0> & !state<2> & !CarEW;	// (2 pt, 5 inp)
+
+MACROCELL | 1 | 0 | LightsEW<1>_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 4 | state<1>  | state<0>  | state<2>  | CarNS
+INPUTMC | 3 | 0 | 14 | 0 | 15 | 0 | 13
+INPUTP | 1 | 9
+EQ | 2 | 
+   LightsEW<1> = !state<1> & state<0> & state<2>
+	# state<1> & !state<0> & !state<2> & CarNS;	// (2 pt, 4 inp)
+
+MACROCELL | 1 | 5 | LightsNS<0>_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 3 | state<1>  | state<0>  | state<2>
+INPUTMC | 3 | 0 | 14 | 0 | 15 | 0 | 13
+EQ | 1 | 
+   LightsNS<0> = !state<1> & !state<0> & state<2>;	// (1 pt, 3 inp)
+
+MACROCELL | 1 | 4 | LightsNS<1>_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 4 | state<1>  | state<0>  | state<2>  | CarEW
+INPUTMC | 3 | 0 | 14 | 0 | 15 | 0 | 13
+INPUTP | 1 | 2
+EQ | 2 | 
+   LightsNS<1> = !state<1> & !state<0> & state<2>
+	# !state<1> & !state<0> & CarEW;	// (2 pt, 4 inp)
+
+MACROCELL | 3 | 12 | clearCounter_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 2 | state<1>  | state<2>
+INPUTMC | 2 | 0 | 14 | 0 | 13
+EQ | 1 | 
+   !clearCounter = !state<1> & state<2>;	// (1 pt, 2 inp)
+
+PIN | CarEW | 64 | 16 | LVCMOS33 | 2 | 2 | 0 | 7 | 1 | 4
+PIN | CarNS | 64 | 16 | LVCMOS33 | 9 | 2 | 0 | 7 | 1 | 0
+PIN | PedEW | 64 | 16 | LVCMOS33 | 10 | 3 | 0 | 4 | 0 | 6 | 0 | 5
+PIN | PedNS | 64 | 16 | LVCMOS33 | 11 | 1 | 0 | 4
+PIN | clock | 16384 | 16 | LVCMOS33 | 23 | 3 | 0 | 13 | 0 | 15 | 0 | 14
+PIN | Reset | 65536 | 16 | LVCMOS33 | 78 | 3 | 0 | 13 | 0 | 15 | 0 | 14
+PIN | LightsEW<0> | 536871040 | 0 | LVCMOS33 | 13
+PIN | LightsEW<1> | 536871040 | 0 | LVCMOS33 | 12
+PIN | LightsNS<0> | 536871040 | 0 | LVCMOS33 | 17
+PIN | LightsNS<1> | 536871040 | 0 | LVCMOS33 | 16
+PIN | clearCounter | 536871040 | 0 | LVCMOS33 | 48

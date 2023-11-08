@@ -1,0 +1,1178 @@
+assert111.........
+name = ddddddd..
+assert333.........
+NDEBUG is not defined
+__STDC__ is not defined
+__MSVC__ is defined
+XPLA_BORLANDC is defined
+
+---------------------
+|  D E F A U L T S  |
+---------------------
+max_pt=28, min_pt=3
+max_fi=32, min_fi=4
+
+-----------------
+|  H E A D E R  |
+-----------------
+#$ MODULE TrafficController
+#$ PINS 6 "clock":1 "reset":30 "CarEW":34 "CarNS":36 "PedEW":37 "PedNS":38 
+#$ PINS 3 "LightsEW<0>":40 "LightsEW<1>":39 "LightsNS<0>":42 
+#$ PINS 1 "LightsNS<1>":41 
+#$ NODES 3 "theController/PedEW_s" "PedEW_s" "theController/PedNS_s" 
+#$ NODES 3 "PedNS_s" "theCounter/count<2>" "theCounter/count<3>" 
+#$ NODES 3 "theCounter/count<5>" "theCounter/count<8>" "theCounter/count<0>" 
+#$ NODES 3 "theCounter/count<1>" "theCounter/count<4>" "theCounter/count<6>" 
+#$ NODES 2 "theController/state_FSM_FFd5" "theController/state_FSM_FFd6" 
+#$ NODES 2 "theCounter/count<7>" "theController/state_FSM_FFd2" 
+#$ NODES 2 "theController/state_FSM_FFd3" "theController/state_FSM_FFd1" 
+#$ NODES 4 "theController/state_FSM_FFd4" "CarEW_s" "CarNS_s" "N_PZ_145"'co' 
+#$ NODES 4 "N_PZ_146"'co' "N_PZ_147"'co' "N_PZ_148"'co' "N_PZ_149"'co' 
+#$ NODES 4 "N_PZ_150"'co' "N_PZ_151"'co' "N_PZ_152"'co' "N_PZ_153"'co' 
+#$ NODES 4 "N_PZ_154"'co' "N_PZ_155"'co' "N_PZ_156"'co' "N_PZ_157"'co' 
+#$ NODES 4 "N_PZ_158"'co' "N_PZ_159"'co' "N_PZ_160"'co' "N_PZ_161"'co' 
+#$ NODES 4 "N_PZ_162"'co' "N_PZ_163"'co' "N_PZ_164"'co' "N_PZ_165"'co' 
+#$ NODES 4 "N_PZ_166"'co' "N_PZ_167"'co' "N_PZ_168"'co' "N_PZ_169"'co' 
+#$ NODES 4 "N_PZ_170"'co' "N_PZ_171"'co' "N_PZ_172"'co' "N_PZ_173"'co' 
+#$ NODES 4 "N_PZ_174"'co' "N_PZ_175"'co' "N_PZ_176"'co' "N_PZ_177"'co' 
+#$ NODES 4 "N_PZ_178"'co' "N_PZ_179"'co' "N_PZ_180"'co' "N_PZ_181"'co' 
+#$ NODES 1 "N_PZ_182"'co' 
+
+--------------------------------------
+|  P I N    T a b l e    [count=69]  |
+--------------------------------------
+ N_PZ_164 N_PZ_163 N_PZ_162 theCounter/count<2> N_PZ_161 N_PZ_159 theCounter/count<5> 
+ theController/PedEW_s N_PZ_160 N_PZ_158 theCounter/count<8> N_PZ_157 PedNS N_PZ_156 
+ PedEW N_PZ_155 theController/PedNS_s N_PZ_154 N_PZ_182 N_PZ_153 LightsNS<0> 
+ theCounter/count<0> N_PZ_181 N_PZ_179 N_PZ_152 CarEW theCounter/count<3> N_PZ_180 
+ N_PZ_178 N_PZ_151 N_PZ_149 CarNS theCounter/count<6> N_PZ_177 N_PZ_150 N_PZ_148 
+ LightsEW<1> N_PZ_176 N_PZ_147 N_PZ_175 N_PZ_146 PedEW_s N_PZ_174 N_PZ_145 N_PZ_173 
+ reset CarNS_s theController/state_FSM_FFd6 N_PZ_172 LightsNS<1> theCounter/count<1> 
+ theController/state_FSM_FFd5 N_PZ_171 N_PZ_169 theCounter/count<4> 
+ theController/state_FSM_FFd4 PedNS_s N_PZ_170 N_PZ_168 theCounter/count<7> 
+ theController/state_FSM_FFd3 N_PZ_167 LightsEW<0> theController/state_FSM_FFd2 CarEW_s 
+ N_PZ_166 theController/state_FSM_FFd1 clock N_PZ_165
+
+------------------------------------------
+|  P I N    E q n l i s t    [count=10]  |
+------------------------------------------
+clock (fi=0): 
+reset (fi=0): 
+CarEW (fi=0): 
+CarNS (fi=0): 
+PedEW (fi=0): 
+PedNS (fi=0): 
+LightsEW<0> (fi=2): (LightsEW<0>/N_PZ_65, net=TrafficController) 
+LightsEW<1> (fi=2): (LightsEW<1>/N_PZ_66, net=TrafficController) 
+LightsNS<0> (fi=2): (LightsNS<0>/N_PZ_67, net=TrafficController) 
+LightsNS<1> (fi=2): (LightsNS<1>/N_PZ_68, net=TrafficController) 
+
+--------------------------------------------
+|  N O D E    E q n l i s t    [count=59]  |
+--------------------------------------------
+theController/PedEW_s (fi=4): theController/PedEW_s.D/N_PZ_0 theController/PedEW_s.CLK/N_PZ_1 theController/PedEW_s.AR/N_PZ_2 theController/PedEW_s.CE/N_PZ_3 
+PedEW_s (fi=3): PedEW_s.D/N_PZ_59 PedEW_s.CLK/N_PZ_60 PedEW_s.AR/N_PZ_61 
+theController/PedNS_s (fi=4): theController/PedNS_s.D/N_PZ_4 theController/PedNS_s.CLK/N_PZ_5 theController/PedNS_s.AR/N_PZ_6 theController/PedNS_s.CE/N_PZ_7 
+PedNS_s (fi=3): PedNS_s.D/N_PZ_62 PedNS_s.CLK/N_PZ_63 PedNS_s.AR/N_PZ_64 
+theCounter/count<2> (fi=8): theCounter/count<2>.D/N_PZ_32 theCounter/count<2>.CLK/N_PZ_33 theCounter/count<2>.AR/N_PZ_34 
+theCounter/count<3> (fi=8): theCounter/count<3>.D/N_PZ_35 theCounter/count<3>.CLK/N_PZ_36 theCounter/count<3>.AR/N_PZ_37 
+theCounter/count<5> (fi=9): theCounter/count<5>.D/N_PZ_41 theCounter/count<5>.CLK/N_PZ_42 theCounter/count<5>.AR/N_PZ_43 
+theCounter/count<8> (fi=8): theCounter/count<8>.CLK/N_PZ_57 theCounter/count<8>.AR/N_PZ_58 theCounter/count<8>.T/N_PZ_104 
+theCounter/count<0> (fi=3): theCounter/count<0>.D/N_PZ_20 theCounter/count<0>.CLK/N_PZ_21 theCounter/count<0>.AP/N_PZ_22 
+theCounter/count<1> (fi=4): theCounter/count<1>.D/N_PZ_29 theCounter/count<1>.CLK/N_PZ_30 theCounter/count<1>.AR/N_PZ_31 
+theCounter/count<4> (fi=11): theCounter/count<4>.D/N_PZ_38 theCounter/count<4>.CLK/N_PZ_39 theCounter/count<4>.AR/N_PZ_40 
+theCounter/count<6> (fi=5): theCounter/count<6>.CLK/N_PZ_45 theCounter/count<6>.AR/N_PZ_46 theCounter/count<6>.T/N_PZ_100 
+theController/state_FSM_FFd5 (fi=9): theController/state_FSM_FFd5.CLK/N_PZ_9 theController/state_FSM_FFd5.AP/N_PZ_10 theController/state_FSM_FFd5.T/N_PZ_88 
+theController/state_FSM_FFd6 (fi=9): theController/state_FSM_FFd6.CLK/N_PZ_12 theController/state_FSM_FFd6.AR/N_PZ_13 theController/state_FSM_FFd6.T/N_PZ_89 
+theCounter/count<7> (fi=7): theCounter/count<7>.CLK/N_PZ_48 theCounter/count<7>.AR/N_PZ_49 theCounter/count<7>.T/N_PZ_101 
+theController/state_FSM_FFd2 (fi=6): theController/state_FSM_FFd2.CLK/N_PZ_15 theController/state_FSM_FFd2.AR/N_PZ_16 theController/state_FSM_FFd2.T/N_PZ_90 
+theController/state_FSM_FFd3 (fi=6): theController/state_FSM_FFd3.CLK/N_PZ_18 theController/state_FSM_FFd3.AR/N_PZ_19 theController/state_FSM_FFd3.T/N_PZ_91 
+theController/state_FSM_FFd1 (fi=6): theController/state_FSM_FFd1.CLK/N_PZ_24 theController/state_FSM_FFd1.AR/N_PZ_25 theController/state_FSM_FFd1.T/N_PZ_93 
+theController/state_FSM_FFd4 (fi=6): theController/state_FSM_FFd4.CLK/N_PZ_27 theController/state_FSM_FFd4.AR/N_PZ_28 theController/state_FSM_FFd4.T/N_PZ_94 
+CarEW_s (fi=3): CarEW_s.D/N_PZ_50 CarEW_s.CLK/N_PZ_51 CarEW_s.AR/N_PZ_52 
+CarNS_s (fi=3): CarNS_s.D/N_PZ_53 CarNS_s.CLK/N_PZ_54 CarNS_s.AR/N_PZ_55 
+N_PZ_145 (fi=2): N_PZ_145 
+N_PZ_146 (fi=2): N_PZ_146 
+N_PZ_147 (fi=2): N_PZ_147 
+N_PZ_148 (fi=4): N_PZ_148 
+N_PZ_149 (fi=2): N_PZ_149 
+N_PZ_150 (fi=2): N_PZ_150 
+N_PZ_151 (fi=2): N_PZ_151 
+N_PZ_152 (fi=4): N_PZ_152 
+N_PZ_153 (fi=2): N_PZ_153 
+N_PZ_154 (fi=2): N_PZ_154 
+N_PZ_155 (fi=2): N_PZ_155 
+N_PZ_156 (fi=2): N_PZ_156 
+N_PZ_157 (fi=2): N_PZ_157 
+N_PZ_158 (fi=2): N_PZ_158 
+N_PZ_159 (fi=2): N_PZ_159 
+N_PZ_160 (fi=2): N_PZ_160 
+N_PZ_161 (fi=2): N_PZ_161 
+N_PZ_162 (fi=2): N_PZ_162 
+N_PZ_163 (fi=2): N_PZ_163 
+N_PZ_164 (fi=2): N_PZ_164 
+N_PZ_165 (fi=2): N_PZ_165 
+N_PZ_166 (fi=2): N_PZ_166 
+N_PZ_167 (fi=2): N_PZ_167 
+N_PZ_168 (fi=2): N_PZ_168 
+N_PZ_169 (fi=2): N_PZ_169 
+N_PZ_170 (fi=2): N_PZ_170 
+N_PZ_171 (fi=2): N_PZ_171 
+N_PZ_172 (fi=2): N_PZ_172 
+N_PZ_173 (fi=2): N_PZ_173 
+N_PZ_174 (fi=2): N_PZ_174 
+N_PZ_175 (fi=2): N_PZ_175 
+N_PZ_176 (fi=3): N_PZ_176 
+N_PZ_177 (fi=3): N_PZ_177 
+N_PZ_178 (fi=2): N_PZ_178 
+N_PZ_179 (fi=2): N_PZ_179 
+N_PZ_180 (fi=2): N_PZ_180 
+N_PZ_181 (fi=2): N_PZ_181 
+N_PZ_182 (fi=2): N_PZ_182 
+
+---------------------------------
+|  D a t a   S t r u c t u r e  |
+---------------------------------
+PI ( 27) =  clock reset CarEW CarNS PedEW PedNS theController/PedEW_s.Q 
+            theController/PedNS_s.Q theController/state_FSM_FFd5.Q 
+            theController/state_FSM_FFd6.Q theController/state_FSM_FFd2.Q 
+            theController/state_FSM_FFd3.Q theCounter/count<0>.Q 
+            theController/state_FSM_FFd1.Q theController/state_FSM_FFd4.Q 
+            theCounter/count<1>.Q theCounter/count<2>.Q theCounter/count<3>.Q 
+            theCounter/count<4>.Q theCounter/count<5>.Q theCounter/count<6>.Q 
+            theCounter/count<7>.Q CarEW_s.Q CarNS_s.Q theCounter/count<8>.Q PedEW_s.Q 
+            PedNS_s.Q
+
+PO ( 69) =  theController/PedEW_s.D theController/PedEW_s.CLK theController/PedEW_s.AR 
+            theController/PedEW_s.CE theController/PedNS_s.D theController/PedNS_s.CLK 
+            theController/PedNS_s.AR theController/PedNS_s.CE 
+            theController/state_FSM_FFd5.CLK theController/state_FSM_FFd5.AP 
+            theController/state_FSM_FFd6.CLK theController/state_FSM_FFd6.AR 
+            theController/state_FSM_FFd2.CLK theController/state_FSM_FFd2.AR 
+            theController/state_FSM_FFd3.CLK theController/state_FSM_FFd3.AR 
+            theCounter/count<0>.D theCounter/count<0>.CLK theCounter/count<0>.AP 
+            theController/state_FSM_FFd1.CLK theController/state_FSM_FFd1.AR 
+            theController/state_FSM_FFd4.CLK theController/state_FSM_FFd4.AR 
+            theCounter/count<1>.D theCounter/count<1>.CLK theCounter/count<1>.AR 
+            theCounter/count<2>.D theCounter/count<2>.CLK theCounter/count<2>.AR 
+            theCounter/count<3>.D theCounter/count<3>.CLK theCounter/count<3>.AR 
+            theCounter/count<4>.D theCounter/count<4>.CLK theCounter/count<4>.AR 
+            theCounter/count<5>.D theCounter/count<5>.CLK theCounter/count<5>.AR 
+            theCounter/count<6>.CLK theCounter/count<6>.AR theCounter/count<7>.CLK 
+            theCounter/count<7>.AR CarEW_s.D CarEW_s.CLK CarEW_s.AR CarNS_s.D 
+            CarNS_s.CLK CarNS_s.AR theCounter/count<8>.CLK theCounter/count<8>.AR 
+            PedEW_s.D PedEW_s.CLK PedEW_s.AR PedNS_s.D PedNS_s.CLK PedNS_s.AR 
+            LightsEW<0> LightsEW<1> LightsNS<0> LightsNS<1> 
+            theController/state_FSM_FFd5.T theController/state_FSM_FFd6.T 
+            theController/state_FSM_FFd2.T theController/state_FSM_FFd3.T 
+            theController/state_FSM_FFd1.T theController/state_FSM_FFd4.T 
+            theCounter/count<6>.T theCounter/count<7>.T theCounter/count<8>.T
+
+INT = (107) N_PZ_0 N_PZ_1 N_PZ_2 N_PZ_3 N_PZ_4 N_PZ_5 N_PZ_6 N_PZ_7 N_PZ_9 N_PZ_10 
+            N_PZ_12 N_PZ_13 N_PZ_15 N_PZ_16 N_PZ_18 N_PZ_19 N_PZ_20 N_PZ_21 N_PZ_22 
+            N_PZ_24 N_PZ_25 N_PZ_27 N_PZ_28 N_PZ_29 N_PZ_30 N_PZ_31 N_PZ_32 N_PZ_33 
+            N_PZ_34 N_PZ_35 N_PZ_36 N_PZ_37 N_PZ_38 N_PZ_39 N_PZ_40 N_PZ_41 N_PZ_42 
+            N_PZ_43 N_PZ_45 N_PZ_46 N_PZ_48 N_PZ_49 N_PZ_50 N_PZ_51 N_PZ_52 N_PZ_53 
+            N_PZ_54 N_PZ_55 N_PZ_57 N_PZ_58 N_PZ_59 N_PZ_60 N_PZ_61 N_PZ_62 N_PZ_63 
+            N_PZ_64 N_PZ_65 N_PZ_66 N_PZ_67 N_PZ_68 N_PZ_88 N_PZ_89 N_PZ_90 N_PZ_91 
+            N_PZ_93 N_PZ_94 N_PZ_100 N_PZ_101 N_PZ_104 N_PZ_145 N_PZ_146 N_PZ_147 
+            N_PZ_148 N_PZ_149 N_PZ_150 N_PZ_151 N_PZ_152 N_PZ_153 N_PZ_154 N_PZ_155 
+            N_PZ_156 N_PZ_157 N_PZ_158 N_PZ_159 N_PZ_160 N_PZ_161 N_PZ_162 N_PZ_163 
+            N_PZ_164 N_PZ_165 N_PZ_166 N_PZ_167 N_PZ_168 N_PZ_169 N_PZ_170 N_PZ_171 
+            N_PZ_172 N_PZ_173 N_PZ_174 N_PZ_175 N_PZ_176 N_PZ_177 N_PZ_178 N_PZ_179 
+            N_PZ_180 N_PZ_181 N_PZ_182
+
+PINT= ( 38) N_PZ_145 N_PZ_146 N_PZ_147 N_PZ_148 N_PZ_149 N_PZ_150 N_PZ_151 N_PZ_152 
+            N_PZ_153 N_PZ_154 N_PZ_155 N_PZ_156 N_PZ_157 N_PZ_158 N_PZ_159 N_PZ_160 
+            N_PZ_161 N_PZ_162 N_PZ_163 N_PZ_164 N_PZ_165 N_PZ_166 N_PZ_167 N_PZ_168 
+            N_PZ_169 N_PZ_170 N_PZ_171 N_PZ_172 N_PZ_173 N_PZ_174 N_PZ_175 N_PZ_176 
+            N_PZ_177 N_PZ_178 N_PZ_179 N_PZ_180 N_PZ_181 N_PZ_182
+
+AINT= ( 69) N_PZ_0 N_PZ_1 N_PZ_2 N_PZ_3 N_PZ_4 N_PZ_5 N_PZ_6 N_PZ_7 N_PZ_9 N_PZ_10 
+            N_PZ_12 N_PZ_13 N_PZ_15 N_PZ_16 N_PZ_18 N_PZ_19 N_PZ_20 N_PZ_21 N_PZ_22 
+            N_PZ_24 N_PZ_25 N_PZ_27 N_PZ_28 N_PZ_29 N_PZ_30 N_PZ_31 N_PZ_32 N_PZ_33 
+            N_PZ_34 N_PZ_35 N_PZ_36 N_PZ_37 N_PZ_38 N_PZ_39 N_PZ_40 N_PZ_41 N_PZ_42 
+            N_PZ_43 N_PZ_45 N_PZ_46 N_PZ_48 N_PZ_49 N_PZ_50 N_PZ_51 N_PZ_52 N_PZ_53 
+            N_PZ_54 N_PZ_55 N_PZ_57 N_PZ_58 N_PZ_59 N_PZ_60 N_PZ_61 N_PZ_62 N_PZ_63 
+            N_PZ_64 N_PZ_65 N_PZ_66 N_PZ_67 N_PZ_68 N_PZ_88 N_PZ_89 N_PZ_90 N_PZ_91 
+            N_PZ_93 N_PZ_94 N_PZ_100 N_PZ_101 N_PZ_104
+
+
+----------------------------
+|  D F S    N e t w o r k  |
+----------------------------
+PedEW_s.Q N_PZ_0 theController/PedEW_s.D clock N_PZ_1 theController/PedEW_s.CLK reset  
+N_PZ_2 theController/PedEW_s.AR theController/state_FSM_FFd3.Q N_PZ_3  
+theController/PedEW_s.CE PedNS_s.Q N_PZ_4 theController/PedNS_s.D N_PZ_5  
+theController/PedNS_s.CLK N_PZ_6 theController/PedNS_s.AR  
+theController/state_FSM_FFd2.Q N_PZ_7 theController/PedNS_s.CE N_PZ_9  
+theController/state_FSM_FFd5.CLK N_PZ_10 theController/state_FSM_FFd5.AP N_PZ_12  
+theController/state_FSM_FFd6.CLK N_PZ_13 theController/state_FSM_FFd6.AR N_PZ_15  
+theController/state_FSM_FFd2.CLK N_PZ_16 theController/state_FSM_FFd2.AR N_PZ_18  
+theController/state_FSM_FFd3.CLK N_PZ_19 theController/state_FSM_FFd3.AR  
+theCounter/count<0>.Q N_PZ_20 theCounter/count<0>.D N_PZ_21 theCounter/count<0>.CLK  
+N_PZ_22 theCounter/count<0>.AP N_PZ_24 theController/state_FSM_FFd1.CLK N_PZ_25  
+theController/state_FSM_FFd1.AR N_PZ_27 theController/state_FSM_FFd4.CLK N_PZ_28  
+theController/state_FSM_FFd4.AR theCounter/count<1>.Q N_PZ_29 theCounter/count<1>.D  
+N_PZ_30 theCounter/count<1>.CLK N_PZ_31 theCounter/count<1>.AR theCounter/count<2>.Q  
+theCounter/count<5>.Q theCounter/count<8>.Q N_PZ_149 N_PZ_150  
+theController/state_FSM_FFd5.Q theController/state_FSM_FFd6.Q CarNS_s.Q  
+theController/PedEW_s.Q theController/PedNS_s.Q N_PZ_145 N_PZ_146 CarEW_s.Q N_PZ_147  
+N_PZ_148 theController/state_FSM_FFd1.Q theController/state_FSM_FFd4.Q N_PZ_151  
+theCounter/count<6>.Q theCounter/count<4>.Q theCounter/count<3>.Q  
+theCounter/count<7>.Q N_PZ_155 N_PZ_157 N_PZ_159 N_PZ_162 N_PZ_164 N_PZ_167 N_PZ_152  
+N_PZ_158 N_PZ_174 N_PZ_32 theCounter/count<2>.D N_PZ_33 theCounter/count<2>.CLK  
+N_PZ_34 theCounter/count<2>.AR N_PZ_154 N_PZ_156 N_PZ_160 N_PZ_175 N_PZ_35  
+theCounter/count<3>.D N_PZ_36 theCounter/count<3>.CLK N_PZ_37 theCounter/count<3>.AR  
+N_PZ_165 N_PZ_153 N_PZ_163 N_PZ_166 N_PZ_168 N_PZ_169 N_PZ_178 N_PZ_38  
+theCounter/count<4>.D N_PZ_39 theCounter/count<4>.CLK N_PZ_40 theCounter/count<4>.AR  
+N_PZ_173 N_PZ_41 theCounter/count<5>.D N_PZ_42 theCounter/count<5>.CLK N_PZ_43  
+theCounter/count<5>.AR N_PZ_45 theCounter/count<6>.CLK N_PZ_46 theCounter/count<6>.AR  
+N_PZ_48 theCounter/count<7>.CLK N_PZ_49 theCounter/count<7>.AR CarEW N_PZ_50 CarEW_s.D  
+N_PZ_51 CarEW_s.CLK N_PZ_52 CarEW_s.AR CarNS N_PZ_53 CarNS_s.D N_PZ_54 CarNS_s.CLK  
+N_PZ_55 CarNS_s.AR N_PZ_57 theCounter/count<8>.CLK N_PZ_58 theCounter/count<8>.AR  
+PedEW N_PZ_59 PedEW_s.D N_PZ_60 PedEW_s.CLK N_PZ_61 PedEW_s.AR PedNS N_PZ_62 PedNS_s.D  
+N_PZ_63 PedNS_s.CLK N_PZ_64 PedNS_s.AR N_PZ_65 LightsEW<0> N_PZ_66 LightsEW<1> N_PZ_67  
+LightsNS<0> N_PZ_68 LightsNS<1> N_PZ_161 N_PZ_179 N_PZ_170 N_PZ_181 N_PZ_88  
+theController/state_FSM_FFd5.T N_PZ_180 N_PZ_182 N_PZ_89  
+theController/state_FSM_FFd6.T N_PZ_172 N_PZ_176 N_PZ_90  
+theController/state_FSM_FFd2.T N_PZ_171 N_PZ_177 N_PZ_91  
+theController/state_FSM_FFd3.T N_PZ_93 theController/state_FSM_FFd1.T N_PZ_94  
+theController/state_FSM_FFd4.T N_PZ_100 theCounter/count<6>.T N_PZ_101  
+theCounter/count<7>.T N_PZ_104 theCounter/count<8>.T 
+
+                                  Short Name                 Collapsible
+          Name       Base   Ext   | TypePolOld pt/th fi/FI fo | min          Pair        pxapin
+         clock      clock         b   PI  -  -  -| -  -| - 21 -   -             -             -
+         reset      reset         c   PI  -  -  -| -  -| - 21 -   -             -             -
+         CarEW      CarEW        n0   PI  -  -  -| -  -| -  1 -   -             -             -
+         CarNS      CarNS        o0   PI  -  -  -| -  -| -  1 -   -             -             -
+         PedEW      PedEW        q0   PI  -  -  -| -  -| -  1 -   -             -             -
+         PedNS      PedNS        r0   PI  -  -  -| -  -| -  1 -   -             -             -
+        N_PZ_0     N_PZ_0     -  k6 AINT  -  -  1|28  1|32  1 -   -theController/PedEW_s.D             -
+        N_PZ_1     N_PZ_1     -  l6 AINT  -  -  1|28  1|32  1 -   -theController/PedEW_s.CLK             -
+        N_PZ_2     N_PZ_2     -  m6 AINT  -  -  1|28  1|32  1 -   -theController/PedEW_s.AR             -
+        N_PZ_3     N_PZ_3     -  n6 AINT  L  -  1|28  2|32  1 -   -theController/PedEW_s.CE             -
+        N_PZ_4     N_PZ_4     -  o6 AINT  -  -  1|28  1|32  1 -   -theController/PedNS_s.D             -
+        N_PZ_5     N_PZ_5     -  p6 AINT  -  -  1|28  1|32  1 -   -theController/PedNS_s.CLK             -
+        N_PZ_6     N_PZ_6     -  q6 AINT  -  -  1|28  1|32  1 -   -theController/PedNS_s.AR             -
+        N_PZ_7     N_PZ_7     -  r6 AINT  L  -  1|28  2|32  1 -   -theController/PedNS_s.CE             -
+        N_PZ_9     N_PZ_9     -  t6 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd5.CLK             -
+       N_PZ_10    N_PZ_10     -  u6 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd5.AP             -
+       N_PZ_12    N_PZ_12     -  w6 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd6.CLK             -
+       N_PZ_13    N_PZ_13     -  x6 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd6.AR             -
+       N_PZ_15    N_PZ_15     -  z6 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd2.CLK             -
+       N_PZ_16    N_PZ_16     -  a7 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd2.AR             -
+       N_PZ_18    N_PZ_18     -  c7 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd3.CLK             -
+       N_PZ_19    N_PZ_19     -  d7 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd3.AR             -
+       N_PZ_20    N_PZ_20     -  e7 AINT  -  -  1|28  1|32  1 -   -theCounter/count<0>.D             -
+       N_PZ_21    N_PZ_21     -  f7 AINT  -  -  1|28  1|32  1 -   -theCounter/count<0>.CLK             -
+       N_PZ_22    N_PZ_22     -  g7 AINT  -  -  1|28  1|32  1 -   -theCounter/count<0>.AP             -
+       N_PZ_24    N_PZ_24     -  i7 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd1.CLK             -
+       N_PZ_25    N_PZ_25     -  j7 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd1.AR             -
+       N_PZ_27    N_PZ_27     -  l7 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd4.CLK             -
+       N_PZ_28    N_PZ_28     -  m7 AINT  -  -  1|28  1|32  1 -   -theController/state_FSM_FFd4.AR             -
+       N_PZ_29    N_PZ_29     -  n7 AINT  -  -  2|28  2|32  1 -   -theCounter/count<1>.D             -
+       N_PZ_30    N_PZ_30     -  o7 AINT  -  -  1|28  1|32  1 -   -theCounter/count<1>.CLK             -
+       N_PZ_31    N_PZ_31     -  p7 AINT  -  -  1|28  1|32  1 -   -theCounter/count<1>.AR             -
+       N_PZ_32    N_PZ_32     -  q7 AINT  L  -  3|28  6|32  1 -   -theCounter/count<2>.D             -
+       N_PZ_33    N_PZ_33     -  r7 AINT  -  -  1|28  1|32  1 -   -theCounter/count<2>.CLK             -
+       N_PZ_34    N_PZ_34     -  s7 AINT  -  -  1|28  1|32  1 -   -theCounter/count<2>.AR             -
+       N_PZ_35    N_PZ_35     -  t7 AINT  L  -  3|28  6|32  1 -   -theCounter/count<3>.D             -
+       N_PZ_36    N_PZ_36     -  u7 AINT  -  -  1|28  1|32  1 -   -theCounter/count<3>.CLK             -
+       N_PZ_37    N_PZ_37     -  v7 AINT  -  -  1|28  1|32  1 -   -theCounter/count<3>.AR             -
+       N_PZ_38    N_PZ_38     -  w7 AINT  L  -  4|28  9|32  1 -   -theCounter/count<4>.D             -
+       N_PZ_39    N_PZ_39     -  x7 AINT  -  -  1|28  1|32  1 -   -theCounter/count<4>.CLK             -
+       N_PZ_40    N_PZ_40     -  y7 AINT  -  -  1|28  1|32  1 -   -theCounter/count<4>.AR             -
+       N_PZ_41    N_PZ_41     -  z7 AINT  L  -  4|28  7|32  1 -   -theCounter/count<5>.D             -
+       N_PZ_42    N_PZ_42     -  a8 AINT  -  -  1|28  1|32  1 -   -theCounter/count<5>.CLK             -
+       N_PZ_43    N_PZ_43     -  b8 AINT  -  -  1|28  1|32  1 -   -theCounter/count<5>.AR             -
+       N_PZ_45    N_PZ_45     -  d8 AINT  -  -  1|28  1|32  1 -   -theCounter/count<6>.CLK             -
+       N_PZ_46    N_PZ_46     -  e8 AINT  -  -  1|28  1|32  1 -   -theCounter/count<6>.AR             -
+       N_PZ_48    N_PZ_48     -  g8 AINT  -  -  1|28  1|32  1 -   -theCounter/count<7>.CLK             -
+       N_PZ_49    N_PZ_49     -  h8 AINT  -  -  1|28  1|32  1 -   -theCounter/count<7>.AR             -
+       N_PZ_50    N_PZ_50     -  i8 AINT  -  -  1|28  1|32  1 -   -     CarEW_s.D             -
+       N_PZ_51    N_PZ_51     -  j8 AINT  -  -  1|28  1|32  1 -   -   CarEW_s.CLK             -
+       N_PZ_52    N_PZ_52     -  k8 AINT  -  -  1|28  1|32  1 -   -    CarEW_s.AR             -
+       N_PZ_53    N_PZ_53     -  l8 AINT  -  -  1|28  1|32  1 -   -     CarNS_s.D             -
+       N_PZ_54    N_PZ_54     -  m8 AINT  -  -  1|28  1|32  1 -   -   CarNS_s.CLK             -
+       N_PZ_55    N_PZ_55     -  n8 AINT  -  -  1|28  1|32  1 -   -    CarNS_s.AR             -
+       N_PZ_57    N_PZ_57     -  p8 AINT  -  -  1|28  1|32  1 -   -theCounter/count<8>.CLK             -
+       N_PZ_58    N_PZ_58     -  q8 AINT  -  -  1|28  1|32  1 -   -theCounter/count<8>.AR             -
+       N_PZ_59    N_PZ_59     -  r8 AINT  -  -  1|28  1|32  1 -   -     PedEW_s.D             -
+       N_PZ_60    N_PZ_60     -  s8 AINT  -  -  1|28  1|32  1 -   -   PedEW_s.CLK             -
+       N_PZ_61    N_PZ_61     -  t8 AINT  -  -  1|28  1|32  1 -   -    PedEW_s.AR             -
+       N_PZ_62    N_PZ_62     -  u8 AINT  -  -  1|28  1|32  1 -   -     PedNS_s.D             -
+       N_PZ_63    N_PZ_63     -  v8 AINT  -  -  1|28  1|32  1 -   -   PedNS_s.CLK             -
+       N_PZ_64    N_PZ_64     -  w8 AINT  -  -  1|28  1|32  1 -   -    PedNS_s.AR             -
+       N_PZ_65    N_PZ_65     -  x8 AINT  L  -  1|28  2|32  1 -   -   LightsEW<0>             -
+       N_PZ_66    N_PZ_66     -  y8 AINT  L  -  1|28  2|32  1 -   -   LightsEW<1>             -
+       N_PZ_67    N_PZ_67     -  z8 AINT  L  -  1|28  2|32  1 -   -   LightsNS<0>             -
+       N_PZ_68    N_PZ_68     -  a9 AINT  L  -  1|28  2|32  1 -   -   LightsNS<1>             -
+theController/PedEW_s.DtheController/PedEW_s    .D  d3   PO  -  -  -| -  -| -  0 -   -        N_PZ_0theController/PedEW_s
+theController/PedEW_s.CLKtheController/PedEW_s  .CLK  e3   PO  -  -  -| -  -| -  0 -   -        N_PZ_1theController/PedEW_s
+theController/PedEW_s.ARtheController/PedEW_s   .AR  f3   PO  -  -  -| -  -| -  0 -   -        N_PZ_2theController/PedEW_s
+theController/PedEW_s.CEtheController/PedEW_s   .CE  g3   PO  -  -  -| -  -| -  0 -   -        N_PZ_3theController/PedEW_s
+theController/PedNS_s.DtheController/PedNS_s    .D  h3   PO  -  -  -| -  -| -  0 -   -        N_PZ_4theController/PedNS_s
+theController/PedNS_s.CLKtheController/PedNS_s  .CLK  i3   PO  -  -  -| -  -| -  0 -   -        N_PZ_5theController/PedNS_s
+theController/PedNS_s.ARtheController/PedNS_s   .AR  j3   PO  -  -  -| -  -| -  0 -   -        N_PZ_6theController/PedNS_s
+theController/PedNS_s.CEtheController/PedNS_s   .CE  k3   PO  -  -  -| -  -| -  0 -   -        N_PZ_7theController/PedNS_s
+theController/state_FSM_FFd5.CLKtheController/state_FSM_FFd5  .CLK  m3   PO  -  -  -| -  -| -  0 -   -        N_PZ_9theController/state_FSM_FFd5
+theController/state_FSM_FFd5.APtheController/state_FSM_FFd5   .AP  n3   PO  -  -  -| -  -| -  0 -   -       N_PZ_10theController/state_FSM_FFd5
+theController/state_FSM_FFd6.CLKtheController/state_FSM_FFd6  .CLK  p3   PO  -  -  -| -  -| -  0 -   -       N_PZ_12theController/state_FSM_FFd6
+theController/state_FSM_FFd6.ARtheController/state_FSM_FFd6   .AR  q3   PO  -  -  -| -  -| -  0 -   -       N_PZ_13theController/state_FSM_FFd6
+theController/state_FSM_FFd2.CLKtheController/state_FSM_FFd2  .CLK  s3   PO  -  -  -| -  -| -  0 -   -       N_PZ_15theController/state_FSM_FFd2
+theController/state_FSM_FFd2.ARtheController/state_FSM_FFd2   .AR  t3   PO  -  -  -| -  -| -  0 -   -       N_PZ_16theController/state_FSM_FFd2
+theController/state_FSM_FFd3.CLKtheController/state_FSM_FFd3  .CLK  v3   PO  -  -  -| -  -| -  0 -   -       N_PZ_18theController/state_FSM_FFd3
+theController/state_FSM_FFd3.ARtheController/state_FSM_FFd3   .AR  w3   PO  -  -  -| -  -| -  0 -   -       N_PZ_19theController/state_FSM_FFd3
+theCounter/count<0>.DtheCounter/count<0>    .D  x3   PO  -  -  -| -  -| -  0 -   -       N_PZ_20theCounter/count<0>
+theCounter/count<0>.CLKtheCounter/count<0>  .CLK  y3   PO  -  -  -| -  -| -  0 -   -       N_PZ_21theCounter/count<0>
+theCounter/count<0>.APtheCounter/count<0>   .AP  z3   PO  -  -  -| -  -| -  0 -   -       N_PZ_22theCounter/count<0>
+theController/state_FSM_FFd1.CLKtheController/state_FSM_FFd1  .CLK  b4   PO  -  -  -| -  -| -  0 -   -       N_PZ_24theController/state_FSM_FFd1
+theController/state_FSM_FFd1.ARtheController/state_FSM_FFd1   .AR  c4   PO  -  -  -| -  -| -  0 -   -       N_PZ_25theController/state_FSM_FFd1
+theController/state_FSM_FFd4.CLKtheController/state_FSM_FFd4  .CLK  e4   PO  -  -  -| -  -| -  0 -   -       N_PZ_27theController/state_FSM_FFd4
+theController/state_FSM_FFd4.ARtheController/state_FSM_FFd4   .AR  f4   PO  -  -  -| -  -| -  0 -   -       N_PZ_28theController/state_FSM_FFd4
+theCounter/count<1>.DtheCounter/count<1>    .D  g4   PO  -  -  -| -  -| -  0 -   -       N_PZ_29theCounter/count<1>
+theCounter/count<1>.CLKtheCounter/count<1>  .CLK  h4   PO  -  -  -| -  -| -  0 -   -       N_PZ_30theCounter/count<1>
+theCounter/count<1>.ARtheCounter/count<1>   .AR  i4   PO  -  -  -| -  -| -  0 -   -       N_PZ_31theCounter/count<1>
+theCounter/count<2>.DtheCounter/count<2>    .D  j4   PO  -  -  -| -  -| -  0 -   -       N_PZ_32theCounter/count<2>
+theCounter/count<2>.CLKtheCounter/count<2>  .CLK  k4   PO  -  -  -| -  -| -  0 -   -       N_PZ_33theCounter/count<2>
+theCounter/count<2>.ARtheCounter/count<2>   .AR  l4   PO  -  -  -| -  -| -  0 -   -       N_PZ_34theCounter/count<2>
+theCounter/count<3>.DtheCounter/count<3>    .D  m4   PO  -  -  -| -  -| -  0 -   -       N_PZ_35theCounter/count<3>
+theCounter/count<3>.CLKtheCounter/count<3>  .CLK  n4   PO  -  -  -| -  -| -  0 -   -       N_PZ_36theCounter/count<3>
+theCounter/count<3>.ARtheCounter/count<3>   .AR  o4   PO  -  -  -| -  -| -  0 -   -       N_PZ_37theCounter/count<3>
+theCounter/count<4>.DtheCounter/count<4>    .D  p4   PO  -  -  -| -  -| -  0 -   -       N_PZ_38theCounter/count<4>
+theCounter/count<4>.CLKtheCounter/count<4>  .CLK  q4   PO  -  -  -| -  -| -  0 -   -       N_PZ_39theCounter/count<4>
+theCounter/count<4>.ARtheCounter/count<4>   .AR  r4   PO  -  -  -| -  -| -  0 -   -       N_PZ_40theCounter/count<4>
+theCounter/count<5>.DtheCounter/count<5>    .D  s4   PO  -  -  -| -  -| -  0 -   -       N_PZ_41theCounter/count<5>
+theCounter/count<5>.CLKtheCounter/count<5>  .CLK  t4   PO  -  -  -| -  -| -  0 -   -       N_PZ_42theCounter/count<5>
+theCounter/count<5>.ARtheCounter/count<5>   .AR  u4   PO  -  -  -| -  -| -  0 -   -       N_PZ_43theCounter/count<5>
+theCounter/count<6>.CLKtheCounter/count<6>  .CLK  w4   PO  -  -  -| -  -| -  0 -   -       N_PZ_45theCounter/count<6>
+theCounter/count<6>.ARtheCounter/count<6>   .AR  x4   PO  -  -  -| -  -| -  0 -   -       N_PZ_46theCounter/count<6>
+theCounter/count<7>.CLKtheCounter/count<7>  .CLK  z4   PO  -  -  -| -  -| -  0 -   -       N_PZ_48theCounter/count<7>
+theCounter/count<7>.ARtheCounter/count<7>   .AR  a5   PO  -  -  -| -  -| -  0 -   -       N_PZ_49theCounter/count<7>
+     CarEW_s.D    CarEW_s    .D  b5   PO  -  -  -| -  -| -  0 -   -       N_PZ_50       CarEW_s
+   CarEW_s.CLK    CarEW_s  .CLK  c5   PO  -  -  -| -  -| -  0 -   -       N_PZ_51       CarEW_s
+    CarEW_s.AR    CarEW_s   .AR  d5   PO  -  -  -| -  -| -  0 -   -       N_PZ_52       CarEW_s
+     CarNS_s.D    CarNS_s    .D  e5   PO  -  -  -| -  -| -  0 -   -       N_PZ_53       CarNS_s
+   CarNS_s.CLK    CarNS_s  .CLK  f5   PO  -  -  -| -  -| -  0 -   -       N_PZ_54       CarNS_s
+    CarNS_s.AR    CarNS_s   .AR  g5   PO  -  -  -| -  -| -  0 -   -       N_PZ_55       CarNS_s
+theCounter/count<8>.CLKtheCounter/count<8>  .CLK  i5   PO  -  -  -| -  -| -  0 -   -       N_PZ_57theCounter/count<8>
+theCounter/count<8>.ARtheCounter/count<8>   .AR  j5   PO  -  -  -| -  -| -  0 -   -       N_PZ_58theCounter/count<8>
+     PedEW_s.D    PedEW_s    .D  k5   PO  -  -  -| -  -| -  0 -   -       N_PZ_59       PedEW_s
+   PedEW_s.CLK    PedEW_s  .CLK  l5   PO  -  -  -| -  -| -  0 -   -       N_PZ_60       PedEW_s
+    PedEW_s.AR    PedEW_s   .AR  m5   PO  -  -  -| -  -| -  0 -   -       N_PZ_61       PedEW_s
+     PedNS_s.D    PedNS_s    .D  n5   PO  -  -  -| -  -| -  0 -   -       N_PZ_62       PedNS_s
+   PedNS_s.CLK    PedNS_s  .CLK  o5   PO  -  -  -| -  -| -  0 -   -       N_PZ_63       PedNS_s
+    PedNS_s.AR    PedNS_s   .AR  p5   PO  -  -  -| -  -| -  0 -   -       N_PZ_64       PedNS_s
+   LightsEW<0>LightsEW<0>        g6   PO  -  -  -| -  -| -  0 -   -       N_PZ_65   LightsEW<0>
+   LightsEW<1>LightsEW<1>        h6   PO  -  -  -| -  -| -  0 -   -       N_PZ_66   LightsEW<1>
+   LightsNS<0>LightsNS<0>        i6   PO  -  -  -| -  -| -  0 -   -       N_PZ_67   LightsNS<0>
+   LightsNS<1>LightsNS<1>        j6   PO  -  -  -| -  -| -  0 -   -       N_PZ_68   LightsNS<1>
+theController/PedEW_s.QtheController/PedEW_s    .Q  b9   PI  -  -  -| -  -| -  4 -   -             -             -
+theController/PedNS_s.QtheController/PedNS_s    .Q  c9   PI  -  -  -| -  -| -  4 -   -             -             -
+theController/state_FSM_FFd5.QtheController/state_FSM_FFd5    .Q  d9   PI  -  -  -| -  -| -  4 -   -             -             -
+theController/state_FSM_FFd6.QtheController/state_FSM_FFd6    .Q  e9   PI  -  -  -| -  -| -  4 -   -             -             -
+theController/state_FSM_FFd2.QtheController/state_FSM_FFd2    .Q  f9   PI  -  -  -| -  -| -  6 -   -             -             -
+theController/state_FSM_FFd3.QtheController/state_FSM_FFd3    .Q  g9   PI  -  -  -| -  -| -  6 -   -             -             -
+theCounter/count<0>.QtheCounter/count<0>    .Q  h9   PI  -  -  -| -  -| -  4 -   -             -             -
+theController/state_FSM_FFd1.QtheController/state_FSM_FFd1    .Q  i9   PI  -  -  -| -  -| -  4 -   -             -             -
+theController/state_FSM_FFd4.QtheController/state_FSM_FFd4    .Q  j9   PI  -  -  -| -  -| -  4 -   -             -             -
+theCounter/count<1>.QtheCounter/count<1>    .Q  k9   PI  -  -  -| -  -| -  3 -   -             -             -
+theCounter/count<2>.QtheCounter/count<2>    .Q  l9   PI  -  -  -| -  -| -  7 -   -             -             -
+theCounter/count<3>.QtheCounter/count<3>    .Q  m9   PI  -  -  -| -  -| -  4 -   -             -             -
+theCounter/count<4>.QtheCounter/count<4>    .Q  n9   PI  -  -  -| -  -| -  4 -   -             -             -
+theCounter/count<5>.QtheCounter/count<5>    .Q  o9   PI  -  -  -| -  -| -  4 -   -             -             -
+theCounter/count<6>.QtheCounter/count<6>    .Q  p9   PI  -  -  -| -  -| -  6 -   -             -             -
+theCounter/count<7>.QtheCounter/count<7>    .Q  q9   PI  -  -  -| -  -| -  3 -   -             -             -
+     CarEW_s.Q    CarEW_s    .Q  r9   PI  -  -  -| -  -| -  2 -   -             -             -
+     CarNS_s.Q    CarNS_s    .Q  s9   PI  -  -  -| -  -| -  2 -   -             -             -
+theCounter/count<8>.QtheCounter/count<8>    .Q  t9   PI  -  -  -| -  -| -  1 -   -             -             -
+     PedEW_s.Q    PedEW_s    .Q  u9   PI  -  -  -| -  -| -  2 -   -             -             -
+     PedNS_s.Q    PedNS_s    .Q  v9   PI  -  -  -| -  -| -  2 -   -             -             -
+       N_PZ_88    N_PZ_88     - b12 AINT  -  -  3|28  7|32  1 -   -theController/state_FSM_FFd5.T             -
+       N_PZ_89    N_PZ_89     - c12 AINT  -  -  3|28  7|32  1 -   -theController/state_FSM_FFd6.T             -
+       N_PZ_90    N_PZ_90     - d12 AINT  -  -  2|28  4|32  1 -   -theController/state_FSM_FFd2.T             -
+       N_PZ_91    N_PZ_91     - e12 AINT  -  -  2|28  4|32  1 -   -theController/state_FSM_FFd3.T             -
+       N_PZ_93    N_PZ_93     - g12 AINT  -  -  2|28  4|32  1 -   -theController/state_FSM_FFd1.T             -
+       N_PZ_94    N_PZ_94     - h12 AINT  -  -  2|28  4|32  1 -   -theController/state_FSM_FFd4.T             -
+      N_PZ_100   N_PZ_100     - n12 AINT  -  -  2|28  3|32  1 -   -theCounter/count<6>.T             -
+      N_PZ_101   N_PZ_101     - o12 AINT  -  -  3|28  5|32  1 -   -theCounter/count<7>.T             -
+      N_PZ_104   N_PZ_104     - r12 AINT  -  -  3|28  6|32  1 -   -theCounter/count<8>.T             -
+theController/state_FSM_FFd5.TtheController/state_FSM_FFd5    .T i11   PO  -  -  -| -  -| -  0 -   -       N_PZ_88theController/state_FSM_FFd5
+theController/state_FSM_FFd6.TtheController/state_FSM_FFd6    .T j11   PO  -  -  -| -  -| -  0 -   -       N_PZ_89theController/state_FSM_FFd6
+theController/state_FSM_FFd2.TtheController/state_FSM_FFd2    .T k11   PO  -  -  -| -  -| -  0 -   -       N_PZ_90theController/state_FSM_FFd2
+theController/state_FSM_FFd3.TtheController/state_FSM_FFd3    .T l11   PO  -  -  -| -  -| -  0 -   -       N_PZ_91theController/state_FSM_FFd3
+theController/state_FSM_FFd1.TtheController/state_FSM_FFd1    .T n11   PO  -  -  -| -  -| -  0 -   -       N_PZ_93theController/state_FSM_FFd1
+theController/state_FSM_FFd4.TtheController/state_FSM_FFd4    .T o11   PO  -  -  -| -  -| -  0 -   -       N_PZ_94theController/state_FSM_FFd4
+theCounter/count<6>.TtheCounter/count<6>    .T u11   PO  -  -  -| -  -| -  0 -   -      N_PZ_100theCounter/count<6>
+theCounter/count<7>.TtheCounter/count<7>    .T v11   PO  -  -  -| -  -| -  0 -   -      N_PZ_101theCounter/count<7>
+theCounter/count<8>.TtheCounter/count<8>    .T y11   PO  -  -  -| -  -| -  0 -   -      N_PZ_104theCounter/count<8>
+      N_PZ_145   N_PZ_145     - g14 PINT  -  -  2|28  2|32  2 Y   -             -      N_PZ_145
+      N_PZ_146   N_PZ_146     - h14 PINT  -  -  2|28  2|32  2 Y   -             -      N_PZ_146
+      N_PZ_147   N_PZ_147     - i14 PINT  -  -  2|28  2|32  2 Y   -             -      N_PZ_147
+      N_PZ_148   N_PZ_148     - j14 PINT  -  -  2|28  4|32  4 Y   -             -      N_PZ_148
+      N_PZ_149   N_PZ_149     - k14 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_149
+      N_PZ_150   N_PZ_150     - l14 PINT  -  -  1|28  2|32  4 Y   -             -      N_PZ_150
+      N_PZ_151   N_PZ_151     - m14 PINT  -  -  2|28  2|32  2 Y   -             -      N_PZ_151
+      N_PZ_152   N_PZ_152     - n14 PINT  -  -  2|28  4|32  3 Y   -             -      N_PZ_152
+      N_PZ_153   N_PZ_153     - o14 PINT  -  -  2|28  2|32  1 Y   -             -      N_PZ_153
+      N_PZ_154   N_PZ_154     - p14 PINT  -  -  1|28  2|32  2 Y   -             -      N_PZ_154
+      N_PZ_155   N_PZ_155     - q14 PINT  -  -  1|28  2|32  2 Y   -             -      N_PZ_155
+      N_PZ_156   N_PZ_156     - r14 PINT  -  -  1|28  2|32  5 Y   -             -      N_PZ_156
+      N_PZ_157   N_PZ_157     - s14 PINT  -  -  1|28  2|32  2 Y   -             -      N_PZ_157
+      N_PZ_158   N_PZ_158     - t14 PINT  -  -  2|28  2|32  3 Y   -             -      N_PZ_158
+      N_PZ_159   N_PZ_159     - u14 PINT  -  -  1|28  2|32  2 Y   -             -      N_PZ_159
+      N_PZ_160   N_PZ_160     - v14 PINT  -  -  2|28  2|32  2 Y   -             -      N_PZ_160
+      N_PZ_161   N_PZ_161     - w14 PINT  -  -  1|28  2|32  4 Y   -             -      N_PZ_161
+      N_PZ_162   N_PZ_162     - x14 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_162
+      N_PZ_163   N_PZ_163     - y14 PINT  -  -  1|28  2|32  2 Y   -             -      N_PZ_163
+      N_PZ_164   N_PZ_164     - z14 PINT  -  -  1|28  2|32  2 Y   -             -      N_PZ_164
+      N_PZ_165   N_PZ_165     - a15 PINT  -  -  2|28  2|32  3 Y   -             -      N_PZ_165
+      N_PZ_166   N_PZ_166     - b15 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_166
+      N_PZ_167   N_PZ_167     - c15 PINT  -  -  1|28  2|32  2 Y   -             -      N_PZ_167
+      N_PZ_168   N_PZ_168     - d15 PINT  -  -  1|28  2|32  1 Y   -             -      N_PZ_168
+      N_PZ_169   N_PZ_169     - e15 PINT  -  -  1|28  2|32  5 Y   -             -      N_PZ_169
+      N_PZ_170   N_PZ_170     - f15 PINT  -  -  1|28  2|32  2 Y   -             -      N_PZ_170
+      N_PZ_171   N_PZ_171     - g15 PINT  -  -  2|28  2|32  2 Y   -             -      N_PZ_171
+      N_PZ_172   N_PZ_172     - h15 PINT  -  -  2|28  2|32  2 Y   -             -      N_PZ_172
+      N_PZ_173   N_PZ_173     - i15 PINT  -  -  1|28  2|32  4 Y   -             -      N_PZ_173
+      N_PZ_174   N_PZ_174     - j15 PINT  -  -  2|28  2|32  2 Y   -             -      N_PZ_174
+      N_PZ_175   N_PZ_175     - k15 PINT  -  -  2|28  2|32  2 Y   -             -      N_PZ_175
+      N_PZ_176   N_PZ_176     - l15 PINT  -  -  2|28  3|32  1 Y   -             -      N_PZ_176
+      N_PZ_177   N_PZ_177     - m15 PINT  -  -  2|28  3|32  1 Y   -             -      N_PZ_177
+      N_PZ_178   N_PZ_178     - n15 PINT  -  -  1|28  2|32  3 Y   -             -      N_PZ_178
+      N_PZ_179   N_PZ_179     - o15 PINT  -  -  1|28  2|32  3 Y   -             -      N_PZ_179
+      N_PZ_180   N_PZ_180     - p15 PINT  -  -  1|28  2|32  3 Y   -             -      N_PZ_180
+      N_PZ_181   N_PZ_181     - q15 PINT  -  -  1|28  2|32  3 Y   -             -      N_PZ_181
+      N_PZ_182   N_PZ_182     - r15 PINT  -  -  1|28  2|32  3 Y   -             -      N_PZ_182
+
+---------------------------------------------------------
+|  PinCnt = 10, NodeCnt = 59, Total = 69, TotalPt = 147 |
+---------------------------------------------------------
+clock,net=TrafficController: PI
+  <--0-- 
+  --21--> (N_PZ_1, TrafficController) (N_PZ_5, TrafficController)  
+          (N_PZ_9, TrafficController) (N_PZ_12, TrafficController)  
+          (N_PZ_15, TrafficController) (N_PZ_18, TrafficController)  
+          (N_PZ_21, TrafficController) (N_PZ_24, TrafficController)  
+          (N_PZ_27, TrafficController) (N_PZ_30, TrafficController)  
+          (N_PZ_33, TrafficController) (N_PZ_36, TrafficController)  
+          (N_PZ_39, TrafficController) (N_PZ_42, TrafficController)  
+          (N_PZ_45, TrafficController) (N_PZ_48, TrafficController)  
+          (N_PZ_51, TrafficController) (N_PZ_54, TrafficController)  
+          (N_PZ_57, TrafficController) (N_PZ_60, TrafficController)  
+          (N_PZ_63, TrafficController) 
+reset,net=TrafficController: PI
+  <--0-- 
+  --21--> (N_PZ_2, TrafficController) (N_PZ_6, TrafficController)  
+          (N_PZ_10, TrafficController) (N_PZ_13, TrafficController)  
+          (N_PZ_16, TrafficController) (N_PZ_19, TrafficController)  
+          (N_PZ_22, TrafficController) (N_PZ_25, TrafficController)  
+          (N_PZ_28, TrafficController) (N_PZ_31, TrafficController)  
+          (N_PZ_34, TrafficController) (N_PZ_37, TrafficController)  
+          (N_PZ_40, TrafficController) (N_PZ_43, TrafficController)  
+          (N_PZ_46, TrafficController) (N_PZ_49, TrafficController)  
+          (N_PZ_52, TrafficController) (N_PZ_55, TrafficController)  
+          (N_PZ_58, TrafficController) (N_PZ_61, TrafficController)  
+          (N_PZ_64, TrafficController) 
+CarEW,net=TrafficController: PI
+  <--0-- 
+  --1--> (N_PZ_50, TrafficController) 
+CarNS,net=TrafficController: PI
+  <--0-- 
+  --1--> (N_PZ_53, TrafficController) 
+PedEW,net=TrafficController: PI
+  <--0-- 
+  --1--> (N_PZ_59, TrafficController) 
+PedNS,net=TrafficController: PI
+  <--0-- 
+  --1--> (N_PZ_62, TrafficController) 
+N_PZ_0,net=TrafficController: PINT ( theController/PedEW_s.D )
+  <--1--  (PedEW_s.Q, TrafficController)
+  --1--> (theController/PedEW_s.D, TrafficController) 
+N_PZ_1,net=TrafficController: PINT ( theController/PedEW_s.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theController/PedEW_s.CLK, TrafficController) 
+N_PZ_2,net=TrafficController: PINT ( theController/PedEW_s.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theController/PedEW_s.AR, TrafficController) 
+N_PZ_3,net=TrafficController: PINT ( theController/PedEW_s.CE )
+  <--2--  (theController/state_FSM_FFd3.Q, TrafficController) 
+          (PedEW_s.Q, TrafficController)
+  --1--> (theController/PedEW_s.CE, TrafficController) 
+N_PZ_4,net=TrafficController: PINT ( theController/PedNS_s.D )
+  <--1--  (PedNS_s.Q, TrafficController)
+  --1--> (theController/PedNS_s.D, TrafficController) 
+N_PZ_5,net=TrafficController: PINT ( theController/PedNS_s.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theController/PedNS_s.CLK, TrafficController) 
+N_PZ_6,net=TrafficController: PINT ( theController/PedNS_s.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theController/PedNS_s.AR, TrafficController) 
+N_PZ_7,net=TrafficController: PINT ( theController/PedNS_s.CE )
+  <--2--  (theController/state_FSM_FFd2.Q, TrafficController) 
+          (PedNS_s.Q, TrafficController)
+  --1--> (theController/PedNS_s.CE, TrafficController) 
+N_PZ_9,net=TrafficController: PINT ( theController/state_FSM_FFd5.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theController/state_FSM_FFd5.CLK, TrafficController) 
+N_PZ_10,net=TrafficController: PINT ( theController/state_FSM_FFd5.AP )
+  <--1--  (reset, TrafficController)
+  --1--> (theController/state_FSM_FFd5.AP, TrafficController) 
+N_PZ_12,net=TrafficController: PINT ( theController/state_FSM_FFd6.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theController/state_FSM_FFd6.CLK, TrafficController) 
+N_PZ_13,net=TrafficController: PINT ( theController/state_FSM_FFd6.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theController/state_FSM_FFd6.AR, TrafficController) 
+N_PZ_15,net=TrafficController: PINT ( theController/state_FSM_FFd2.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theController/state_FSM_FFd2.CLK, TrafficController) 
+N_PZ_16,net=TrafficController: PINT ( theController/state_FSM_FFd2.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theController/state_FSM_FFd2.AR, TrafficController) 
+N_PZ_18,net=TrafficController: PINT ( theController/state_FSM_FFd3.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theController/state_FSM_FFd3.CLK, TrafficController) 
+N_PZ_19,net=TrafficController: PINT ( theController/state_FSM_FFd3.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theController/state_FSM_FFd3.AR, TrafficController) 
+N_PZ_20,net=TrafficController: PINT ( theCounter/count<0>.D )
+  <--1--  (theCounter/count<0>.Q, TrafficController)
+  --1--> (theCounter/count<0>.D, TrafficController) 
+N_PZ_21,net=TrafficController: PINT ( theCounter/count<0>.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theCounter/count<0>.CLK, TrafficController) 
+N_PZ_22,net=TrafficController: PINT ( theCounter/count<0>.AP )
+  <--1--  (reset, TrafficController)
+  --1--> (theCounter/count<0>.AP, TrafficController) 
+N_PZ_24,net=TrafficController: PINT ( theController/state_FSM_FFd1.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theController/state_FSM_FFd1.CLK, TrafficController) 
+N_PZ_25,net=TrafficController: PINT ( theController/state_FSM_FFd1.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theController/state_FSM_FFd1.AR, TrafficController) 
+N_PZ_27,net=TrafficController: PINT ( theController/state_FSM_FFd4.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theController/state_FSM_FFd4.CLK, TrafficController) 
+N_PZ_28,net=TrafficController: PINT ( theController/state_FSM_FFd4.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theController/state_FSM_FFd4.AR, TrafficController) 
+N_PZ_29,net=TrafficController: PINT ( theCounter/count<1>.D )
+  <--2--  (theCounter/count<0>.Q, TrafficController) 
+          (theCounter/count<1>.Q, TrafficController)
+  --1--> (theCounter/count<1>.D, TrafficController) 
+N_PZ_30,net=TrafficController: PINT ( theCounter/count<1>.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theCounter/count<1>.CLK, TrafficController) 
+N_PZ_31,net=TrafficController: PINT ( theCounter/count<1>.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theCounter/count<1>.AR, TrafficController) 
+N_PZ_32,net=TrafficController: PINT ( theCounter/count<2>.D )
+  <--6--  (theCounter/count<2>.Q, TrafficController) 
+          (theCounter/count<5>.Q, TrafficController) (N_PZ_150, TrafficController) 
+          (N_PZ_152, TrafficController) (N_PZ_158, TrafficController) 
+          (N_PZ_174, TrafficController)
+  --1--> (theCounter/count<2>.D, TrafficController) 
+N_PZ_33,net=TrafficController: PINT ( theCounter/count<2>.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theCounter/count<2>.CLK, TrafficController) 
+N_PZ_34,net=TrafficController: PINT ( theCounter/count<2>.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theCounter/count<2>.AR, TrafficController) 
+N_PZ_35,net=TrafficController: PINT ( theCounter/count<3>.D )
+  <--6--  (theCounter/count<3>.Q, TrafficController) (N_PZ_151, TrafficController) 
+          (N_PZ_156, TrafficController) (N_PZ_164, TrafficController) 
+          (N_PZ_174, TrafficController) (N_PZ_175, TrafficController)
+  --1--> (theCounter/count<3>.D, TrafficController) 
+N_PZ_36,net=TrafficController: PINT ( theCounter/count<3>.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theCounter/count<3>.CLK, TrafficController) 
+N_PZ_37,net=TrafficController: PINT ( theCounter/count<3>.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theCounter/count<3>.AR, TrafficController) 
+N_PZ_38,net=TrafficController: PINT ( theCounter/count<4>.D )
+  <--9--  (theCounter/count<2>.Q, TrafficController) 
+          (theCounter/count<4>.Q, TrafficController) 
+          (theCounter/count<6>.Q, TrafficController) (N_PZ_148, TrafficController) 
+          (N_PZ_155, TrafficController) (N_PZ_156, TrafficController) 
+          (N_PZ_165, TrafficController) (N_PZ_175, TrafficController) 
+          (N_PZ_178, TrafficController)
+  --1--> (theCounter/count<4>.D, TrafficController) 
+N_PZ_39,net=TrafficController: PINT ( theCounter/count<4>.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theCounter/count<4>.CLK, TrafficController) 
+N_PZ_40,net=TrafficController: PINT ( theCounter/count<4>.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theCounter/count<4>.AR, TrafficController) 
+N_PZ_41,net=TrafficController: PINT ( theCounter/count<5>.D )
+  <--7--  (theCounter/count<2>.Q, TrafficController) 
+          (theCounter/count<5>.Q, TrafficController) (N_PZ_150, TrafficController) 
+          (N_PZ_152, TrafficController) (N_PZ_163, TrafficController) 
+          (N_PZ_165, TrafficController) (N_PZ_173, TrafficController)
+  --1--> (theCounter/count<5>.D, TrafficController) 
+N_PZ_42,net=TrafficController: PINT ( theCounter/count<5>.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theCounter/count<5>.CLK, TrafficController) 
+N_PZ_43,net=TrafficController: PINT ( theCounter/count<5>.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theCounter/count<5>.AR, TrafficController) 
+N_PZ_45,net=TrafficController: PINT ( theCounter/count<6>.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theCounter/count<6>.CLK, TrafficController) 
+N_PZ_46,net=TrafficController: PINT ( theCounter/count<6>.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theCounter/count<6>.AR, TrafficController) 
+N_PZ_48,net=TrafficController: PINT ( theCounter/count<7>.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theCounter/count<7>.CLK, TrafficController) 
+N_PZ_49,net=TrafficController: PINT ( theCounter/count<7>.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theCounter/count<7>.AR, TrafficController) 
+N_PZ_50,net=TrafficController: PINT ( CarEW_s.D )
+  <--1--  (CarEW, TrafficController)
+  --1--> (CarEW_s.D, TrafficController) 
+N_PZ_51,net=TrafficController: PINT ( CarEW_s.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (CarEW_s.CLK, TrafficController) 
+N_PZ_52,net=TrafficController: PINT ( CarEW_s.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (CarEW_s.AR, TrafficController) 
+N_PZ_53,net=TrafficController: PINT ( CarNS_s.D )
+  <--1--  (CarNS, TrafficController)
+  --1--> (CarNS_s.D, TrafficController) 
+N_PZ_54,net=TrafficController: PINT ( CarNS_s.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (CarNS_s.CLK, TrafficController) 
+N_PZ_55,net=TrafficController: PINT ( CarNS_s.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (CarNS_s.AR, TrafficController) 
+N_PZ_57,net=TrafficController: PINT ( theCounter/count<8>.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (theCounter/count<8>.CLK, TrafficController) 
+N_PZ_58,net=TrafficController: PINT ( theCounter/count<8>.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (theCounter/count<8>.AR, TrafficController) 
+N_PZ_59,net=TrafficController: PINT ( PedEW_s.D )
+  <--1--  (PedEW, TrafficController)
+  --1--> (PedEW_s.D, TrafficController) 
+N_PZ_60,net=TrafficController: PINT ( PedEW_s.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (PedEW_s.CLK, TrafficController) 
+N_PZ_61,net=TrafficController: PINT ( PedEW_s.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (PedEW_s.AR, TrafficController) 
+N_PZ_62,net=TrafficController: PINT ( PedNS_s.D )
+  <--1--  (PedNS, TrafficController)
+  --1--> (PedNS_s.D, TrafficController) 
+N_PZ_63,net=TrafficController: PINT ( PedNS_s.CLK )
+  <--1--  (clock, TrafficController)
+  --1--> (PedNS_s.CLK, TrafficController) 
+N_PZ_64,net=TrafficController: PINT ( PedNS_s.AR )
+  <--1--  (reset, TrafficController)
+  --1--> (PedNS_s.AR, TrafficController) 
+N_PZ_65,net=TrafficController: PINT ( LightsEW<0> )
+  <--2--  (theController/state_FSM_FFd3.Q, TrafficController) 
+          (theController/state_FSM_FFd4.Q, TrafficController)
+  --1--> (LightsEW<0>, TrafficController) 
+N_PZ_66,net=TrafficController: PINT ( LightsEW<1> )
+  <--2--  (theController/state_FSM_FFd5.Q, TrafficController) 
+          (theController/state_FSM_FFd3.Q, TrafficController)
+  --1--> (LightsEW<1>, TrafficController) 
+N_PZ_67,net=TrafficController: PINT ( LightsNS<0> )
+  <--2--  (theController/state_FSM_FFd2.Q, TrafficController) 
+          (theController/state_FSM_FFd1.Q, TrafficController)
+  --1--> (LightsNS<0>, TrafficController) 
+N_PZ_68,net=TrafficController: PINT ( LightsNS<1> )
+  <--2--  (theController/state_FSM_FFd6.Q, TrafficController) 
+          (theController/state_FSM_FFd2.Q, TrafficController)
+  --1--> (LightsNS<1>, TrafficController) 
+theController/PedEW_s.D,net=TrafficController: PO
+  <--1--  (N_PZ_0, TrafficController)
+  --0--> 
+theController/PedEW_s.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_1, TrafficController)
+  --0--> 
+theController/PedEW_s.AR,net=TrafficController: PO
+  <--1--  (N_PZ_2, TrafficController)
+  --0--> 
+theController/PedEW_s.CE,net=TrafficController: PO
+  <--1--  (N_PZ_3, TrafficController)
+  --0--> 
+theController/PedNS_s.D,net=TrafficController: PO
+  <--1--  (N_PZ_4, TrafficController)
+  --0--> 
+theController/PedNS_s.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_5, TrafficController)
+  --0--> 
+theController/PedNS_s.AR,net=TrafficController: PO
+  <--1--  (N_PZ_6, TrafficController)
+  --0--> 
+theController/PedNS_s.CE,net=TrafficController: PO
+  <--1--  (N_PZ_7, TrafficController)
+  --0--> 
+theController/state_FSM_FFd5.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_9, TrafficController)
+  --0--> 
+theController/state_FSM_FFd5.AP,net=TrafficController: PO
+  <--1--  (N_PZ_10, TrafficController)
+  --0--> 
+theController/state_FSM_FFd6.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_12, TrafficController)
+  --0--> 
+theController/state_FSM_FFd6.AR,net=TrafficController: PO
+  <--1--  (N_PZ_13, TrafficController)
+  --0--> 
+theController/state_FSM_FFd2.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_15, TrafficController)
+  --0--> 
+theController/state_FSM_FFd2.AR,net=TrafficController: PO
+  <--1--  (N_PZ_16, TrafficController)
+  --0--> 
+theController/state_FSM_FFd3.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_18, TrafficController)
+  --0--> 
+theController/state_FSM_FFd3.AR,net=TrafficController: PO
+  <--1--  (N_PZ_19, TrafficController)
+  --0--> 
+theCounter/count<0>.D,net=TrafficController: PO
+  <--1--  (N_PZ_20, TrafficController)
+  --0--> 
+theCounter/count<0>.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_21, TrafficController)
+  --0--> 
+theCounter/count<0>.AP,net=TrafficController: PO
+  <--1--  (N_PZ_22, TrafficController)
+  --0--> 
+theController/state_FSM_FFd1.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_24, TrafficController)
+  --0--> 
+theController/state_FSM_FFd1.AR,net=TrafficController: PO
+  <--1--  (N_PZ_25, TrafficController)
+  --0--> 
+theController/state_FSM_FFd4.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_27, TrafficController)
+  --0--> 
+theController/state_FSM_FFd4.AR,net=TrafficController: PO
+  <--1--  (N_PZ_28, TrafficController)
+  --0--> 
+theCounter/count<1>.D,net=TrafficController: PO
+  <--1--  (N_PZ_29, TrafficController)
+  --0--> 
+theCounter/count<1>.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_30, TrafficController)
+  --0--> 
+theCounter/count<1>.AR,net=TrafficController: PO
+  <--1--  (N_PZ_31, TrafficController)
+  --0--> 
+theCounter/count<2>.D,net=TrafficController: PO
+  <--1--  (N_PZ_32, TrafficController)
+  --0--> 
+theCounter/count<2>.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_33, TrafficController)
+  --0--> 
+theCounter/count<2>.AR,net=TrafficController: PO
+  <--1--  (N_PZ_34, TrafficController)
+  --0--> 
+theCounter/count<3>.D,net=TrafficController: PO
+  <--1--  (N_PZ_35, TrafficController)
+  --0--> 
+theCounter/count<3>.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_36, TrafficController)
+  --0--> 
+theCounter/count<3>.AR,net=TrafficController: PO
+  <--1--  (N_PZ_37, TrafficController)
+  --0--> 
+theCounter/count<4>.D,net=TrafficController: PO
+  <--1--  (N_PZ_38, TrafficController)
+  --0--> 
+theCounter/count<4>.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_39, TrafficController)
+  --0--> 
+theCounter/count<4>.AR,net=TrafficController: PO
+  <--1--  (N_PZ_40, TrafficController)
+  --0--> 
+theCounter/count<5>.D,net=TrafficController: PO
+  <--1--  (N_PZ_41, TrafficController)
+  --0--> 
+theCounter/count<5>.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_42, TrafficController)
+  --0--> 
+theCounter/count<5>.AR,net=TrafficController: PO
+  <--1--  (N_PZ_43, TrafficController)
+  --0--> 
+theCounter/count<6>.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_45, TrafficController)
+  --0--> 
+theCounter/count<6>.AR,net=TrafficController: PO
+  <--1--  (N_PZ_46, TrafficController)
+  --0--> 
+theCounter/count<7>.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_48, TrafficController)
+  --0--> 
+theCounter/count<7>.AR,net=TrafficController: PO
+  <--1--  (N_PZ_49, TrafficController)
+  --0--> 
+CarEW_s.D,net=TrafficController: PO
+  <--1--  (N_PZ_50, TrafficController)
+  --0--> 
+CarEW_s.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_51, TrafficController)
+  --0--> 
+CarEW_s.AR,net=TrafficController: PO
+  <--1--  (N_PZ_52, TrafficController)
+  --0--> 
+CarNS_s.D,net=TrafficController: PO
+  <--1--  (N_PZ_53, TrafficController)
+  --0--> 
+CarNS_s.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_54, TrafficController)
+  --0--> 
+CarNS_s.AR,net=TrafficController: PO
+  <--1--  (N_PZ_55, TrafficController)
+  --0--> 
+theCounter/count<8>.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_57, TrafficController)
+  --0--> 
+theCounter/count<8>.AR,net=TrafficController: PO
+  <--1--  (N_PZ_58, TrafficController)
+  --0--> 
+PedEW_s.D,net=TrafficController: PO
+  <--1--  (N_PZ_59, TrafficController)
+  --0--> 
+PedEW_s.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_60, TrafficController)
+  --0--> 
+PedEW_s.AR,net=TrafficController: PO
+  <--1--  (N_PZ_61, TrafficController)
+  --0--> 
+PedNS_s.D,net=TrafficController: PO
+  <--1--  (N_PZ_62, TrafficController)
+  --0--> 
+PedNS_s.CLK,net=TrafficController: PO
+  <--1--  (N_PZ_63, TrafficController)
+  --0--> 
+PedNS_s.AR,net=TrafficController: PO
+  <--1--  (N_PZ_64, TrafficController)
+  --0--> 
+LightsEW<0>,net=TrafficController: PO
+  <--1--  (N_PZ_65, TrafficController)
+  --0--> 
+LightsEW<1>,net=TrafficController: PO
+  <--1--  (N_PZ_66, TrafficController)
+  --0--> 
+LightsNS<0>,net=TrafficController: PO
+  <--1--  (N_PZ_67, TrafficController)
+  --0--> 
+LightsNS<1>,net=TrafficController: PO
+  <--1--  (N_PZ_68, TrafficController)
+  --0--> 
+theController/PedEW_s.Q,net=TrafficController: PI
+  <--0-- 
+  --4--> (N_PZ_145, TrafficController) (N_PZ_172, TrafficController)  
+         (N_PZ_91, TrafficController) (N_PZ_88, TrafficController) 
+theController/PedNS_s.Q,net=TrafficController: PI
+  <--0-- 
+  --4--> (N_PZ_145, TrafficController) (N_PZ_171, TrafficController)  
+         (N_PZ_90, TrafficController) (N_PZ_89, TrafficController) 
+theController/state_FSM_FFd5.Q,net=TrafficController: PI
+  <--0-- 
+  --4--> (N_PZ_66, TrafficController) (N_PZ_148, TrafficController)  
+         (N_PZ_179, TrafficController) (N_PZ_88, TrafficController) 
+theController/state_FSM_FFd6.Q,net=TrafficController: PI
+  <--0-- 
+  --4--> (N_PZ_68, TrafficController) (N_PZ_148, TrafficController)  
+         (N_PZ_89, TrafficController) (N_PZ_182, TrafficController) 
+theController/state_FSM_FFd2.Q,net=TrafficController: PI
+  <--0-- 
+  --6--> (N_PZ_67, TrafficController) (N_PZ_68, TrafficController)  
+         (N_PZ_7, TrafficController) (N_PZ_153, TrafficController)  
+         (N_PZ_90, TrafficController) (N_PZ_89, TrafficController) 
+theController/state_FSM_FFd3.Q,net=TrafficController: PI
+  <--0-- 
+  --6--> (N_PZ_65, TrafficController) (N_PZ_66, TrafficController)  
+         (N_PZ_3, TrafficController) (N_PZ_153, TrafficController)  
+         (N_PZ_91, TrafficController) (N_PZ_88, TrafficController) 
+theCounter/count<0>.Q,net=TrafficController: PI
+  <--0-- 
+  --4--> (N_PZ_29, TrafficController) (N_PZ_20, TrafficController)  
+         (N_PZ_149, TrafficController) (N_PZ_158, TrafficController) 
+theController/state_FSM_FFd1.Q,net=TrafficController: PI
+  <--0-- 
+  --4--> (N_PZ_67, TrafficController) (N_PZ_151, TrafficController)  
+         (N_PZ_181, TrafficController) (N_PZ_93, TrafficController) 
+theController/state_FSM_FFd4.Q,net=TrafficController: PI
+  <--0-- 
+  --4--> (N_PZ_65, TrafficController) (N_PZ_151, TrafficController)  
+         (N_PZ_94, TrafficController) (N_PZ_180, TrafficController) 
+theCounter/count<1>.Q,net=TrafficController: PI
+  <--0-- 
+  --3--> (N_PZ_29, TrafficController) (N_PZ_149, TrafficController)  
+         (N_PZ_158, TrafficController) 
+theCounter/count<2>.Q,net=TrafficController: PI
+  <--0-- 
+  --7--> (N_PZ_154, TrafficController) (N_PZ_163, TrafficController)  
+         (N_PZ_41, TrafficController) (N_PZ_174, TrafficController)  
+         (N_PZ_32, TrafficController) (N_PZ_175, TrafficController)  
+         (N_PZ_38, TrafficController) 
+theCounter/count<3>.Q,net=TrafficController: PI
+  <--0-- 
+  --4--> (N_PZ_155, TrafficController) (N_PZ_160, TrafficController)  
+         (N_PZ_167, TrafficController) (N_PZ_35, TrafficController) 
+theCounter/count<4>.Q,net=TrafficController: PI
+  <--0-- 
+  --4--> (N_PZ_157, TrafficController) (N_PZ_162, TrafficController)  
+         (N_PZ_165, TrafficController) (N_PZ_38, TrafficController) 
+theCounter/count<5>.Q,net=TrafficController: PI
+  <--0-- 
+  --4--> (N_PZ_154, TrafficController) (N_PZ_163, TrafficController)  
+         (N_PZ_41, TrafficController) (N_PZ_32, TrafficController) 
+theCounter/count<6>.Q,net=TrafficController: PI
+  <--0-- 
+  --6--> (N_PZ_159, TrafficController) (N_PZ_162, TrafficController)  
+         (N_PZ_168, TrafficController) (N_PZ_38, TrafficController)  
+         (N_PZ_101, TrafficController) (N_PZ_104, TrafficController) 
+theCounter/count<7>.Q,net=TrafficController: PI
+  <--0-- 
+  --3--> (N_PZ_155, TrafficController) (N_PZ_164, TrafficController)  
+         (N_PZ_104, TrafficController) 
+CarEW_s.Q,net=TrafficController: PI
+  <--0-- 
+  --2--> (N_PZ_147, TrafficController) (N_PZ_172, TrafficController) 
+CarNS_s.Q,net=TrafficController: PI
+  <--0-- 
+  --2--> (N_PZ_146, TrafficController) (N_PZ_171, TrafficController) 
+theCounter/count<8>.Q,net=TrafficController: PI
+  <--0-- 
+  --1--> (N_PZ_150, TrafficController) 
+PedEW_s.Q,net=TrafficController: PI
+  <--0-- 
+  --2--> (N_PZ_0, TrafficController) (N_PZ_3, TrafficController) 
+PedNS_s.Q,net=TrafficController: PI
+  <--0-- 
+  --2--> (N_PZ_4, TrafficController) (N_PZ_7, TrafficController) 
+N_PZ_88,net=TrafficController: PINT ( theController/state_FSM_FFd5.T )
+  <--7--  (theController/PedEW_s.Q, TrafficController) 
+          (theController/state_FSM_FFd5.Q, TrafficController) 
+          (theController/state_FSM_FFd3.Q, TrafficController) 
+          (N_PZ_146, TrafficController) (N_PZ_169, TrafficController) 
+          (N_PZ_179, TrafficController) (N_PZ_181, TrafficController)
+  --1--> (theController/state_FSM_FFd5.T, TrafficController) 
+N_PZ_89,net=TrafficController: PINT ( theController/state_FSM_FFd6.T )
+  <--7--  (theController/PedNS_s.Q, TrafficController) 
+          (theController/state_FSM_FFd6.Q, TrafficController) 
+          (theController/state_FSM_FFd2.Q, TrafficController) 
+          (N_PZ_147, TrafficController) (N_PZ_169, TrafficController) 
+          (N_PZ_180, TrafficController) (N_PZ_182, TrafficController)
+  --1--> (theController/state_FSM_FFd6.T, TrafficController) 
+N_PZ_90,net=TrafficController: PINT ( theController/state_FSM_FFd2.T )
+  <--4--  (theController/PedNS_s.Q, TrafficController) 
+          (theController/state_FSM_FFd2.Q, TrafficController) 
+          (N_PZ_169, TrafficController) (N_PZ_176, TrafficController)
+  --1--> (theController/state_FSM_FFd2.T, TrafficController) 
+N_PZ_91,net=TrafficController: PINT ( theController/state_FSM_FFd3.T )
+  <--4--  (theController/PedEW_s.Q, TrafficController) 
+          (theController/state_FSM_FFd3.Q, TrafficController) 
+          (N_PZ_169, TrafficController) (N_PZ_177, TrafficController)
+  --1--> (theController/state_FSM_FFd3.T, TrafficController) 
+N_PZ_93,net=TrafficController: PINT ( theController/state_FSM_FFd1.T )
+  <--4--  (theController/state_FSM_FFd1.Q, TrafficController) 
+          (N_PZ_172, TrafficController) (N_PZ_181, TrafficController) 
+          (N_PZ_182, TrafficController)
+  --1--> (theController/state_FSM_FFd1.T, TrafficController) 
+N_PZ_94,net=TrafficController: PINT ( theController/state_FSM_FFd4.T )
+  <--4--  (theController/state_FSM_FFd4.Q, TrafficController) 
+          (N_PZ_171, TrafficController) (N_PZ_179, TrafficController) 
+          (N_PZ_180, TrafficController)
+  --1--> (theController/state_FSM_FFd4.T, TrafficController) 
+N_PZ_100,net=TrafficController: PINT ( theCounter/count<6>.T )
+  <--3--  (N_PZ_148, TrafficController) (N_PZ_161, TrafficController) 
+          (N_PZ_173, TrafficController)
+  --1--> (theCounter/count<6>.T, TrafficController) 
+N_PZ_101,net=TrafficController: PINT ( theCounter/count<7>.T )
+  <--5--  (theCounter/count<6>.Q, TrafficController) (N_PZ_148, TrafficController) 
+          (N_PZ_161, TrafficController) (N_PZ_173, TrafficController) 
+          (N_PZ_178, TrafficController)
+  --1--> (theCounter/count<7>.T, TrafficController) 
+N_PZ_104,net=TrafficController: PINT ( theCounter/count<8>.T )
+  <--6--  (theCounter/count<6>.Q, TrafficController) 
+          (theCounter/count<7>.Q, TrafficController) (N_PZ_152, TrafficController) 
+          (N_PZ_156, TrafficController) (N_PZ_173, TrafficController) 
+          (N_PZ_178, TrafficController)
+  --1--> (theCounter/count<8>.T, TrafficController) 
+theController/state_FSM_FFd5.T,net=TrafficController: PO
+  <--1--  (N_PZ_88, TrafficController)
+  --0--> 
+theController/state_FSM_FFd6.T,net=TrafficController: PO
+  <--1--  (N_PZ_89, TrafficController)
+  --0--> 
+theController/state_FSM_FFd2.T,net=TrafficController: PO
+  <--1--  (N_PZ_90, TrafficController)
+  --0--> 
+theController/state_FSM_FFd3.T,net=TrafficController: PO
+  <--1--  (N_PZ_91, TrafficController)
+  --0--> 
+theController/state_FSM_FFd1.T,net=TrafficController: PO
+  <--1--  (N_PZ_93, TrafficController)
+  --0--> 
+theController/state_FSM_FFd4.T,net=TrafficController: PO
+  <--1--  (N_PZ_94, TrafficController)
+  --0--> 
+theCounter/count<6>.T,net=TrafficController: PO
+  <--1--  (N_PZ_100, TrafficController)
+  --0--> 
+theCounter/count<7>.T,net=TrafficController: PO
+  <--1--  (N_PZ_101, TrafficController)
+  --0--> 
+theCounter/count<8>.T,net=TrafficController: PO
+  <--1--  (N_PZ_104, TrafficController)
+  --0--> 
+N_PZ_145,net=TrafficController: INT
+  <--2--  (theController/PedEW_s.Q, TrafficController) 
+          (theController/PedNS_s.Q, TrafficController)
+  --2--> (N_PZ_146, TrafficController) (N_PZ_147, TrafficController) 
+N_PZ_146,net=TrafficController: INT
+  <--2--  (CarNS_s.Q, TrafficController) (N_PZ_145, TrafficController)
+  --2--> (N_PZ_148, TrafficController) (N_PZ_88, TrafficController) 
+N_PZ_147,net=TrafficController: INT
+  <--2--  (CarEW_s.Q, TrafficController) (N_PZ_145, TrafficController)
+  --2--> (N_PZ_148, TrafficController) (N_PZ_89, TrafficController) 
+N_PZ_148,net=TrafficController: INT
+  <--4--  (theController/state_FSM_FFd5.Q, TrafficController) 
+          (theController/state_FSM_FFd6.Q, TrafficController) 
+          (N_PZ_146, TrafficController) (N_PZ_147, TrafficController)
+  --4--> (N_PZ_152, TrafficController) (N_PZ_100, TrafficController)  
+         (N_PZ_38, TrafficController) (N_PZ_101, TrafficController) 
+N_PZ_149,net=TrafficController: INT
+  <--2--  (theCounter/count<0>.Q, TrafficController) 
+          (theCounter/count<1>.Q, TrafficController)
+  --1--> (N_PZ_150, TrafficController) 
+N_PZ_150,net=TrafficController: INT
+  <--2--  (theCounter/count<8>.Q, TrafficController) (N_PZ_149, TrafficController)
+  --4--> (N_PZ_156, TrafficController) (N_PZ_166, TrafficController)  
+         (N_PZ_41, TrafficController) (N_PZ_32, TrafficController) 
+N_PZ_151,net=TrafficController: INT
+  <--2--  (theController/state_FSM_FFd1.Q, TrafficController) 
+          (theController/state_FSM_FFd4.Q, TrafficController)
+  --2--> (N_PZ_152, TrafficController) (N_PZ_35, TrafficController) 
+N_PZ_152,net=TrafficController: INT
+  <--4--  (N_PZ_148, TrafficController) (N_PZ_151, TrafficController) 
+          (N_PZ_159, TrafficController) (N_PZ_167, TrafficController)
+  --3--> (N_PZ_41, TrafficController) (N_PZ_32, TrafficController)  
+         (N_PZ_104, TrafficController) 
+N_PZ_153,net=TrafficController: INT
+  <--2--  (theController/state_FSM_FFd2.Q, TrafficController) 
+          (theController/state_FSM_FFd3.Q, TrafficController)
+  --1--> (N_PZ_178, TrafficController) 
+N_PZ_154,net=TrafficController: INT
+  <--2--  (theCounter/count<2>.Q, TrafficController) 
+          (theCounter/count<5>.Q, TrafficController)
+  --2--> (N_PZ_156, TrafficController) (N_PZ_173, TrafficController) 
+N_PZ_155,net=TrafficController: INT
+  <--2--  (theCounter/count<3>.Q, TrafficController) 
+          (theCounter/count<7>.Q, TrafficController)
+  --2--> (N_PZ_157, TrafficController) (N_PZ_38, TrafficController) 
+N_PZ_156,net=TrafficController: INT
+  <--2--  (N_PZ_150, TrafficController) (N_PZ_154, TrafficController)
+  --5--> (N_PZ_161, TrafficController) (N_PZ_170, TrafficController)  
+         (N_PZ_35, TrafficController) (N_PZ_38, TrafficController)  
+         (N_PZ_104, TrafficController) 
+N_PZ_157,net=TrafficController: INT
+  <--2--  (theCounter/count<4>.Q, TrafficController) (N_PZ_155, TrafficController)
+  --2--> (N_PZ_159, TrafficController) (N_PZ_169, TrafficController) 
+N_PZ_158,net=TrafficController: INT
+  <--2--  (theCounter/count<0>.Q, TrafficController) 
+          (theCounter/count<1>.Q, TrafficController)
+  --3--> (N_PZ_160, TrafficController) (N_PZ_174, TrafficController)  
+         (N_PZ_32, TrafficController) 
+N_PZ_159,net=TrafficController: INT
+  <--2--  (theCounter/count<6>.Q, TrafficController) (N_PZ_157, TrafficController)
+  --2--> (N_PZ_161, TrafficController) (N_PZ_152, TrafficController) 
+N_PZ_160,net=TrafficController: INT
+  <--2--  (theCounter/count<3>.Q, TrafficController) (N_PZ_158, TrafficController)
+  --2--> (N_PZ_165, TrafficController) (N_PZ_175, TrafficController) 
+N_PZ_161,net=TrafficController: INT
+  <--2--  (N_PZ_156, TrafficController) (N_PZ_159, TrafficController)
+  --4--> (N_PZ_100, TrafficController) (N_PZ_101, TrafficController)  
+         (N_PZ_179, TrafficController) (N_PZ_182, TrafficController) 
+N_PZ_162,net=TrafficController: INT
+  <--2--  (theCounter/count<4>.Q, TrafficController) 
+          (theCounter/count<6>.Q, TrafficController)
+  --1--> (N_PZ_164, TrafficController) 
+N_PZ_163,net=TrafficController: INT
+  <--2--  (theCounter/count<2>.Q, TrafficController) 
+          (theCounter/count<5>.Q, TrafficController)
+  --2--> (N_PZ_166, TrafficController) (N_PZ_41, TrafficController) 
+N_PZ_164,net=TrafficController: INT
+  <--2--  (theCounter/count<7>.Q, TrafficController) (N_PZ_162, TrafficController)
+  --2--> (N_PZ_167, TrafficController) (N_PZ_35, TrafficController) 
+N_PZ_165,net=TrafficController: INT
+  <--2--  (theCounter/count<4>.Q, TrafficController) (N_PZ_160, TrafficController)
+  --3--> (N_PZ_41, TrafficController) (N_PZ_173, TrafficController)  
+         (N_PZ_38, TrafficController) 
+N_PZ_166,net=TrafficController: INT
+  <--2--  (N_PZ_150, TrafficController) (N_PZ_163, TrafficController)
+  --1--> (N_PZ_168, TrafficController) 
+N_PZ_167,net=TrafficController: INT
+  <--2--  (theCounter/count<3>.Q, TrafficController) (N_PZ_164, TrafficController)
+  --2--> (N_PZ_152, TrafficController) (N_PZ_170, TrafficController) 
+N_PZ_168,net=TrafficController: INT
+  <--2--  (theCounter/count<6>.Q, TrafficController) (N_PZ_166, TrafficController)
+  --1--> (N_PZ_169, TrafficController) 
+N_PZ_169,net=TrafficController: INT
+  <--2--  (N_PZ_157, TrafficController) (N_PZ_168, TrafficController)
+  --5--> (N_PZ_90, TrafficController) (N_PZ_91, TrafficController)  
+         (N_PZ_178, TrafficController) (N_PZ_88, TrafficController)  
+         (N_PZ_89, TrafficController) 
+N_PZ_170,net=TrafficController: INT
+  <--2--  (N_PZ_156, TrafficController) (N_PZ_167, TrafficController)
+  --2--> (N_PZ_180, TrafficController) (N_PZ_181, TrafficController) 
+N_PZ_171,net=TrafficController: INT
+  <--2--  (theController/PedNS_s.Q, TrafficController) (CarNS_s.Q, TrafficController)
+  --2--> (N_PZ_94, TrafficController) (N_PZ_177, TrafficController) 
+N_PZ_172,net=TrafficController: INT
+  <--2--  (theController/PedEW_s.Q, TrafficController) (CarEW_s.Q, TrafficController)
+  --2--> (N_PZ_93, TrafficController) (N_PZ_176, TrafficController) 
+N_PZ_173,net=TrafficController: INT
+  <--2--  (N_PZ_154, TrafficController) (N_PZ_165, TrafficController)
+  --4--> (N_PZ_100, TrafficController) (N_PZ_41, TrafficController)  
+         (N_PZ_101, TrafficController) (N_PZ_104, TrafficController) 
+N_PZ_174,net=TrafficController: INT
+  <--2--  (theCounter/count<2>.Q, TrafficController) (N_PZ_158, TrafficController)
+  --2--> (N_PZ_32, TrafficController) (N_PZ_35, TrafficController) 
+N_PZ_175,net=TrafficController: INT
+  <--2--  (theCounter/count<2>.Q, TrafficController) (N_PZ_160, TrafficController)
+  --2--> (N_PZ_35, TrafficController) (N_PZ_38, TrafficController) 
+N_PZ_176,net=TrafficController: INT
+  <--3--  (N_PZ_172, TrafficController) (N_PZ_180, TrafficController) 
+          (N_PZ_182, TrafficController)
+  --1--> (N_PZ_90, TrafficController) 
+N_PZ_177,net=TrafficController: INT
+  <--3--  (N_PZ_171, TrafficController) (N_PZ_179, TrafficController) 
+          (N_PZ_181, TrafficController)
+  --1--> (N_PZ_91, TrafficController) 
+N_PZ_178,net=TrafficController: INT
+  <--2--  (N_PZ_153, TrafficController) (N_PZ_169, TrafficController)
+  --3--> (N_PZ_38, TrafficController) (N_PZ_101, TrafficController)  
+         (N_PZ_104, TrafficController) 
+N_PZ_179,net=TrafficController: INT
+  <--2--  (theController/state_FSM_FFd5.Q, TrafficController) 
+          (N_PZ_161, TrafficController)
+  --3--> (N_PZ_94, TrafficController) (N_PZ_177, TrafficController)  
+         (N_PZ_88, TrafficController) 
+N_PZ_180,net=TrafficController: INT
+  <--2--  (theController/state_FSM_FFd4.Q, TrafficController) 
+          (N_PZ_170, TrafficController)
+  --3--> (N_PZ_94, TrafficController) (N_PZ_89, TrafficController)  
+         (N_PZ_176, TrafficController) 
+N_PZ_181,net=TrafficController: INT
+  <--2--  (theController/state_FSM_FFd1.Q, TrafficController) 
+          (N_PZ_170, TrafficController)
+  --3--> (N_PZ_177, TrafficController) (N_PZ_88, TrafficController)  
+         (N_PZ_93, TrafficController) 
+N_PZ_182,net=TrafficController: INT
+  <--2--  (theController/state_FSM_FFd6.Q, TrafficController) 
+          (N_PZ_161, TrafficController)
+  --3--> (N_PZ_89, TrafficController) (N_PZ_93, TrafficController)  
+         (N_PZ_176, TrafficController) 

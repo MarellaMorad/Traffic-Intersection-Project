@@ -1,0 +1,138 @@
+MDF Database:  version 1.0
+MDF_INFO | Counter | XC2C64A-5-VQ44
+MACROCELL | 2 | 1 | is400_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 9 | count<7>  | count<8>  | count<5>  | count<4>  | count<6>  | count<0>  | count<1>  | count<2>  | count<3>
+INPUTMC | 9 | 0 | 3 | 0 | 12 | 0 | 5 | 0 | 6 | 0 | 4 | 0 | 15 | 0 | 14 | 0 | 13 | 0 | 7
+EQ | 5 | 
+   !is400 = !count<7>
+	# !count<8>
+	# !count<5> & !count<4> & !count<6>
+	# !count<0> & !count<1> & !count<2> & !count<3> & 
+	!count<5> & !count<6>;	// (4 pt, 9 inp)
+
+MACROCELL | 0 | 15 | count<0>_MC
+ATTRIBUTES | 2172683008 | 0
+OUTPUTMC | 10 | 0 | 15 | 0 | 14 | 0 | 13 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 12 | 2 | 1
+INPUTS | 2 | count<0>  | clear
+INPUTMC | 1 | 0 | 15
+INPUTP | 1 | 80
+EQ | 3 | 
+   !count<0> := count<0> & !clear;	// (1 pt, 2 inp)
+   count<0>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   count<0>.AP = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 1 | Reset
+
+MACROCELL | 0 | 14 | count<1>_MC
+ATTRIBUTES | 2189460224 | 0
+OUTPUTMC | 9 | 0 | 14 | 0 | 13 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 12 | 2 | 1
+INPUTS | 3 | count<0>  | clear  | count<1>
+INPUTMC | 2 | 0 | 15 | 0 | 14
+INPUTP | 1 | 80
+EQ | 4 | 
+   count<1> := count<0> & !clear & !count<1>
+	# !count<0> & !clear & count<1>;	// (2 pt, 3 inp)
+   count<1>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   count<1>.AR = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 4 | Reset
+
+MACROCELL | 0 | 13 | count<2>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 8 | 0 | 13 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 12 | 2 | 1
+INPUTS | 4 | clear  | count<2>  | count<0>  | count<1>
+INPUTMC | 3 | 0 | 13 | 0 | 15 | 0 | 14
+INPUTP | 1 | 80
+EQ | 4 | 
+   count<2>.T := clear & count<2>
+	# count<0> & !clear & count<1>;	// (2 pt, 4 inp)
+   count<2>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   count<2>.AR = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 4 | Reset
+
+MACROCELL | 0 | 7 | count<3>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 7 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 12 | 2 | 1
+INPUTS | 5 | clear  | count<3>  | count<0>  | count<1>  | count<2>
+INPUTMC | 4 | 0 | 7 | 0 | 15 | 0 | 14 | 0 | 13
+INPUTP | 1 | 80
+EQ | 4 | 
+   count<3>.T := clear & count<3>
+	# count<0> & !clear & count<1> & count<2>;	// (2 pt, 5 inp)
+   count<3>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   count<3>.AR = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 4 | Reset
+
+MACROCELL | 0 | 5 | count<5>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 5 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 12 | 2 | 1
+INPUTS | 7 | clear  | count<5>  | count<0>  | count<1>  | count<2>  | count<3>  | count<4>
+INPUTMC | 6 | 0 | 5 | 0 | 15 | 0 | 14 | 0 | 13 | 0 | 7 | 0 | 6
+INPUTP | 1 | 80
+EQ | 5 | 
+   count<5>.T := clear & count<5>
+	# count<0> & !clear & count<1> & count<2> & 
+	count<3> & count<4>;	// (2 pt, 7 inp)
+   count<5>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   count<5>.AR = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 4 | Reset
+
+MACROCELL | 0 | 6 | count<4>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 6 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 12 | 2 | 1
+INPUTS | 6 | clear  | count<4>  | count<0>  | count<1>  | count<2>  | count<3>
+INPUTMC | 5 | 0 | 6 | 0 | 15 | 0 | 14 | 0 | 13 | 0 | 7
+INPUTP | 1 | 80
+EQ | 5 | 
+   count<4>.T := clear & count<4>
+	# count<0> & !clear & count<1> & count<2> & 
+	count<3>;	// (2 pt, 6 inp)
+   count<4>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   count<4>.AR = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 4 | Reset
+
+MACROCELL | 0 | 4 | count<6>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 4 | 0 | 4 | 0 | 3 | 0 | 12 | 2 | 1
+INPUTS | 8 | clear  | count<6>  | count<0>  | count<1>  | count<2>  | count<3>  | count<5>  | count<4>
+INPUTMC | 7 | 0 | 4 | 0 | 15 | 0 | 14 | 0 | 13 | 0 | 7 | 0 | 5 | 0 | 6
+INPUTP | 1 | 80
+EQ | 5 | 
+   count<6>.T := clear & count<6>
+	# count<0> & !clear & count<1> & count<2> & 
+	count<3> & count<5> & count<4>;	// (2 pt, 8 inp)
+   count<6>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   count<6>.AR = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 4 | Reset
+
+MACROCELL | 0 | 3 | count<7>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 3 | 0 | 3 | 0 | 12 | 2 | 1
+INPUTS | 9 | clear  | count<7>  | count<0>  | count<1>  | count<2>  | count<3>  | count<5>  | count<4>  | count<6>
+INPUTMC | 8 | 0 | 3 | 0 | 15 | 0 | 14 | 0 | 13 | 0 | 7 | 0 | 5 | 0 | 6 | 0 | 4
+INPUTP | 1 | 80
+EQ | 5 | 
+   count<7>.T := clear & count<7>
+	# count<0> & !clear & count<1> & count<2> & 
+	count<3> & count<5> & count<4> & count<6>;	// (2 pt, 9 inp)
+   count<7>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   count<7>.AR = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 4 | Reset
+
+MACROCELL | 0 | 12 | count<8>_MC
+ATTRIBUTES | 2185265920 | 0
+OUTPUTMC | 2 | 0 | 12 | 2 | 1
+INPUTS | 10 | clear  | count<8>  | count<0>  | count<1>  | count<2>  | count<3>  | count<5>  | count<4>  | count<6>  | count<7>
+INPUTMC | 9 | 0 | 12 | 0 | 15 | 0 | 14 | 0 | 13 | 0 | 7 | 0 | 5 | 0 | 6 | 0 | 4 | 0 | 3
+INPUTP | 1 | 80
+EQ | 5 | 
+   count<8>.T := clear & count<8>
+	# count<0> & !clear & count<1> & count<2> & 
+	count<3> & count<5> & count<4> & count<6> & count<7>;	// (2 pt, 10 inp)
+   count<8>.CLK  =  clock;	// GCK	(0 pt, 0 inp)
+   count<8>.AR = Reset;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clock | 4 | Reset
+
+PIN | Reset | 65536 | 16 | LVCMOS33 | 78 | 9 | 0 | 15 | 0 | 14 | 0 | 13 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 12
+PIN | clear | 64 | 16 | LVCMOS33 | 80 | 9 | 0 | 15 | 0 | 14 | 0 | 13 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 12
+PIN | clock | 16384 | 16 | LVCMOS33 | 23 | 9 | 0 | 15 | 0 | 14 | 0 | 13 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 0 | 12
+PIN | is400 | 536871040 | 0 | LVCMOS33 | 72

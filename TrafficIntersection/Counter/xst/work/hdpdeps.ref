@@ -1,0 +1,9 @@
+V3 3
+FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.vhd" 2021/05/25.14:17:13 P.20131013
+EN work/Counter 1621916241 \
+      FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.vhd" \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/Counter/Behavioral 1621916242 \
+      FL "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/Counter/Counter.vhd" \
+      EN work/Counter 1621916241

@@ -1,0 +1,229 @@
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+tsim -intstyle ise TrafficController TrafficController.nga 
+taengine -intstyle ise -f TrafficController -l TrafficController.tim -e {C:\Users\marel\OneDrive - Swinburne University\Semester 1 - 2021\EEE20001 - Digital Electronics Design\Project\Project Final\TrafficController\taengine.err} 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/Desktop/Project Final/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/Desktop/Project Final/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/Project Final/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.syr" 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project New/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
+xst -intstyle ise -ifn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.xst" -ofn "C:/Users/marel/OneDrive - Swinburne University/Semester 1 - 2021/EEE20001 - Digital Electronics Design/Project/Project Final/TrafficController/TrafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc C-MOD-TrafficController.ucf -p xc2c64a-VQ44-5 "TrafficController.ngc" TrafficController.ngd  
+cpldfit -intstyle ise -p xc2c64a-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TrafficController.ngd 
+XSLTProcess TrafficController_build.xml 
+tsim -intstyle ise TrafficController TrafficController.nga 
+hprep6 -s IEEE1149 -i TrafficController 
